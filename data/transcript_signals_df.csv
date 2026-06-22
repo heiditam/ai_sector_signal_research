@@ -1,4 +1,4 @@
-date,ticker,gpu_mentions,capex_up_score,capex_down_score,competitor_mentions,capex_net,ai_sentence_ratio
+Date,Ticker,gpu_mentions,capex_up_score,capex_down_score,competitor_mentions,capex_net,ai_sentence_ratio
 2004-10-07,AMD,0.0,0.0,0.0,0.0,0.0,0.0
 2004-10-12,INTC,0.0,0.0,0.0,0.0,0.0,0.0
 2004-10-21,AMZN,0.0,0.0,0.0,0.0,0.0,0.0
