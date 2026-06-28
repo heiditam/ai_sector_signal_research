@@ -137,6 +137,7 @@ def make_features(close: pd.Series,
 end = date.today() + timedelta(days=1)
 start = end - timedelta(days=400)  # extra buffer for 252-day rolling windows
 
+@st.cache_data(ttl=3600) #cache for 1 hour
 prices_live = yf.download(
     tickers=all_tickers + ['SOXX', 'QQQ'],
     start=start,
