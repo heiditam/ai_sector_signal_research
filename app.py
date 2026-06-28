@@ -3,13 +3,12 @@ import streamlit as st
 import lightgbm as lgb
 import pandas as pd
 import numpy as np
+import yfinance as yf
+import plotly.graph_objects as go
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import TimeSeriesSplit
 from datetime import date, timedelta
-import yfinance as yf
-import streamlit as st
-import yfinance as yf
-import plotly.graph_objects as go
+
 
 # Next 5 Days Graph
 def make_splits(df, n_splits=5, target_col='target', gap_days=21):
@@ -68,7 +67,6 @@ def train_evaluate(splits):
         acc = accuracy_score(y_te, probs > 0.5)
 
         # volatile threshold
-        vol_5d_thresh   = np.percentile(test_df['vol_5d'],   70)
         signals = np.where(probs > 0.52, 1, np.where(probs < 0.48, -1, 0))
         strat_returns = signals * asset_returns
         excess_returns = strat_returns - (0.04 / 52) # assume 4% annual risk-free rate; 52 trading periods
@@ -85,11 +83,6 @@ def train_evaluate(splits):
         all_results.append({'fold': fold_num+1, 'IC': round(ic,4), 'accuracy': round(acc,4), 'sharpe': round(sharpe, 4),\
                             'Accuracy on >2% moves': round(correct_big_moves, 3)})
         X_te = X_te.fillna(0)
-
-        baseline_ic = np.corrcoef(X_te['vol_5d'], y_te)[0,1]
-        # Directional accuracy of baseline (vol_5d only)
-        baseline_preds = (X_te['vol_5d'] > X_te['vol_5d'].median()).astype(int)
-        baseline_acc = accuracy_score(y_te, baseline_preds)
         
     return pd.DataFrame(all_results), model, X_te, y_te
 
@@ -209,7 +202,7 @@ fig.add_vline(
 )
 
 fig.update_layout(
-    title=f'AI Sector Stock Rankings — Next 5 Trading Days<br>{latest.index.get_level_values("Date").unique()[0].date()}',
+    title=f'AI Sector Stock Rankings — Next 5 Trading Days<br>{latest.index.get_level_values('Date').max().date()}',
     xaxis_title='Predicted Outperformance Probability',
     xaxis=dict(range=[0, 0.75]),
     height=600,
@@ -257,3 +250,7 @@ st.plotly_chart(fig, use_container_width=True)
 # SHAP chart
 st.subheader("What drives predictions: SHAP feature importance")
 st.image('outputs/shap_summary.png')
+
+print(latest.index.get_level_values('Date').unique())
+print(latest.index.get_level_values('Date').max())
+print(type(latest.index.get_level_values('Date').max()))
