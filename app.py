@@ -138,13 +138,16 @@ end = date.today() + timedelta(days=1)
 start = end - timedelta(days=400)  # extra buffer for 252-day rolling windows
 
 @st.cache_data(ttl=3600) #cache for 1 hour
-prices_live = yf.download(
-    tickers=all_tickers + ['SOXX', 'QQQ'],
-    start=start,
-    end=end,
-    auto_adjust=True,
-    progress=False
-)
+def load_price_data(all_tickers, start, end):
+    return yf.download(
+        tickers=all_tickers + ['SOXX', 'QQQ'],
+        start=start,
+        end=end,
+        auto_adjust=True,
+        progress=False
+    )
+
+prices_live = load_price_data(all_tickers, start, end)
 
 close_live = prices_live['Close']
 volume_live = prices_live['Volume']
