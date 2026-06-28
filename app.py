@@ -9,6 +9,7 @@ from sklearn.metrics import accuracy_score
 from sklearn.model_selection import TimeSeriesSplit
 from datetime import date, timedelta
 
+st.cache_data.clear()
 
 # Next 5 Days Graph
 def make_splits(df, n_splits=5, target_col='target', gap_days=21):
