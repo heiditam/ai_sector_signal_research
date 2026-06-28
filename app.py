@@ -201,8 +201,10 @@ fig.add_vline(
     annotation_position='bottom right'
 )
 
+last_date = latest.index.get_level_values('Date').max().date()
+
 fig.update_layout(
-    title=f'AI Sector Stock Rankings — Next 5 Trading Days<br>{latest.index.get_level_values('Date').max().date()}',
+    title=f'AI Sector Stock Rankings — Next 5 Trading Days<br>{last_date}',
     xaxis_title='Predicted Outperformance Probability',
     xaxis=dict(range=[0, 0.75]),
     height=600,
@@ -250,7 +252,3 @@ st.plotly_chart(fig, use_container_width=True)
 # SHAP chart
 st.subheader("What drives predictions: SHAP feature importance")
 st.image('outputs/shap_summary.png')
-
-print(latest.index.get_level_values('Date').unique())
-print(latest.index.get_level_values('Date').max())
-print(type(latest.index.get_level_values('Date').max()))
