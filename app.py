@@ -9,7 +9,7 @@ from sklearn.metrics import accuracy_score
 from sklearn.model_selection import TimeSeriesSplit
 from datetime import date, timedelta
 
-st.cache_data.clear()
+st.set_page_config(page_title="AI Stock Forecasting", layout="wide")
 
 # Next 5 Days Graph
 def make_splits(df, n_splits=5, target_col='target', gap_days=21):
@@ -140,14 +140,14 @@ start = end - timedelta(days=400)  # extra buffer for 252-day rolling windows
 @st.cache_data(ttl=3600) #cache for 1 hour
 def load_price_data(all_tickers, start, end):
     return yf.download(
-        tickers=all_tickers + ['SOXX', 'QQQ'],
+        tickers=list(all_tickers) + ['SOXX', 'QQQ'],
         start=start,
         end=end,
         auto_adjust=True,
         progress=False
     )
 
-prices_live = load_price_data(all_tickers, start, end)
+prices_live = load_price_data(tuple(all_tickers), start, end)
 
 close_live = prices_live['Close']
 volume_live = prices_live['Volume']
@@ -209,7 +209,7 @@ fig.add_vline(
 last_date = latest.index.get_level_values('Date').max().date()
 
 fig.update_layout(
-    title=f'AI Sector Stock Rankings — Next 5 Trading Days<br>{last_date}',
+    title=f'AI Sector Stock Overall Rankings — Next 5 Trading Days<br>{last_date}',
     xaxis_title='Predicted Outperformance Probability',
     xaxis=dict(range=[0, 0.75]),
     height=600,
@@ -220,7 +220,6 @@ fig.update_layout(
     annotations=[dict(text='Decision Threshold (0.5)', font=dict(color='black'))]
 )
 
-st.set_page_config(page_title="AI Stock Forecasting", layout="wide")
 st.title("AI Sector Stock Forecasting Dashboard")
 st.caption("Hybrid model: price features + FinBERT news sentiment + earnings keyword signals")
 
@@ -244,6 +243,50 @@ col3.metric("Top Feature", top_feature)
 col4.metric("Universe", f"{n_tickers} AI stocks")
 
 st.plotly_chart(fig, use_container_width=True)
+
+# Separated by bucket (type of company)
+st.subheader("Rankings by Sector Bucket")
+
+bucket_map = {}
+for bucket, tickers_list in ai_tickers.items():
+    for ticker in tickers_list:
+        bucket_map[ticker] = bucket
+
+bucket_labels = {
+    'semis': 'Semiconductors',
+    'hypers': 'Hyperscalers',
+    'pure': 'AI Pure Plays',
+    'infra': 'Infrastructure'
+}
+
+ranking_df = ranking.reset_index()
+ranking_df.columns = ['Ticker', 'Probability']
+ranking_df['Bucket'] = ranking_df['Ticker'].map(bucket_map)
+
+cols = st.columns(4)
+for i, (bucket, label) in enumerate(bucket_labels.items()):
+    bucket_df = ranking_df[ranking_df['Bucket'] == bucket].sort_values('Probability')
+    
+    with cols[i]:
+        st.markdown(f"**{label}**")
+        fig_bucket = go.Figure(go.Bar(
+            x=bucket_df['Probability'],
+            y=bucket_df['Ticker'],
+            orientation='h',
+            marker_color=['#2ecc71' if p > 0.5 else '#e74c3c' for p in bucket_df['Probability']],
+            text=[f'{p:.3f}' for p in bucket_df['Probability']],
+            textposition='outside',
+            textfont=dict(color='black', size=10)
+        ))
+        fig_bucket.add_vline(x=0.5, line_dash='dash', line_color='gray')
+        fig_bucket.update_layout(
+            height=350,
+            xaxis=dict(range=[0, 0.75]),
+            margin=dict(t=20, r=60, b=20, l=20),
+            plot_bgcolor='white',
+            showlegend=False
+        )
+        st.plotly_chart(fig_bucket, use_container_width=True)
 
 # Last 30 Days Graph
 st.subheader("AI sector performance Last 30 Days")
