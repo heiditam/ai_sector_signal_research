@@ -2,7 +2,7 @@
 
 **Contributors:** Heidi Tam <br>
 **Creation Date:** June 8, 2026 <br>
-**Last Updated:** July 25, 2026
+**Last Updated:** July 26, 2026
 
 ## Overview
 [type stuff here]
@@ -40,3 +40,25 @@ yfinance==1.2.2
 4) The data is collected from https://en.wikipedia.org/wiki/List_of_S%26P_500_companies, FinnHub API, and Edgar. Run the file called `data_cleaning.ipynb` located in `notebooks/cleaned/data_cleaning.ipynb` to ensure all relevant CSVs are created and stored in the correct folder (`data`).
 
 5) To train and test the data and view the corresponding dashboard, in your terminal, run ```streamlit run app.py```. A localhost window will appear.
+
+## Expected Outputs
+```
+results/
+├── results_df.csv
+├── results_table.tex
+├── feature_importance.csv
+├── shap_summary.png
+├── shap_waterfall.csv
+├── ic_by_fold.png
+└── ic_over_folds.png
+````
+Outputs include: <br>
+* Model results table
+* Feature importance table
+* IC by Fold bar chart - visualizes the model vs. baseline performance across folds
+* IC Over Folds - shows the cumulative IC over folds
+
+## File Structure
+
+## Conclusion
+This study confirmed that SEC EDGAR 8-K Filings do add measurable predictive value beyond the volatility-only baseline. With a mean model IC of 0.0693 compared to the baseline IC of 0.0542, the overall IC improved by 0.0148, with a +0.0266 higher IC in the fifth fold. Additionally, `ai_sentence_ratio` and `gpu_mentions` were top performers in feature importance, reaffirming the idea that language does contain stock-specific signal. However, although the addition of natural language processing applied to SEC EDGAR 8-K Filings resulted in an overall improvement in model performance, these features were ranked as less significant compared to their volatility and volume counterparts, indicating predictive value is added but volatility and volume still primarily dominate. Moreover, the application of NLP on current events articles for each of the 19 tickers did not have any feature importance to the model, although this is likely an infrastructure issue in having current news text correspond with the historical data drawn, rather than a true lack of sentiment value. Overall, the signal appears to be dependent on the time frame of the test data; lower performance was noted during the COVID-19 Pandemic (2020-2023) and the Federal Reserve rate hiking cycle (March 2022-July 2023). 

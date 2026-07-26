@@ -8,6 +8,7 @@ import plotly.graph_objects as go
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import TimeSeriesSplit
 from datetime import date, timedelta
+import matplotlib.pyplot as plt
 
 st.set_page_config(page_title="AI Stock Forecasting", layout="wide")
 
@@ -88,6 +89,9 @@ def train_evaluate(splits):
     return pd.DataFrame(all_results), model, X_te, y_te
 
 results_df, final_model, X_te, y_te = train_evaluate(splits)
+# Save results table
+results_df.to_csv('outputs/results_df.csv', index=False)
+results_df.to_latex('outputs/results_table.tex', index=False, float_format='%.4f')
 
 tickers = pd.read_csv('data/tickers.csv')
 tickers = tickers.drop(columns=['Unnamed: 0'])
@@ -176,6 +180,13 @@ feat_cols = [
     'gpu_mentions', 'capex_up_score', 'capex_down_score',
     'capex_net', 'competitor_mentions', 'ai_sentence_ratio'
 ]
+
+# feature importance
+importance = pd.Series(
+    final_model.feature_importances_, 
+    index=feat_cols
+).sort_values(ascending=False)
+importance.to_csv('outputs/feature_importance.csv')
 
 for col in feat_cols:
     if col not in latest.columns:
@@ -300,3 +311,37 @@ st.plotly_chart(fig, use_container_width=True)
 # SHAP chart
 st.subheader("What drives predictions: SHAP feature importance")
 st.image('outputs/shap_summary.png')
+
+# Other visualizations
+# IC by fold bar chart
+fig, ax = plt.subplots(figsize=(10, 5))
+x = np.arange(len(results_df))
+width = 0.35
+ax.bar(x - width/2, results_df['IC'], width, label='Model IC', color='#2ecc71')
+ax.bar(x + width/2, [0.0436, 0.0316, 0.0717, 0.0673, 0.0566], width, label='Baseline IC', color='#95a5a6')
+ax.set_xlabel('Fold')
+ax.set_ylabel('Information Coefficient')
+ax.set_title('Model IC vs Volatility-Only Baseline by Fold')
+ax.set_xticks(x)
+ax.set_xticklabels([f'Fold {i+1}' for i in range(5)])
+ax.legend()
+plt.tight_layout()
+plt.savefig('outputs/ic_by_fold.png', dpi=150, bbox_inches='tight')
+st.image('outputs/ic_by_fold.png', width=700)
+
+# Cumulative IC Over Time
+fig, ax = plt.subplots(figsize=(10, 5))
+folds = [f'Fold {i+1}' for i in range(5)]
+model_ics = results_df['IC'].values
+baseline_ics = [0.0436, 0.0316, 0.0717, 0.0673, 0.0566]
+
+ax.plot(folds, model_ics, marker='o', color='#2ecc71', linewidth=2, label='Model IC')
+ax.plot(folds, baseline_ics, marker='s', color='#95a5a6', linewidth=2, linestyle='--', label='Baseline IC')
+ax.fill_between(folds, model_ics, baseline_ics, alpha=0.2, color='#2ecc71')
+ax.set_xlabel('Fold')
+ax.set_ylabel('Information Coefficient')
+ax.set_title('Model vs Baseline IC Across Walk-Forward Folds')
+ax.legend()
+plt.tight_layout()
+plt.savefig('outputs/ic_over_folds.png', dpi=150, bbox_inches='tight')
+st.image('outputs/ic_over_folds.png', width=700)
