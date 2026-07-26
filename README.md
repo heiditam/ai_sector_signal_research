@@ -59,6 +59,40 @@ Outputs include: <br>
 * IC Over Folds - shows the cumulative IC over folds
 
 ## File Structure
+```
+ai_sector_signal_research/
+├── .devcontainer/
+│   └── devcontainer.json
+├── data/
+│   ├── ai_sector_features_df.csv
+│   ├── clean_prices.csv
+│   ├── features_df.csv
+│   ├── prices_raw.csv
+│   ├── sentiment_df.csv
+│   ├── tickers.csv
+│   └── transcript_signals_df.csv
+├── notebooks/
+│   ├── cleaned/
+│   │   ├── data_cleaning.ipynb
+│   │   └── training.ipynb
+│   └── messy/                      # For development history
+│       ├── data_cleaning.ipynb
+│       └── training.ipynb
+├── outputs/
+│   ├── feature_importance.csv
+│   ├── ic_by_fold.png
+│   ├── ic_over_folds.png
+│   ├── results_df.csv
+│   ├── results_table.tex
+│   ├── shap_force.png
+│   ├── shap_summary.png
+│   └── shap_waterfall.png
+├── .gitignore
+├── README.md
+├── app.py
+├── environment.yml
+└── requirements.txt
+```
 
 ## Conclusion
 This study confirmed that SEC EDGAR 8-K Filings do add measurable predictive value beyond the volatility-only baseline. With a mean model IC of 0.0693 compared to the baseline IC of 0.0542, the overall IC improved by 0.0148, with a +0.0266 higher IC in the fifth fold. Additionally, `ai_sentence_ratio` and `gpu_mentions` were top performers in feature importance, reaffirming the idea that language does contain stock-specific signal. However, although the addition of natural language processing applied to SEC EDGAR 8-K Filings resulted in an overall improvement in model performance, these features were ranked as less significant compared to their volatility and volume counterparts, indicating predictive value is added but volatility and volume still primarily dominate. Moreover, the application of NLP on current events articles for each of the 19 tickers did not have any feature importance to the model, although this is likely an infrastructure issue in having current news text correspond with the historical data drawn, rather than a true lack of sentiment value. Overall, the signal appears to be dependent on the time frame of the test data; lower performance was noted during the COVID-19 Pandemic (2020-2023) and the Federal Reserve rate hiking cycle (March 2022-July 2023). 
