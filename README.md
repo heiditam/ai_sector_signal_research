@@ -2,10 +2,19 @@
 
 **Contributors:** Heidi Tam <br>
 **Creation Date:** June 8, 2026 <br>
-**Last Updated:** July 26, 2026
+**Last Updated:** July 27, 2026
 
 ## Overview
-[type stuff here]
+Generative artificial intelligence (AI) has rapidly permeated technology in nearly all industry sectors, such as healthcare, financial services, software engineering, and more, progressing towards operating autonomously and managing software, tools, and APIs, with the emergence of agentic AI in late 2023-2024. This rapid expansion has triggered a sudden influx of investment in AI infrastructure. In 2025, over 60 \% of the total capex spent by the four largest hyperscalers (Amazon, Microsoft, Google, and Meta, at \$156B out of \$260B collectively) went towards AI, including GPUs and data centers. <br>
+However, CapEx commitments don't guarantee substantial returns. This raises the question for investors: <br>
+_Beyond the hype, which enterprises are actually translating AI demand into measurable market value?_
+
+
+This project utilizes the United States Securities and Exchange Commission (SEC) 8-K Filings, which are updated reports that provide crucial financial information on material events of a business, including revenue guidance, bankruptcy, and unaudited quarterly financial statements. These documents are highly credible since companies must be accurate, unlike press releases or earnings calls, which may be subject to bias of how executive management frames the events or rehearsed speaking points. Rather than relying solely on the backward-looking signals of price and volume, filings data observations may carry forward-looking information through text. 
+
+This motivates us to answer the following question:
+> Do NLP signals extracted from SEC EDGAR 8-K Filings, specifically AI demand language, mentions of GPUs, and capital expenditure signals, add measurable predictive value beyond a volatility-only baseline model for cross-sectional stock ranking in the AI sector?
+
 
 ## Running the Project
 1) Navigate into your respective folder and run the following command in your command line or terminal: <br>
