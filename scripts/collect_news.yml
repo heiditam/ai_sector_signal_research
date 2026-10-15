@@ -1,0 +1,40 @@
+name: Collect Tiingo news
+
+on:
+  schedule:
+    - cron: "17 11 * * *"     # daily at 11:17 UTC (7:17 am New York, before market open)
+  workflow_dispatch:           # lets you run it manually from the Actions tab
+    inputs:
+      lookback_days:
+        description: "Days to look back (use 90 once for the initial backfill)"
+        default: "7"
+
+permissions:
+  contents: write              # needed to commit the new CSVs
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install pandas requests
+
+      - name: Fetch news
+        env:
+          TIINGO_API_KEY: ${{ secrets.TIINGO_API_KEY }}
+          LOOKBACK_DAYS: ${{ github.event.inputs.lookback_days || '7' }}
+        run: python scripts/collect_news.py
+
+      - name: Commit new articles
+        run: |
+          git config user.name  "news-bot"
+          git config user.email "news-bot@users.noreply.github.com"
+          git add data/news_live/
+          git diff --cached --quiet && echo "No new articles" && exit 0
+          git commit -m "news: $(date -u +%Y-%m-%d)"
+          git push
