@@ -7,3 +7,4 @@ yfinance
 shap
 matplotlib
 plotly
+statsmodels
