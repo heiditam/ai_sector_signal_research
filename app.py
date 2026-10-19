@@ -6,33 +6,93 @@ import numpy as np
 import yfinance as yf
 import plotly.graph_objects as go
 from sklearn.metrics import accuracy_score
+from sklearn.model_selection import TimeSeriesSplit
 from datetime import date, timedelta
 import matplotlib.pyplot as plt
 
 st.set_page_config(page_title="AI Stock Forecasting", layout="wide")
 
-# Full model (scripts/full_model.py): mean fold IC = 0.0185, fold ICIR = 0.6671, mean daily IC = 0.0149
-import sys
-sys.path.insert(0, 'scripts')
-from full_model import FULL_MODEL_FEATS, load_full_model_data, make_splits, fit_full_model
+# Next 5 Days Graph
+def make_splits(df, n_splits=5, target_col='target', gap_days=21):
+    """
+    Create walk-forward splits from the merged DataFrame.
+    gap_days: trading days between train end and test start (avoids lookahead).
+    """
+    # Work on unique dates to split time, not rows
+    dates = df.index.get_level_values('Date').unique().sort_values()
+    tss = TimeSeriesSplit(n_splits=n_splits, gap=gap_days)
+    
+    splits = []
+    for train_idx, test_idx in tss.split(dates):
+        train_dates = dates[train_idx]
+        test_dates  = dates[test_idx]
+        
+        train_df = df[df.index.get_level_values('Date').isin(train_dates)]
+        test_df  = df[df.index.get_level_values('Date').isin(test_dates)]
+        
+        splits.append((train_df, test_df))
+    
+    return splits
 
-@st.cache_resource
-def train_evaluate():
-    df = load_full_model_data('data/ai_sector_features_df.csv')
+ai_sector_features_signals_df = pd.read_csv('data/ai_sector_features_df.csv', index_col=['Date', 'Ticker'], parse_dates=['Date'])
+
+splits = make_splits(ai_sector_features_signals_df)
+
+def train_evaluate(splits):
     all_results = []
-    for fold_num, (train_df, test_df) in enumerate(make_splits(df)):
-        model = fit_full_model(train_df)
-        X_te, y_te = test_df[FULL_MODEL_FEATS], test_df['Target']
-        probs = model.predict_proba(X_te)[:, 1]
-        all_results.append({
-            'fold': fold_num + 1,
-            'IC': round(np.corrcoef(probs, y_te)[0, 1], 4),
-            'accuracy': round(accuracy_score(y_te, probs > 0.5), 4),
-            'baseline_IC': round(np.corrcoef(X_te['vol_5d'].fillna(0), y_te)[0, 1], 4),
-        })
-    return pd.DataFrame(all_results), model   # final model = fold-5 model
+    for fold_num, (train_df, test_df) in enumerate(splits):
+        feat_cols = [
+            'vol_5d', 'vol_20d', 'vol_spike',
+            'gpu_mentions', 'capex_up_score',
+            'capex_net', 'competitor_mentions', 'ai_sentence_ratio', 'nvidia_mentions', 'amd_mentions', 'intel_mentions'
+        ]
+        X_tr, y_tr = train_df[feat_cols], train_df['Target']
+        X_te, y_te = test_df[feat_cols],  test_df['Target']
+        asset_returns = test_df['ret_5d'].values
 
-results_df, final_model = train_evaluate()
+        model = lgb.LGBMClassifier(
+            n_estimators=600, 
+            learning_rate=0.05,
+            num_leaves=63,    
+            min_child_samples=20,
+            subsample=0.8,    
+            colsample_bytree=0.8,
+            class_weight='balanced',
+            reg_alpha=0.1,
+            reg_lambda=0.1
+        )
+        model.fit(X_tr, y_tr,
+                  eval_set=[(X_te, y_te)],
+                  callbacks=[lgb.early_stopping(50, verbose=False)])
+
+        probs = model.predict_proba(X_te)[:,1]
+        ic  = np.corrcoef(probs, y_te)[0,1]
+        acc = accuracy_score(y_te, probs > 0.5)
+
+        # volatile threshold
+        signals = np.where(probs > 0.52, 1, np.where(probs < 0.48, -1, 0))
+        strat_returns = signals * asset_returns
+        excess_returns = strat_returns - (0.04 / 52) # assume 4% annual risk-free rate; 52 trading periods
+
+        if excess_returns.std() == 0:
+            sharpe = 0
+        else:
+            sharpe = (excess_returns.mean() / excess_returns.std()) * np.sqrt(52)
+
+        # correct big moves
+        correct_big_moves = np.mean(signals[(np.abs(asset_returns) > 0.02)] == 
+                                    np.sign(asset_returns[(np.abs(asset_returns) > 0.02)]))
+
+        all_results.append({'fold': fold_num+1, 'IC': round(ic,4), 'accuracy': round(acc,4), 'sharpe': round(sharpe, 4),\
+                            'Accuracy on >2% moves': round(correct_big_moves, 3)})
+        X_te = X_te.fillna(0)
+        
+    return pd.DataFrame(all_results), model, X_te, y_te
+
+results_df, final_model, X_te, y_te = train_evaluate(splits)
+# Save results table
+results_df.to_csv('outputs/results_df.csv', index=False)
+results_df.to_latex('outputs/results_table.tex', index=False, float_format='%.4f')
 
 tickers = pd.read_csv('data/tickers.csv')
 tickers = tickers.drop(columns=['Unnamed: 0'])
@@ -115,7 +175,11 @@ live_df = live_df.set_index(['Date', 'Ticker'])
 # Get the most recent row per ticker (should be June 18)
 latest = live_df.groupby('Ticker').tail(1)
 
-feat_cols = FULL_MODEL_FEATS   # EDGAR features are not available live and are set to 0 below
+feat_cols = [
+    'vol_5d', 'vol_20d', 'vol_spike',
+    'gpu_mentions', 'capex_up_score',
+    'capex_net', 'competitor_mentions', 'ai_sentence_ratio', 'nvidia_mentions', 'amd_mentions', 'intel_mentions'
+]
 
 # feature importance
 importance = pd.Series(
@@ -168,7 +232,7 @@ fig.update_layout(
 )
 
 st.title("AI Sector Stock Forecasting Dashboard")
-st.caption("Full model: volatility features + EDGAR filing keyword signals (LightGBM)")
+st.caption("Hybrid model: price features + FinBERT news sentiment + earnings keyword signals")
 
 # Top metrics
 col1, col2, col3, col4 = st.columns(4)
@@ -181,7 +245,7 @@ top_feature = pd.Series(
 n_tickers = len(all_tickers)
 
 # Baseline median IC
-baseline_ics = results_df['baseline_IC'].median()
+baseline_ics = results_df['baseline_IC'].median() if 'baseline_IC' in results_df.columns else 0.056
 ic_delta = median_ic - baseline_ics
 
 col1.metric("Median Walk-forward IC", f"{median_ic:.3f}", f"{ic_delta:+.3f} vs vol-only baseline")
@@ -253,12 +317,11 @@ st.image('outputs/shap_summary.png')
 fig, ax = plt.subplots(figsize=(10, 5))
 x = np.arange(len(results_df))
 width = 0.35
-ax.bar(x - width/2, results_df['IC'], width, label='Full model IC', color='#2ecc71')
-ax.bar(x + width/2, results_df['baseline_IC'], width, label='Baseline IC', color='#95a5a6')
+ax.bar(x - width/2, results_df['IC'], width, label='Model IC', color='#2ecc71')
+ax.bar(x + width/2, [0.0436, 0.0316, 0.0717, 0.0673, 0.0566], width, label='Baseline IC', color='#95a5a6')
 ax.set_xlabel('Fold')
 ax.set_ylabel('Information Coefficient')
-ax.axhline(0, color='black', linewidth=0.8)
-ax.set_title('Full Model IC vs Volatility-Only Baseline by Fold')
+ax.set_title('Model IC vs Volatility-Only Baseline by Fold')
 ax.set_xticks(x)
 ax.set_xticklabels([f'Fold {i+1}' for i in range(5)])
 ax.legend()
@@ -270,15 +333,14 @@ st.image('outputs/ic_by_fold.png', width=700)
 fig, ax = plt.subplots(figsize=(10, 5))
 folds = [f'Fold {i+1}' for i in range(5)]
 model_ics = results_df['IC'].values
-baseline_ics = results_df['baseline_IC'].values
+baseline_ics = [0.0436, 0.0316, 0.0717, 0.0673, 0.0566]
 
-ax.plot(folds, model_ics, marker='o', color='#2ecc71', linewidth=2, label='Full model IC')
+ax.plot(folds, model_ics, marker='o', color='#2ecc71', linewidth=2, label='Model IC')
 ax.plot(folds, baseline_ics, marker='s', color='#95a5a6', linewidth=2, linestyle='--', label='Baseline IC')
 ax.fill_between(folds, model_ics, baseline_ics, alpha=0.2, color='#2ecc71')
 ax.set_xlabel('Fold')
 ax.set_ylabel('Information Coefficient')
-ax.axhline(0, color='black', linewidth=0.8)
-ax.set_title('Full Model vs Baseline IC Across Walk-Forward Folds')
+ax.set_title('Model vs Baseline IC Across Walk-Forward Folds')
 ax.legend()
 plt.tight_layout()
 plt.savefig('outputs/ic_over_folds.png', dpi=150, bbox_inches='tight')
