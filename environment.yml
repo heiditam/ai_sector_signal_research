@@ -9,6 +9,9 @@ dependencies:
   - scikit-learn=1.6.1
   - matplotlib=3.9.2
   - plotly=5.23.0
+  - statsmodels>=0.14.5
+  - pyarrow
+  - ipykernel
   - pip
   - pip:
     - streamlit==1.58.0
@@ -16,7 +19,7 @@ dependencies:
     - yfinance==1.2.2
     - shap==0.48.0
     - transformers==4.51.3
-    - finnhub-python==2.4.28
+    - torch
     - edgartools==5.36.0
     - python-dotenv==1.1.1
-    - sentence-transformers==5.0.0
+    - tiingo

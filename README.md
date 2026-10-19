@@ -79,20 +79,29 @@ yfinance==1.2.2
 
 ## Expected Outputs
 ```
-results/
-├── results_df.csv
-├── results_table.tex
-├── feature_importance.csv
-├── shap_summary.png
-├── shap_waterfall.csv
+outputs/
+├── main_results.csv            # Per-fold results for the final model
+├── results_df.csv              # Per-fold results (IC, accuracy, baseline IC)
+├── results_table.tex           # LaTeX version of the results table
+├── feature_importance.csv      # LightGBM split counts per feature
+├── leakage_dose_response.csv   # IC at each level of label overlap (k = 0–4)
+├── leakage_tests.csv           # Significance tests for the leakage analysis
 ├── ic_by_fold.png
-└── ic_over_folds.png
-````
-Outputs include: <br>
-* Model results table
-* Feature importance table
-* IC by Fold bar chart - visualizes the model vs. baseline performance across folds
-* IC Over Folds - shows the cumulative IC over folds
+├── ic_over_folds.png
+├── leakage_dose_response.png
+├── shap_summary.png
+├── shap_waterfall.png
+├── htmls/                      # HTML exports of the notebooks
+└── pdfs/                       # PDF exports of the notebooks
+```
+
+Outputs include:
+* **Model results tables:** per-fold IC for the model and the `vol_5d` baseline, also exported as a LaTeX table
+* **Feature importance table:** how often the final model splits on each feature
+* **IC by Fold:** bar chart comparing model and baseline IC in each walk-forward fold
+* **IC Over Folds:** line chart of model and baseline IC across the five folds
+* **Leakage analysis:** IC and significance tests as the label window overlaps the feature date by 0–4 days, with a dose-response chart
+* **SHAP plots:** summary plot of each feature's effect on predictions, plus a waterfall plot explaining a single prediction
 
 ## File Structure
 ```
