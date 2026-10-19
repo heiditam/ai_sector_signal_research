@@ -1,347 +1,295 @@
-# imports
-import streamlit as st
-import lightgbm as lgb
-import pandas as pd
-import numpy as np
-import yfinance as yf
-import plotly.graph_objects as go
-from sklearn.metrics import accuracy_score
-from sklearn.model_selection import TimeSeriesSplit
+"""
+Streamlit dashboard for the AI-sector 8-K text-signal study.
+
+The model, target, and walk-forward evaluation are imported from scripts/full_model.py,
+so every number on this page matches the paper. Live rankings combine today's price-based
+volatility features (yfinance) with each firm's most recent 8-K text features from the dataset.
+
+Run from the repository root:
+    streamlit run app.py
+"""
+import sys
+import warnings
 from datetime import date, timedelta
-import matplotlib.pyplot as plt
+from pathlib import Path
 
-st.set_page_config(page_title="AI Stock Forecasting", layout="wide")
+import numpy as np
+import pandas as pd
+import plotly.graph_objects as go
+import statsmodels.api as sm
+import streamlit as st
+import yfinance as yf
 
-# Next 5 Days Graph
-def make_splits(df, n_splits=5, target_col='target', gap_days=21):
-    """
-    Create walk-forward splits from the merged DataFrame.
-    gap_days: trading days between train end and test start (avoids lookahead).
-    """
-    # Work on unique dates to split time, not rows
-    dates = df.index.get_level_values('Date').unique().sort_values()
-    tss = TimeSeriesSplit(n_splits=n_splits, gap=gap_days)
-    
-    splits = []
-    for train_idx, test_idx in tss.split(dates):
-        train_dates = dates[train_idx]
-        test_dates  = dates[test_idx]
-        
-        train_df = df[df.index.get_level_values('Date').isin(train_dates)]
-        test_df  = df[df.index.get_level_values('Date').isin(test_dates)]
-        
-        splits.append((train_df, test_df))
-    
-    return splits
+ROOT = Path(__file__).resolve().parent
+sys.path.insert(0, str(ROOT / "scripts"))
+from full_model import (  # noqa: E402
+    FULL_MODEL_FEATS, VOL_FEATS, load_full_model_data, make_splits, fit_full_model, daily_ic,
+)
 
-ai_sector_features_signals_df = pd.read_csv('data/ai_sector_features_df.csv', index_col=['Date', 'Ticker'], parse_dates=['Date'])
+warnings.filterwarnings("ignore")   # LightGBM deprecation notices; NaN IC on days with constant predictions
+st.set_page_config(page_title="AI Sector Text Signals", layout="wide")
 
-splits = make_splits(ai_sector_features_signals_df)
+DATA_PATH = ROOT / "data" / "ai_sector_features_df.csv"
+OUTPUTS = ROOT / "outputs"
+TEXT_FEATS = [c for c in FULL_MODEL_FEATS if c not in VOL_FEATS]
 
-def train_evaluate(splits):
-    all_results = []
-    for fold_num, (train_df, test_df) in enumerate(splits):
-        feat_cols = [
-            'vol_5d', 'vol_20d', 'vol_spike',
-            'gpu_mentions', 'capex_up_score',
-            'capex_net', 'competitor_mentions', 'ai_sentence_ratio', 'nvidia_mentions', 'amd_mentions', 'intel_mentions'
-        ]
-        X_tr, y_tr = train_df[feat_cols], train_df['Target']
-        X_te, y_te = test_df[feat_cols],  test_df['Target']
-        asset_returns = test_df['ret_5d'].values
-
-        model = lgb.LGBMClassifier(
-            n_estimators=600, 
-            learning_rate=0.05,
-            num_leaves=63,    
-            min_child_samples=20,
-            subsample=0.8,    
-            colsample_bytree=0.8,
-            class_weight='balanced',
-            reg_alpha=0.1,
-            reg_lambda=0.1
-        )
-        model.fit(X_tr, y_tr,
-                  eval_set=[(X_te, y_te)],
-                  callbacks=[lgb.early_stopping(50, verbose=False)])
-
-        probs = model.predict_proba(X_te)[:,1]
-        ic  = np.corrcoef(probs, y_te)[0,1]
-        acc = accuracy_score(y_te, probs > 0.5)
-
-        # volatile threshold
-        signals = np.where(probs > 0.52, 1, np.where(probs < 0.48, -1, 0))
-        strat_returns = signals * asset_returns
-        excess_returns = strat_returns - (0.04 / 52) # assume 4% annual risk-free rate; 52 trading periods
-
-        if excess_returns.std() == 0:
-            sharpe = 0
-        else:
-            sharpe = (excess_returns.mean() / excess_returns.std()) * np.sqrt(52)
-
-        # correct big moves
-        correct_big_moves = np.mean(signals[(np.abs(asset_returns) > 0.02)] == 
-                                    np.sign(asset_returns[(np.abs(asset_returns) > 0.02)]))
-
-        all_results.append({'fold': fold_num+1, 'IC': round(ic,4), 'accuracy': round(acc,4), 'sharpe': round(sharpe, 4),\
-                            'Accuracy on >2% moves': round(correct_big_moves, 3)})
-        X_te = X_te.fillna(0)
-        
-    return pd.DataFrame(all_results), model, X_te, y_te
-
-results_df, final_model, X_te, y_te = train_evaluate(splits)
-# Save results table
-results_df.to_csv('outputs/results_df.csv', index=False)
-results_df.to_latex('outputs/results_table.tex', index=False, float_format='%.4f')
-
-tickers = pd.read_csv('data/tickers.csv')
-tickers = tickers.drop(columns=['Unnamed: 0'])
-
-ai_tickers = {
-    'semis':   ['NVDA','AMD','INTC','ASML','TSM','AVGO','MRVL','ARM','SMCI'], # semiconductors
-    'hypers':  ['MSFT','GOOGL','AMZN','META'], # hyperscalar
-    'pure':    ['PLTR','AI','SOUN'], # AI pure plays
-    'infra':   ['DELL','ANET','HPE'] # infrastructure
+AI_TICKERS = {
+    "Semiconductors": ["NVDA", "AMD", "INTC", "ASML", "TSM", "AVGO", "MRVL", "ARM", "SMCI"],
+    "Hyperscalers":   ["MSFT", "GOOGL", "AMZN", "META"],
+    "AI Pure Plays":  ["PLTR", "AI", "SOUN"],
+    "Infrastructure": ["DELL", "ANET", "HPE"],
 }
-all_tickers = [t for group in ai_tickers.values() for t in group]
+ALL_TICKERS = [t for group in AI_TICKERS.values() for t in group]
+BUCKET_OF = {t: b for b, ts in AI_TICKERS.items() for t in ts}
 
-# SOXX: holds 30 largest semiconductor companies
-# QQQ: holds 100 largest non-financial companies on the NASDAQ, heavily weighted towards big tech
-def make_features(close: pd.Series,
-                     volume: pd.Series,
-                     soxx: pd.Series,
-                     qqq: pd.Series) -> pd.DataFrame:
-    df = pd.DataFrame(index=close.index)
+GREEN, RED, GRAY, BLUE = "#2e9e5b", "#c0392b", "#95a5a6", "#2c6fbb"
 
-    # Lag returns: percent change over x days
-    for lag in [1, 3, 5, 10, 20]:
-        df[f'ret_{lag}d'] = close.pct_change(lag)
 
-    # Rolling volatility
-    df['vol_5d']  = close.pct_change().rolling(5).std()
-    df['vol_20d'] = close.pct_change().rolling(20).std()
+def newey_west(s, lags=20):
+    """Newey-West (HAC) t-test that the mean of a daily series is zero."""
+    s = pd.Series(s).dropna()
+    return sm.OLS(s.values, np.ones(len(s))).fit(cov_type="HAC", cov_kwds={"maxlags": lags})
 
-    # RSI (14-day): Relative Strength Index; measures magnitude and recent price changes in stocks
-    delta = close.pct_change()
-    gain  = delta.clip(lower=0).rolling(14).mean()
-    loss  = (-delta.clip(upper=0)).rolling(14).mean()
-    df['rsi_14'] = 100 - (100 / (1 + gain / loss))
 
-    # How does the stock compare to SOXX and QQQ?
-    df['rel_soxx'] = close.pct_change(20) - soxx.pct_change(20)
-    df['rel_qqq']  = close.pct_change(20) - qqq.pct_change(20)
+# --------------------------------------------------------------------------------------
+# Study results (same code path as scripts/full_model.py), computed once and cached
+# --------------------------------------------------------------------------------------
+@st.cache_resource(show_spinner="Running the walk-forward evaluation...")
+def run_study():
+    df = load_full_model_data(DATA_PATH)
+    rows, daily_full, daily_vol = [], [], []
+    for i, (train_df, test_df) in enumerate(make_splits(df), 1):
+        model = fit_full_model(train_df)
+        t = test_df.assign(prob=model.predict_proba(test_df[FULL_MODEL_FEATS])[:, 1])
+        vol_model = fit_full_model(train_df, VOL_FEATS)
+        tv = test_df.assign(prob=vol_model.predict_proba(test_df[VOL_FEATS])[:, 1])
+        daily_full.append(daily_ic(t))
+        daily_vol.append(daily_ic(tv))
+        dates = t.index.get_level_values("Date")
+        rows.append({
+            "Fold": i,
+            "Test period": f"{dates.min():%b %Y} – {dates.max():%b %Y}",
+            "Model IC": np.corrcoef(t["prob"], t["Target"])[0, 1],
+            "Baseline IC": np.corrcoef(t["vol_5d"].fillna(0), t["Target"])[0, 1],
+            "Trees": model.best_iteration_,
+        })
+    folds = pd.DataFrame(rows)
+    folds["Delta IC"] = folds["Model IC"] - folds["Baseline IC"]
 
-    # Volume spike: number of shares traded on a given day
-    df['vol_spike'] = volume / volume.rolling(20).mean()
+    daily_full = pd.concat(daily_full).dropna()
+    daily_vol = pd.concat(daily_vol).dropna()
+    delta = (daily_full - daily_vol).dropna()
 
-    # 52-week high proximity: the highest price traded at over the last 252 trading days (1 year)
-    df['pct_from_52wk_high'] = close / close.rolling(252).max() - 1
+    final_model = fit_full_model(df)   # trained on all 2019-2025 data, used for live rankings
+    return {
+        "folds": folds,
+        "daily_ic": daily_full,
+        "nw_daily": newey_west(daily_full),
+        "delta": delta,
+        "nw_delta": newey_west(delta),
+        "final_model": final_model,
+    }
 
-    return df.dropna()
+
+@st.cache_data
+def latest_text_features():
+    """Most recent 8-K keyword features per ticker (already lagged one trading day in the dataset)."""
+    raw = pd.read_csv(DATA_PATH, parse_dates=["Date"]).sort_values("Date")
+    last = raw.groupby("Ticker")[TEXT_FEATS + ["Date"]].last()
+    return last.rename(columns={"Date": "text_as_of"})
+
+
+# --------------------------------------------------------------------------------------
+# Live price features
+# --------------------------------------------------------------------------------------
+@st.cache_data(ttl=3600, show_spinner="Downloading live prices...")
+def load_prices(tickers, start, end):
+    return yf.download(list(tickers), start=start, end=end, auto_adjust=True, progress=False)
+
+
+def live_volatility_features(px):
+    """Latest vol_5d, vol_20d, vol_spike per ticker, defined exactly as in data_cleaning.ipynb."""
+    if px is None or px.empty:
+        return pd.DataFrame()
+    close, volume = px["Close"], px["Volume"]
+    rows = []
+    for t in ALL_TICKERS:
+        if t not in close.columns:
+            continue
+        c = close[t].dropna()
+        v = volume[t].reindex(c.index)
+        r = c.pct_change()
+        f = pd.DataFrame({
+            "vol_5d": r.rolling(5).std(),
+            "vol_20d": r.rolling(20).std(),
+            "vol_spike": v / v.rolling(20).mean(),
+        }).dropna()
+        if not f.empty:
+            rows.append({"Ticker": t, "price_date": f.index[-1], **f.iloc[-1].to_dict()})
+    return pd.DataFrame(rows).set_index("Ticker") if rows else pd.DataFrame()
+
+
+# --------------------------------------------------------------------------------------
+# Page
+# --------------------------------------------------------------------------------------
+st.title("AI Sector Text Signals Dashboard")
+st.caption("LightGBM on price volatility + SEC 8-K (Item 2.02) keyword features · 19 AI-sector stocks · "
+           "five-day cross-sectional ranking")
+
+st.info(
+    "**Research demo, not investment advice.** In walk-forward testing (2019–2025), the model's "
+    "daily IC was not statistically different from zero, and the 8-K text features added no "
+    "significant value over a volatility-only model. Rankings below show what the model predicts, "
+    "not a validated trading signal."
+)
+
+study = run_study()
+folds = study["folds"]
+n_beat = int((folds["Model IC"] > folds["Baseline IC"]).sum())
+
+c1, c2, c3, c4 = st.columns(4)
+c1.metric("Mean fold IC", f"{folds['Model IC'].mean():.4f}")
+c1.caption(f"vol_5d baseline: {folds['Baseline IC'].mean():.4f}")
+c2.metric("Mean daily IC", f"{study['daily_ic'].mean():.4f}")
+c2.caption(f"Newey-West p = {study['nw_daily'].pvalues[0]:.2f} (not significant)")
+c3.metric("Folds beating baseline", f"{n_beat} / {len(folds)}")
+c3.caption(f"Mean delta IC = {folds['Delta IC'].mean():+.4f}")
+c4.metric("Text added vs vol-only model", f"{study['delta'].mean():+.4f}")
+c4.caption(f"Newey-West p = {study['nw_delta'].pvalues[0]:.2f} (not significant)")
+
+
+def ranking_bars(frame, x_lim, height, text_size=12):
+    """Diverging bars: each stock's predicted probability minus today's cross-sectional median."""
+    colors = [GRAY if abs(v) < 1e-9 else (GREEN if v > 0 else RED) for v in frame["rank_vs_median"]]
+    fig = go.Figure(go.Bar(
+        x=frame["rank_vs_median"], y=frame.index, orientation="h", marker_color=colors,
+        text=[f"{p:.3f}" for p in frame["prob"]], textposition="outside",
+        textfont=dict(size=text_size), cliponaxis=False,
+        customdata=frame["prob"], hovertemplate="%{y}: p = %{customdata:.4f}<extra></extra>",
+    ))
+    fig.add_vline(x=0, line_color="black", line_width=1)
+    fig.update_layout(height=height, plot_bgcolor="white", showlegend=False,
+                      xaxis=dict(range=[-x_lim, x_lim], zeroline=False, tickformat="+.3f"),
+                      margin=dict(t=10, r=60, b=40, l=10))
+    return fig
+
+# ---- Live rankings ----------------------------------------------------------------------
+st.header("Live rankings: next 5 trading days")
 
 end = date.today() + timedelta(days=1)
-start = end - timedelta(days=400)  # extra buffer for 252-day rolling windows
+try:
+    prices = load_prices(tuple(ALL_TICKERS), end - timedelta(days=90), end)
+    live = live_volatility_features(prices)
+except Exception as e:   # network or Yahoo rate limits
+    prices, live = None, pd.DataFrame()
+    st.warning(f"Live price download failed ({e}).")
 
-@st.cache_data(ttl=3600) #cache for 1 hour
-def load_price_data(all_tickers, start, end):
-    return yf.download(
-        tickers=list(all_tickers) + ['SOXX', 'QQQ'],
-        start=start,
-        end=end,
-        auto_adjust=True,
-        progress=False
-    )
+if live.empty:
+    st.warning("Live prices are unavailable right now (Yahoo Finance may be rate-limiting). "
+               "The research results below are unaffected. Try refreshing in a few minutes.")
+else:
+    text = latest_text_features()
+    live = live.join(text, how="left")
+    live[TEXT_FEATS] = live[TEXT_FEATS].fillna(0)
+    live["prob"] = study["final_model"].predict_proba(live[FULL_MODEL_FEATS])[:, 1]
+    live["rank_vs_median"] = live["prob"] - live["prob"].median()
+    live["Bucket"] = live.index.map(BUCKET_OF)
 
-prices_live = load_price_data(tuple(all_tickers), start, end)
+    price_date = live["price_date"].max().date()
+    text_date = pd.to_datetime(live["text_as_of"]).max().date()
+    st.caption(f"Prices as of {price_date}. Text features use each firm's latest 8-K in the dataset "
+               f"(through {text_date}). ASML, TSM, and ARM file 6-Ks rather than 8-Ks, so their text "
+               "features are zero.")
 
-close_live = prices_live['Close']
-volume_live = prices_live['Volume']
+    ranked = live.sort_values(["rank_vs_median", "vol_20d"])
+    x_lim = max(ranked["rank_vs_median"].abs().max() * 1.35, 0.002)
 
-# Build features for each ticker
-live_features = []
-for ticker in all_tickers:
-    feats = make_features(
-        close=close_live[ticker],
-        volume=volume_live[ticker],
-        soxx=close_live['SOXX'],
-        qqq=close_live['QQQ']
-    )
-    feats['Ticker'] = ticker
-    live_features.append(feats)
+    fig = ranking_bars(ranked, x_lim, height=620)
+    fig.update_layout(xaxis_title="Predicted probability minus today's median (labels show the probability)")
+    st.plotly_chart(fig, width="stretch")
+    st.caption("Green = predicted to beat the median stock; red = predicted to lag it; gray = tied at the "
+               "median. Probabilities sit close to 0.5 and the model (one shallow tree) assigns many stocks "
+               "the same value, reflecting its weak signal.")
 
-live_df = pd.concat(live_features).reset_index()
-live_df = live_df.set_index(['Date', 'Ticker'])
+    st.subheader("Rankings by sector bucket")
+    cols = st.columns(len(AI_TICKERS))
+    for col, bucket in zip(cols, AI_TICKERS):
+        with col:
+            st.markdown(f"**{bucket}**")
+            st.plotly_chart(ranking_bars(ranked[ranked["Bucket"] == bucket], x_lim, height=320, text_size=10),
+                            width="stretch")
 
-# Get the most recent row per ticker (should be June 18)
-latest = live_df.groupby('Ticker').tail(1)
+    # 30-day performance from the same download (no second request)
+    close = prices["Close"][[t for t in ALL_TICKERS if t in prices["Close"].columns]].dropna(how="all")
+    last_21 = close.tail(22)
+    ret_30d = (last_21.iloc[-1] / last_21.iloc[0] - 1).dropna().sort_values(ascending=False) * 100
+    st.subheader("Trailing one-month return (21 trading days)")
+    fr = go.Figure(go.Bar(x=ret_30d.index, y=ret_30d.values,
+                          marker_color=[BLUE if v > 0 else RED for v in ret_30d.values],
+                          hovertemplate="%{x}: %{y:.1f}%<extra></extra>"))
+    fr.update_layout(height=320, yaxis_title="Return (%)", plot_bgcolor="white",
+                     margin=dict(t=10, r=20, b=40, l=40))
+    st.plotly_chart(fr, width="stretch")
 
-feat_cols = [
-    'vol_5d', 'vol_20d', 'vol_spike',
-    'gpu_mentions', 'capex_up_score',
-    'capex_net', 'competitor_mentions', 'ai_sentence_ratio', 'nvidia_mentions', 'amd_mentions', 'intel_mentions'
-]
+# ---- Research results ---------------------------------------------------------------------
+st.header("Walk-forward results (2019–2025)")
 
-# feature importance
-importance = pd.Series(
-    final_model.feature_importances_, 
-    index=feat_cols
-).sort_values(ascending=False)
-importance.to_csv('outputs/feature_importance.csv')
+left, right = st.columns([3, 2])
+with left:
+    ff = go.Figure()
+    ff.add_bar(x=[f"Fold {i}" for i in folds["Fold"]], y=folds["Model IC"], name="Model IC",
+               marker_color=GREEN)
+    ff.add_bar(x=[f"Fold {i}" for i in folds["Fold"]], y=folds["Baseline IC"],
+               name="Baseline IC (vol_5d)", marker_color=GRAY)
+    ff.add_hline(y=0, line_color="black", line_width=1)
+    ff.update_layout(barmode="group", height=380, yaxis_title="Information Coefficient",
+                     plot_bgcolor="white", margin=dict(t=30, r=20, b=40, l=40),
+                     legend=dict(orientation="h", y=1.1))
+    st.plotly_chart(ff, width="stretch")
+with right:
+    show = folds[["Fold", "Test period", "Model IC", "Baseline IC", "Delta IC", "Trees"]]
+    st.dataframe(show.style.format({"Model IC": "{:.4f}", "Baseline IC": "{:.4f}", "Delta IC": "{:+.4f}"}),
+                 hide_index=True, width="stretch")
+    st.caption("Each fold's IC carries a standard error of roughly 0.015, so differences across folds "
+               "are consistent with noise. Early stopping kept a single tree in every fold.")
 
-for col in feat_cols:
-    if col not in latest.columns:
-        latest[col] = 0
-latest[feat_cols] = latest[feat_cols].fillna(0)
+st.subheader("What drives predictions")
+imp = pd.Series(study["final_model"].booster_.feature_importance("split"), index=FULL_MODEL_FEATS)
+imp = imp[imp > 0].sort_values()
+fi = go.Figure(go.Bar(x=imp.values, y=imp.index, orientation="h", marker_color=BLUE))
+fi.update_layout(height=max(250, 32 * len(imp)), xaxis_title="Number of splits (final model)",
+                 plot_bgcolor="white", margin=dict(t=10, r=20, b=40, l=40))
+st.plotly_chart(fi, width="stretch")
+st.caption("Split counts for the live model, trained on all 2019–2025 data. Split counts show how often the "
+           "model uses a feature, not whether it improves prediction.")
+if (OUTPUTS / "shap_summary.png").exists():
+    with st.expander("SHAP summary (from the training notebook)"):
+        st.image(str(OUTPUTS / "shap_summary.png"))
 
-probs_today = final_model.predict_proba(latest[feat_cols])[:, 1]
+# ---- Leakage analysis ------------------------------------------------------------------------
+leak_path = OUTPUTS / "leakage_tests.csv"
+if leak_path.exists():
+    st.header("Lookahead leakage inflates IC")
+    leak = pd.read_csv(leak_path)
+    se = leak["IC"] / leak["t"]
+    fl = go.Figure()
+    fl.add_scatter(x=leak["k"], y=leak["IC"], mode="lines+markers", name="Model daily IC",
+                   line=dict(color=GREEN, width=3),
+                   error_y=dict(type="data", array=1.96 * se, visible=True))
+    fl.add_scatter(x=leak["k"], y=leak["vol_IC"], mode="lines+markers", name="vol_5d daily IC",
+                   line=dict(color=GRAY, dash="dot", width=2))
+    fl.add_hline(y=0, line_color="black", line_width=1)
+    fl.update_layout(height=400, plot_bgcolor="white", margin=dict(t=30, r=20, b=50, l=40),
+                     xaxis=dict(title="Days of overlap between label window and feature date (k)",
+                                tickvals=list(leak["k"]),
+                                ticktext=["0 (correct)", "1", "2", "3", "4 (original bug)"]),
+                     yaxis_title="Mean daily IC", legend=dict(orientation="h", y=1.12))
+    st.plotly_chart(fl, width="stretch")
+    p0 = leak.loc[leak["k"] == 0, "p"].iloc[0]
+    st.caption(f"With the correct target (k = 0), IC is not significant (p = {p0:.2f}, computed on the days "
+               "shared by all five versions); every k ≥ 1 is "
+               "significant at p < 0.001. The volatility baseline rises in parallel, so beating it does "
+               "not reveal the leak. Error bars are 95% Newey-West confidence intervals.")
 
-ranking = pd.Series(probs_today, index=latest.index.get_level_values('Ticker'))
-ranking = ranking.sort_values(ascending=False)
-
-colors = ['#2ecc71' if p > 0.5 else '#e74c3c' for p in ranking.values[::-1]]
-
-fig = go.Figure(go.Bar(
-    x=ranking.values[::-1],
-    y=ranking.index[::-1],
-    orientation='h',
-    marker_color=colors,
-    text=[f'{p:.3f}' for p in ranking.values[::-1]],
-    textposition='outside',
-    textfont=dict(color='black', size=12)
-))
-
-fig.add_vline(
-    x=0.5,
-    line_dash='dash',
-    line_color='dark blue',
-    annotation_position='bottom right'
-)
-
-last_date = latest.index.get_level_values('Date').max().date()
-
-fig.update_layout(
-    title=f'AI Sector Stock Overall Rankings — Next 5 Trading Days<br>{last_date}',
-    xaxis_title='Predicted Outperformance Probability',
-    xaxis=dict(range=[0, 0.75]),
-    height=600,
-    width=900,
-    margin=dict(t=120, r=100, b=40, l=40),
-    plot_bgcolor='white',
-    showlegend=False,
-    annotations=[dict(text='Decision Threshold (0.5)', font=dict(color='black'))]
-)
-
-st.title("AI Sector Stock Forecasting Dashboard")
-st.caption("Hybrid model: price features + FinBERT news sentiment + earnings keyword signals")
-
-# Top metrics
-col1, col2, col3, col4 = st.columns(4)
-median_ic = results_df['IC'].median()
-icir = results_df['IC'].mean() / results_df['IC'].std()
-top_feature = pd.Series(
-    final_model.feature_importances_,
-    index=feat_cols
-).idxmax()
-n_tickers = len(all_tickers)
-
-# Baseline median IC
-baseline_ics = results_df['baseline_IC'].median() if 'baseline_IC' in results_df.columns else 0.056
-ic_delta = median_ic - baseline_ics
-
-col1.metric("Median Walk-forward IC", f"{median_ic:.3f}", f"{ic_delta:+.3f} vs vol-only baseline")
-col2.metric("ICIR", f"{icir:.2f}")
-col3.metric("Top Feature", top_feature)
-col4.metric("Universe", f"{n_tickers} AI stocks")
-
-st.plotly_chart(fig, use_container_width=True)
-
-# Separated by bucket (type of company)
-st.subheader("Rankings by Sector Bucket")
-
-bucket_map = {}
-for bucket, tickers_list in ai_tickers.items():
-    for ticker in tickers_list:
-        bucket_map[ticker] = bucket
-
-bucket_labels = {
-    'semis': 'Semiconductors',
-    'hypers': 'Hyperscalers',
-    'pure': 'AI Pure Plays',
-    'infra': 'Infrastructure'
-}
-
-ranking_df = ranking.reset_index()
-ranking_df.columns = ['Ticker', 'Probability']
-ranking_df['Bucket'] = ranking_df['Ticker'].map(bucket_map)
-
-cols = st.columns(4)
-for i, (bucket, label) in enumerate(bucket_labels.items()):
-    bucket_df = ranking_df[ranking_df['Bucket'] == bucket].sort_values('Probability')
-    
-    with cols[i]:
-        st.markdown(f"**{label}**")
-        fig_bucket = go.Figure(go.Bar(
-            x=bucket_df['Probability'],
-            y=bucket_df['Ticker'],
-            orientation='h',
-            marker_color=['#2ecc71' if p > 0.5 else '#e74c3c' for p in bucket_df['Probability']],
-            text=[f'{p:.3f}' for p in bucket_df['Probability']],
-            textposition='outside',
-            textfont=dict(color='black', size=10)
-        ))
-        fig_bucket.add_vline(x=0.5, line_dash='dash', line_color='gray')
-        fig_bucket.update_layout(
-            height=350,
-            xaxis=dict(range=[0, 0.75]),
-            margin=dict(t=20, r=60, b=20, l=20),
-            plot_bgcolor='white',
-            showlegend=False
-        )
-        st.plotly_chart(fig_bucket, use_container_width=True)
-
-# Last 30 Days Graph
-st.subheader("AI sector performance Last 30 Days")
-data = yf.download(all_tickers, period='30d', auto_adjust=True)['Close']
-returns_30d = data.pct_change(len(data)-1).iloc[-1].sort_values(ascending=False)
-fig = go.Figure(go.Bar(x=returns_30d.index, y=returns_30d.values*100,
-    marker_color=['#185FA5' if v>0 else '#993C1D' for v in returns_30d.values]))
-fig.update_layout(yaxis_title='30-day return (%)', height=300)
-st.plotly_chart(fig, use_container_width=True)
-
-# SHAP chart
-st.subheader("What drives predictions: SHAP feature importance")
-st.image('outputs/shap_summary.png')
-
-# Other visualizations
-# IC by fold bar chart
-fig, ax = plt.subplots(figsize=(10, 5))
-x = np.arange(len(results_df))
-width = 0.35
-ax.bar(x - width/2, results_df['IC'], width, label='Model IC', color='#2ecc71')
-ax.bar(x + width/2, [0.0436, 0.0316, 0.0717, 0.0673, 0.0566], width, label='Baseline IC', color='#95a5a6')
-ax.set_xlabel('Fold')
-ax.set_ylabel('Information Coefficient')
-ax.set_title('Model IC vs Volatility-Only Baseline by Fold')
-ax.set_xticks(x)
-ax.set_xticklabels([f'Fold {i+1}' for i in range(5)])
-ax.legend()
-plt.tight_layout()
-plt.savefig('outputs/ic_by_fold.png', dpi=150, bbox_inches='tight')
-st.image('outputs/ic_by_fold.png', width=700)
-
-# Cumulative IC Over Time
-fig, ax = plt.subplots(figsize=(10, 5))
-folds = [f'Fold {i+1}' for i in range(5)]
-model_ics = results_df['IC'].values
-baseline_ics = [0.0436, 0.0316, 0.0717, 0.0673, 0.0566]
-
-ax.plot(folds, model_ics, marker='o', color='#2ecc71', linewidth=2, label='Model IC')
-ax.plot(folds, baseline_ics, marker='s', color='#95a5a6', linewidth=2, linestyle='--', label='Baseline IC')
-ax.fill_between(folds, model_ics, baseline_ics, alpha=0.2, color='#2ecc71')
-ax.set_xlabel('Fold')
-ax.set_ylabel('Information Coefficient')
-ax.set_title('Model vs Baseline IC Across Walk-Forward Folds')
-ax.legend()
-plt.tight_layout()
-plt.savefig('outputs/ic_over_folds.png', dpi=150, bbox_inches='tight')
-st.image('outputs/ic_over_folds.png', width=700)
+st.divider()
+st.caption("Code and paper: github.com/heiditam/ai_sector_signal_research")
