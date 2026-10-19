@@ -149,7 +149,13 @@ ai_sector_signal_research/
 │   ├── collect_news.py               # Tiingo news collector
 │   ├── fnspid_news.py                # FNSPID filtering and FinBERT scoring
 │   ├── features_v2.py                # Next-version text features
-│   ├──
+│   ├── test_2026.py                  # 2026 holdout evaluation
+│   └── tune_2019_2025.py
+├── .gitignore
+├── README.md
+├── app.py                            # Streamlit dashboard (demo)
+├── environment.yml
+└── requirements.txt
 ```
 
 ## Conclusion
