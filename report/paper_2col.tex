@@ -1,0 +1,306 @@
+% !TEX TS-program = xelatex
+% !BIB TS-program = bibtex
+\documentclass[10pt,letterpaper,twocolumn]{article}
+\usepackage{style/dsc180reportstyle}
+\usepackage{pdfpages}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{geometry}
+\usepackage{tcolorbox}
+\geometry{margin=0.75in}
+\setlength{\columnsep}{0.25in}
+\sloppy
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Title and Authors
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Textual Signals from SEC 8-K Filings: Incremental Predictive Value Beyond Volatility in the AI Sector}
+
+\author{
+  Heidi Tam \\
+  {\tt ht546@cornell.edu}
+}
+
+\begin{document}
+
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Abstract and Links
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{abstract}
+Since the public launch of OpenAI's ChatGPT in November 2022, firms across the AI value chain increasingly describe AI demand, GPU capacity, and capital expenditure in their earnings disclosures. We test whether this language, extracted from SEC 8-K Item 2.02 filings for a 19-stock AI-sector universe, adds predictive value beyond volatility for cross-sectional stock ranking. Filing-level signals, including an AI-sentence ratio, GPU mentions, and capital-expenditure and competitive language, are combined with price-based volatility features (2019--2025) in a LightGBM model that predicts which stocks will outperform their peers over the next five trading days. As a robustness check, we also add headline sentiment from FNSPID, a financial news dataset, which does not change the results. Under walk-forward validation across five expanding folds with a 21-trading-day gap, the model achieves a mean Information Coefficient (IC) of 0.0185, but relative to a volatility-only model, the text features add no significant predictive value ($\Delta$IC $= 0.008$, Newey--West $p = 0.57$). A leakage analysis shows that shifting the label window to overlap the feature date by even one trading day produces highly significant ICs, with IC rising by 0.008 per day of overlap ($p = 0.012$). Keyword-based AI disclosure signals therefore carry little incremental information at this horizon, and apparent signals in this setting warrant scrutiny for lookahead bias.
+\end{abstract}
+
+\begin{center}
+Code: \url{https://github.com/heiditam/ai_sector_signal_research}\\
+Dashboard Demo: \url{https://ai-sector-signals.streamlit.app/}
+\end{center}
+
+% Table of contents removed to save space; restore with \maketoc and \clearpage if allowed.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Main Contents
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Introduction}
+Since the public launch of ChatGPT in November 2022, investment in AI infrastructure has surged. In 2025, over 60\% of the capital expenditure of the four largest hyperscalers (Amazon, Microsoft, Google, and Meta), \$156B of \$260B, went toward AI, including GPUs and data centers \cite{shieldops2025hyperscaler}. This raises a question for investors: \textit{As firms increasingly describe AI demand, GPU capacity, and capital spending in their earnings disclosures, does that language contain information about future relative returns that prices and volatility do not already reflect?}
+
+We study SEC 8-K filings under Item 2.02 (Results of Operations), whose earnings releases (Exhibit 99.1) are furnished rather than filed and largely reflect how management chooses to frame its results \cite{sec_form8k}. These filings are mandated, timestamped, and consistently structured across firms, making them well suited to systematic text analysis.
+
+A second concern is methodological. Financial machine learning is prone to lookahead bias, in which information unavailable at prediction time leaks into features or labels and produces large, spuriously significant results. In our own pipeline, an off-by-one error in the five-day forward-return target initially yielded an IC of 0.061, which disappeared once the target was corrected. We therefore treat leakage as a research question in its own right.
+
+\noindent This motivates two research questions:
+
+\noindent\setlength{\fboxsep}{4pt}\fbox{
+    \parbox{\dimexpr\columnwidth-2\fboxsep-2\fboxrule-4pt\relax}{
+        \small\begin{description}\setlength{\leftmargin}{0pt}
+            \item[RQ1.] Do NLP signals extracted from SEC EDGAR 8-K filings, specifically AI demand language, mentions of GPUs, and capital expenditure signals, add measurable predictive value beyond a volatility-only model for cross-sectional stock ranking in the AI sector?
+            \item[RQ2.] How sensitive are cross-sectional IC estimates to lookahead leakage in target construction, and does inflation scale with the degree of overlap between the label window and the feature date?
+        \end{description}
+    }}
+
+This paper makes three contributions. First, we construct keyword dictionaries for AI demand, GPU, capital expenditure, and competitive language in AI-sector earnings releases. Second, we evaluate these signals in a leakage-controlled walk-forward design against a volatility-only model and find no significant incremental value. Third, we quantify how lookahead leakage inflates IC, showing that inflation grows with each day of overlap between the label window and the feature date.
+
+\subsection{Related Works}
+Loughran and McDonald show that nearly three-quarters of the words the Harvard Psychosociological Dictionary classifies as negative are not negative in a financial context, and develop a finance-specific lexicon in response \cite{https://doi.org/10.1111/j.1540-6261.2010.01625.x}. Their dictionary predates generative AI and contains no AI-related vocabulary, so we construct dictionaries targeting AI demand, GPU, capital expenditure, and competitive language.
+
+Gu, Kelly, and Xiu find that tree ensembles and neural networks outperform linear models in predicting cross-sectional returns because they capture nonlinear interactions among predictors, and that volatility is among the most informative predictors \cite{10.1093/rfs/hhaa009}. We therefore use LightGBM, a gradient-boosted tree ensemble. Our panel of 29,487 stock-days across 19 tickers is far smaller than their universe of tens of thousands of stocks, and at this scale tree-based models are generally more reliable than neural networks on tabular data.
+
+\section{Methodology}
+
+\subsection{Data and Features}
+We collect daily prices from yfinance for 19 AI-sector stocks from 2019 to 2025, grouped into four segments of the AI value chain (Table~\ref{tab:ticker_buckets}). The segments describe the universe only; the target ranks each stock against all others.
+
+\begin{table*}[t]
+\centering\small
+\caption{Ticker classification by AI-sector exposure category.}
+\label{tab:ticker_buckets}
+\begin{tabularx}{\textwidth}{@{} l >{\raggedright\arraybackslash}p{4.2cm} >{\raggedright\arraybackslash}X @{}}
+\toprule
+\textbf{Bucket} & \textbf{Tickers} & \textbf{Definition} \\
+\midrule
+Semiconductors & NVDA, AMD, INTC, ASML, TSM, AVGO, ARM, MRVL & Designs, manufactures, and sells microchips for electronic devices\\
+\addlinespace
+Hyperscalers & MSFT, GOOGL, AMZN, META & Invests capital in building and expanding data centers; provides scalable cloud computing infrastructure\\
+\addlinespace
+AI Pure Plays & PLTR, AI, SOUN & Generates the majority of its revenue from AI tech, products, or services\\
+\addlinespace
+Infrastructure & DELL, ANET, HPE, SMCI & Specializes in hardware, server, and high-speed networking \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+Filing text comes from SEC EDGAR 8-K filings under Item 2.02, which contain quarterly earnings releases. We remove HTML tags and entities, monetary values, special characters, and excess whitespace, and keep documents of at least 200 characters. As a robustness check, we score FNSPID news headlines \cite{dong2024fnspid} for 2019--2023 with FinBERT \cite{araci2019finbert}, a BERT model fine-tuned on financial text, producing daily mean sentiment, article count, and share of positive headlines.
+
+The main model uses two groups of features. \textbf{Volatility features:} \texttt{vol\_5d} and \texttt{vol\_20d} are rolling standard deviations of daily returns over 5 and 20 days, and \texttt{vol\_spike} is trading volume relative to its 20-day average. Return-based columns are excluded to avoid lookahead bias. \textbf{Filing signals:} keyword scores for GPU demand, rising and falling capital expenditure, competitor mentions, and NVIDIA, AMD, and Intel product terminology (Appendix~\ref{app:keywords}), plus the share of sentences containing an AI phrase. For each filing $f$ of stock $i$, the score for dictionary $c$ and the AI-sentence ratio are
+\[
+s_{i,c,f} = 1000 \times \frac{\sum_{k \in \mathcal{K}_c} \text{count}(k, D_{i,f})}{W_{i,f}},
+\]
+\[
+a_{i,f} = \frac{\left|\{\text{sentences in } D_{i,f} \text{ with an AI phrase}\}\right|}{\left|\{\text{sentences in } D_{i,f}\}\right|},
+\]
+where $\mathcal{K}_c$ is the set of keywords in dictionary $c$, $\text{count}(k, D_{i,f})$ is the number of case-insensitive occurrences of keyword $k$ in filing text $D_{i,f}$, and $W_{i,f}$ is the filing's word count. Net capital-expenditure language is $s_{i,\text{capex\_up},f} - s_{i,\text{capex\_down},f}$. Because earnings releases are typically filed after the market close, filing scores are mapped to trading days with a one-day lag,
+\[
+x_{i,c,t} = s_{i,c,f^*(t)},
+\]
+where $f^*(t)$ is the most recent filing with filing date $\le t-1$, so each score is carried forward until the firm's next filing and is set to 0 before its first filing.
+
+The target is cross-sectional. The forward five-day return $R_{i,t} = \sum_{h=1}^{5} r_{i,t+h}$ sums the daily simple returns of stock $i$ over the next five trading days, and the label compares it with the median across the universe $\mathcal{N}$ on the same day:
+\[
+y_{i,t} = \mathbf{1}\!\left[ R_{i,t} > \operatorname*{median}_{j \in \mathcal{N}} R_{j,t} \right].
+\]
+This gives a roughly 50/50 class balance and removes market-wide direction: in a bull market most stocks rise, so an absolute-direction target would largely reward predicting ``up.'' Observations without a complete five-day forward window are excluded.
+
+\subsection{Model and Validation}
+We use a LightGBM classifier (\texttt{n\_estimators=600}, \texttt{learning\_rate=0.05}, \texttt{num\_leaves=31}, \texttt{class\_weight='balanced'}). Walk-forward validation uses scikit-learn's \texttt{TimeSeriesSplit} on unique dates to create five expanding folds (Table~\ref{tab:folds}). Because the label on day $t$ spans returns from $t+1$ to $t+5$, any gap longer than five days keeps training labels out of the test period; we use 21 trading days (one month) for additional margin. Within each training set, the last 15\% of dates are held out for early stopping (50 rounds), with a five-day purge between fitting and validation dates.
+
+\subsection{Evaluation Metrics}
+The Information Coefficient (IC) is the cross-sectional Pearson correlation between predicted outperformance probabilities $f_{i,t}$ and realized labels $y_{i,t}$:
+\[
+IC_t=\frac{\sum_{i=1}^{N}(f_{i,t}-\bar f _t)(y_{i,t} - \bar y_t)}
+{\sqrt{\sum_{i=1}^{N}(f_{i,t}-\bar f _t)^2 \sum_{i=1}^{N}(y_{i,t} - \bar y_t)^2}},
+\]
+where $N = 19$. Because the label is binary, this is a point-biserial correlation. Unlike directional accuracy, it uses the full predicted probability, rewarding confident correct rankings over marginal ones. The IC Information Ratio, $\text{ICIR} = \mu_{IC} / \sigma_{IC}$, measures the consistency of IC across folds. With only five folds, we report it descriptively. For inference, we compute IC on each of the 1,455 test days and test whether its mean is zero using Newey--West standard errors (20 lags), which correct for the autocorrelation created by overlapping five-day labels.
+
+We compare the full model against two benchmarks. The \emph{raw \texttt{vol\_5d} baseline} is the correlation between \texttt{vol\_5d} and the label in each test fold, with no model trained. The \emph{volatility-only model} is a LightGBM model trained on \texttt{vol\_5d}, \texttt{vol\_20d}, and \texttt{vol\_spike} with the same folds and hyperparameters. Comparing against it isolates the contribution of the text features and answers RQ1. Volatility is the natural benchmark because prior work identifies it as a dominant cross-sectional predictor \cite{10.1093/rfs/hhaa009}.
+
+\subsection{Leakage Analysis}
+To measure sensitivity to lookahead leakage, we repeat the analysis with deliberately misaligned labels built from returns over days $t+1-k$ to $t+5-k$, where $k$ is the number of trading days the label window overlaps the feature date. The correct target is $k = 0$, and $k = 4$ reproduces our original error. Features, hyperparameters, folds, and the purge are held constant. For each $k$, we test whether mean daily IC exceeds zero, and we test whether IC increases linearly with $k$, both with Newey--West standard errors.
+
+\section{Results}
+
+\subsection{Walk-Forward Performance}
+
+\begin{table}[t]
+\centering\footnotesize\setlength{\tabcolsep}{2.5pt}
+\caption{Walk-forward results by fold ($k = 0$, correctly constructed target).}
+\label{tab:folds}
+\begin{tabular}{@{}c l l r r r@{}}
+\toprule
+& & & \multicolumn{3}{c}{\textbf{IC}} \\
+\cmidrule(l){4-6}
+\textbf{Fold} & \textbf{Train end} & \textbf{Test period} & \textbf{Model} & \textbf{Base.} & \textbf{$\Delta$} \\
+\midrule
+1 & Feb 2020 & Mar 2020--Apr 2021 & $-0.021$ & $0.002$ & $-0.023$ \\
+2 & Mar 2021 & Apr 2021--Jun 2022 & $0.053$ & $0.008$ & $0.045$  \\
+3 & May 2022 & Jun 2022--Aug 2023 & $0.023$ & $0.002$ & $0.021$  \\
+4 & Jul 2023 & Aug 2023--Oct 2024 & $0.007$ & $0.005$ & $0.002$  \\
+5 & Sep 2024 & Oct 2024--Dec 2025 & $0.031$ & $-0.008$ & $0.040$  \\
+\midrule
+\textbf{Mean} & & & $0.019$ & $0.002$ & $0.017$  \\
+\bottomrule
+\end{tabular}
+\par\smallskip
+{\scriptsize \textit{Note:} Training begins 2019-01-02. $\Delta$IC = Model IC $-$ Baseline IC. Baseline IC is the correlation of raw \texttt{vol\_5d} with the label. Test periods are separated from training data by a 21-trading-day gap.}
+\end{table}
+
+The model achieves a mean fold IC of 0.0185 and a fold ICIR of 0.67 (Table~\ref{tab:folds}). Across all 1,455 test days, the mean daily IC is 0.015 (daily ICIR 0.06), which is not significantly different from zero (Newey--West $t = 1.34$, $p = 0.18$).
+
+The full model's IC exceeded the raw \texttt{vol\_5d} baseline in four of five folds (mean $\Delta$IC $= 0.017$). This comparison, however, is against a single untrained feature, and four wins in five folds would occur by chance with probability 0.19. The relevant test for RQ1 compares the full model with the volatility-only model: the text features add a mean daily $\Delta$IC of 0.008, which is not significantly different from zero (Newey--West $p = 0.57$). Adding FNSPID news sentiment does not change this conclusion.
+
+Fold ICs range from $-0.021$ (Fold 1) to $0.053$ (Fold 2). With roughly 290 test days per fold and a daily IC standard deviation of about 0.25, each fold's IC has a standard error of approximately 0.015, so variation of this size across folds is consistent with sampling noise.
+
+\subsection{Feature Importance}
+\begin{table}[t]
+\centering\footnotesize
+\caption{LightGBM feature importance (number of splits) in the final-fold model.}
+\label{tab:importance}
+\begin{tabular}{@{}l r r@{}}
+\toprule
+\textbf{Feature} & \textbf{Splits} & \textbf{Share (\%)} \\
+\midrule
+\texttt{vol\_20d}              & 12 & 40.0 \\
+\texttt{nvidia\_mentions}      & 4  & 13.3 \\
+\texttt{vol\_spike}            & 3  & 10.0 \\
+\texttt{capex\_up\_score}      & 3  & 10.0 \\
+\texttt{competitor\_mentions}  & 3  & 10.0 \\
+\texttt{ai\_sentence\_ratio}   & 3  & 10.0 \\
+\texttt{amd\_mentions}         & 2  & 6.7  \\
+\midrule
+\textbf{Total}                 & 30 & 100.0 \\
+\bottomrule
+\end{tabular}
+\par\smallskip
+{\scriptsize \textit{Note:} \texttt{vol\_5d}, \texttt{gpu\_mentions}, \texttt{capex\_net},
+\texttt{capex\_down\_score}, and \texttt{intel\_mentions} were not used in any split.}
+\end{table}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.85\columnwidth]{images/shap_summary.png}
+    \caption{SHAP summary plot for the final-fold model. Red points indicate high feature values and blue points low values; points right of zero raise the predicted probability of outperformance.}
+    \label{fig:shap}
+\end{figure}
+
+Early stopping retained a single tree in every fold; the final-fold model's tree has 30 splits (31 leaves), so the rankings in Table~\ref{tab:importance} reflect few decisions and should be read cautiously. Consistent with Gu, Kelly, and Xiu, \texttt{vol\_20d} accounts for 40\% of splits, followed by \texttt{nvidia\_mentions}. In Figure~\ref{fig:shap}, \texttt{vol\_20d} has the widest spread but no consistent direction, as do \texttt{nvidia\_mentions} and \texttt{amd\_mentions}. \texttt{competitor\_mentions} shows the clearest pattern: high values lower the predicted probability of outperformance. \texttt{capex\_down\_score} is never used, likely because capex-reduction language was rare during the AI investment boom.
+
+\subsection{Sensitivity to Lookahead Leakage}
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\columnwidth]{images/leakage_dose_response.png}
+    \caption{Out-of-sample IC rises as lookahead leakage increases.}
+    \label{fig:leakage}
+\end{figure}
+
+As shown in Figure~\ref{fig:leakage}, IC rises steadily as the label window overlaps the feature date. Each additional day of overlap increases IC by about 0.008, and the slope is significantly positive (Newey--West $t = 2.54$, $p = 0.012$). Even one day of overlap ($k = 1$) produces an IC significantly above zero ($p < 0.001$), turning the null result at $k = 0$ into an apparently strong signal.
+
+\section{Discussion}
+
+\subsection{Limitations}
+First, FNSPID news coverage ends in 2023, so sentiment is available only for Folds 1--3 and part of Fold 4, leaving the 2024--2025 AI boom untested. FNSPID also provides only headlines with date-only timestamps, so FinBERT scores short text and news must be lagged a full day. Second, ASML, TSM, and ARM are foreign private issuers that file Form 6-K rather than 8-K, so their filing features are zero. Third, the text features are keyword counts using case-insensitive substring matching, which ignores context and negation and can produce false positives (e.g., ``h20'' matching ``h200''). Finally, the universe of 19 stocks limits statistical power and was chosen based on companies' current association with AI, which introduces lookahead bias in sample selection.
+
+\subsection{Implications}
+Keyword-based AI features do not significantly improve five-day cross-sectional prediction beyond volatility. A likely reason is that AI language no longer differentiates firms: after the release of ChatGPT, nearly every company in the sample adopted AI terminology. This relates to ``AI-washing,'' in which firms overstate the role of AI in their products; one 2019 study found that 40\% of European start-ups classified as AI companies used virtually no AI \cite{bbc2026}. Context-aware methods such as named entity recognition and dependency parsing could distinguish firms that experience AI demand from those that merely mention it.
+
+A second implication concerns research practice. A single line of code inflated our IC to 0.061, and the leakage analysis shows that even one day of overlap can turn a null result into a significant one. Because the volatility baseline was inflated by the same leaked label, outperforming it offered no warning. Validation design and baseline comparisons alone are therefore insufficient; label construction should be verified directly with spot checks and automated assertions.
+
+\subsection{Future Work}
+Future work could extend EDGAR coverage to Form 6-K filings, replace FNSPID with full-text news from Tiingo or GDELT, and define the universe point-in-time using sector classifications as of each date. Text representation could be improved by separating management commentary from boilerplate and financial tables, measuring changes in a firm's language relative to its own past filings, and applying FinBERT or SEC-BERT \cite{loukas-etal-2022-finer} to the filings directly. Finally, a longer sample and longer horizons (20--60 trading days) would increase statistical power and test whether filing information is incorporated more slowly than five days allows.
+
+\section{Conclusion}
+This study tested whether AI-related language in SEC 8-K earnings releases adds predictive value beyond volatility when ranking AI-sector stocks over a five-day horizon. It does not. The model's mean daily IC of 0.015 was not significantly different from zero (Newey--West $p = 0.18$), and relative to a volatility-only model trained on the same folds, the text features added no detectable value ($\Delta$IC $= 0.008$, $p = 0.57$). Early stopping retained a single tree dominated by \texttt{vol\_20d}, indicating little learnable structure in the text features.
+
+The second finding concerns methodology. An error in the original target produced an apparently strong signal (IC $= 0.061$) that disappeared once corrected, and IC rises by roughly 0.008 per day of label--feature overlap. Apparent signals from financial text should be treated with caution until label construction has been verified, and a carefully tested null result can be as informative as a positive one.
+
+These findings do not show that AI-related disclosure language contains no information. The null result applies to keyword counts, a 19-stock universe, and a five-day horizon, and the design has limited power: a true IC of roughly 0.03 would be needed for reliable detection. Prior work shows that filing text can predict returns when measured with richer methods and larger samples (e.g., Cohen, Malloy \& Nguyen, 2020). Whether AI-related language carries a similar signal remains an open question.
+
+{\small
+\bibliographystyle{plain}
+\bibliography{references}
+}
+
+\onecolumn
+\appendix
+\section{Keyword Dictionaries}
+\label{app:keywords}
+
+Terms are matched as case-insensitive substrings, summed within each dictionary, and normalized per 1,000 words. Sentences for \texttt{ai\_sentence\_ratio} are split on periods.
+
+{\small
+\begin{longtable}{@{}l c p{0.62\textwidth}@{}}
+\caption{Keyword dictionaries used to construct filing-level features.}
+\label{tab:keywords} \\
+\toprule
+\textbf{Feature} & \textbf{\# Terms} & \textbf{Terms} \\
+\midrule
+\endfirsthead
+\multicolumn{3}{@{}l}{\textit{Table \ref{tab:keywords} continued}} \\
+\toprule
+\textbf{Feature} & \textbf{\# Terms} & \textbf{Terms} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+
+\texttt{nvidia\_mentions} & 19 &
+h100, h200, h20, blackwell, b100, b200, gb200, gb300, rubin, vera rubin, nvl72,
+dgx, hgx, cuda, tensorrt, triton, nim microservices, hopper architecture,
+blackwell architecture \\
+\addlinespace
+\texttt{amd\_mentions} & 22 &
+instinct mi300, instinct mi300x, instinct mi325, instinct mi350, instinct mi400,
+instinct mi250, instinct mi200, radeon pro, radeon instinct, rocm, hip framework,
+amd cdna, amd rdna, amd infinity fabric, amd gpu demand, amd accelerator,
+amd data center gpu, amd ai accelerator, amd compute demand, amd inference,
+amd training workload, amd cluster \\
+\addlinespace
+\texttt{intel\_mentions} & 27 &
+gaudi2, gaudi 2, gaudi3, gaudi 3, habana labs, habana gaudi, ponte vecchio,
+max series gpu, intel gpu max, flex series gpu, openvino, intel oneapi,
+intel neural compressor, intel xeon ai, intel core ultra ai, meteor lake ai,
+lunar lake ai, arrow lake ai, intel npu, intel data center gpu, intel ai accelerator,
+intel compute demand, intel ai inference, intel training workload,
+gaudi deployment, gaudi adoption, gaudi demand \\
+\addlinespace
+\texttt{gpu\_mentions} & 14 &
+gpu demand, gpu supply, gpu allocation, data center revenue, data center demand,
+inference demand, inference workload, training compute, compute demand, cloud ai,
+ai infrastructure, ai accelerator, tensor processing, custom ai chip \\
+\addlinespace
+\texttt{capex\_up\_score} & 14 &
+increasing capex, raised capex, accelerating capex, accelerating investment,
+capital expenditure increase, expanding capacity, record investment, investing heavily,
+multiyear investment, committed to investing, significant investment in ai,
+capital investment, infrastructure investment, ai investment \\
+\addlinespace
+\texttt{capex\_down\_score} & 9 &
+reducing capex, cutting investment, slowing spend, deferring investment,
+pausing investment, capital efficiency, disciplined spending, revisiting capex,
+moderating investment \\
+\addlinespace
+\texttt{competitor\_mentions} & 18 &
+amd instinct, gaudi, trainium, inferentia, maia, google tpu, axion, custom silicon,
+in-house chip, in-house ai chip, merchant silicon, proprietary chip,
+competitive alternative, alternative to nvidia, amd alternative, nvidia alternative,
+vendor diversification, multi vendor gpu \\
+\addlinespace
+\texttt{ai\_sentence\_ratio} & 5 &
+artificial intelligence, ai demand, ai revenue, ai growth, ai contribution \\
+\end{longtable}
+}
+
+
+\end{document}
