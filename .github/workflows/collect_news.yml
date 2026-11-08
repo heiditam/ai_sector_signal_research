@@ -1,8 +1,10 @@
 name: Collect Tiingo news
 
 on:
-  schedule:
-    - cron: "17 11 * * *"     # daily at 11:17 UTC (7:17 am New York, before market open)
+  # Daily schedule disabled 2026-11-07: Tiingo plan no longer includes the News API.
+  # To re-enable, restore:
+  # schedule:
+  #   - cron: "17 11 * * *"   # daily at 11:17 UTC (7:17 am New York, before market open)
   workflow_dispatch:           # lets you run it manually from the Actions tab
     inputs:
       lookback_days:
