@@ -30,7 +30,7 @@ warnings.filterwarnings("ignore")   # LightGBM deprecation notices; NaN IC on da
 st.set_page_config(page_title="AI Sector Text Signals", layout="wide")
 
 DATA_PATH = ROOT / "data" / "ai_sector_features_df.csv"
-OUTPUTS = ROOT / "outputs"
+OUTPUTS = ROOT / "outputs" / "v1"
 TEXT_FEATS = [c for c in FULL_MODEL_FEATS if c not in VOL_FEATS]
 
 AI_TICKERS = {

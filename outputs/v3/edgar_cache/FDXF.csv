@@ -1,0 +1,4 @@
+Ticker,Date,Accepted,nvidia_mentions,amd_mentions,intel_mentions,gpu_mentions,capex_up_score,capex_down_score,competitor_mentions,capex_net,ai_sentence_ratio
+FDXF,2026-10-29,2026-10-29 20:08:03+00:00,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.004545454545454545
+FDXF,2026-08-06,2026-08-06 20:11:45+00:00,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+FDXF,2026-06-25,2026-06-25 20:15:38+00:00,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.008

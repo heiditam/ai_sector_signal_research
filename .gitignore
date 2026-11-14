@@ -6,3 +6,7 @@ __pycache__/
 
 # Raw FNSPID dump (23 GB, too large for GitHub)
 data/fnspid/nasdaq_exteral_data.csv
+
+# v3 S&P 500 panels (features_df.csv alone is ~240 MB, over GitHub's 100 MB limit)
+outputs/v3/data/
+outputs/v3/filing_text/

@@ -1,0 +1,4 @@
+Date,news_sentiment,news_count,pct_positive,eod_sentiment,Ticker
+2025-10-15,0.0,1,0.0,0.981,MRSH
+2025-10-16,0.6270846724510193,1,1.0,0.999,MRSH
+2025-10-17,0.79679274559021,1,1.0,0.987,MRSH

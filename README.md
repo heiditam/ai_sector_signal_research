@@ -73,13 +73,14 @@ yfinance==1.2.2
 
 5) **Reproduce the main results.** From the repository root, run:
 ```python scripts/full_model.py```
-  This trains the walk-forward model and prints the per-fold IC, mean fold IC, fold ICIR, and mean daily IC reported in the paper. The text ablation, leakage analysis, and figures are in `notebooks/cleaned/training.ipynb`.
+  This trains the walk-forward model and prints the per-fold IC, mean fold IC, fold ICIR, and mean daily IC reported in the paper. The text ablation, leakage analysis, and figures are in `notebooks/cleaned/version1/training.ipynb`.
 
 6) **(Optional) Dashboard demo.** Run `streamlit run app.py` to open a local dashboard with live price-based rankings. Note: the dashboard is a demonstration and does not reproduce the paper's results.
 
 ## Expected Outputs
+Each version's training notebook writes to its own folder: `outputs/v1/` (main study, shown below), `outputs/v2/`, and `outputs/v3/`.
 ```
-outputs/
+outputs/v1/
 ├── main_results.csv            # Per-fold results for the final model
 ├── results_df.csv              # Per-fold results (IC, accuracy, baseline IC)
 ├── results_table.tex           # LaTeX version of the results table
@@ -133,26 +134,19 @@ ai_sector_signal_research/
 │   │   ├── version1/                 # Main study
 │   │   │   ├── data_cleaning.ipynb
 │   │   │   └── training.ipynb        # Ablation, leakage analysis, figures
-│   │   └── version2/                 # Extended features (features_v2)
-│   │       ├── data_cleaning_v2.ipynb
-│   │       └── training_v2.ipynb
+│   │   ├── version2/                 # Extended features (features_v2)
+│   │   │   ├── data_cleaning_v2.ipynb
+│   │   │   └── training_v2.ipynb
+│   │   └── version3/
+│   │       ├── data_cleaning_v3.ipynb
+│   │       └── training_v3.ipynb
 │   └── messy/                        # Development history
 │       ├── data_cleaning.ipynb
 │       └── training.ipynb
 ├── outputs/
-│   ├── htmls/                        # Notebook exports
-│   ├── pdfs/                         # Notebook exports
-│   ├── feature_importance.csv
-│   ├── ic_by_fold.png
-│   ├── ic_over_folds.png
-│   ├── leakage_dose_response.csv
-│   ├── leakage_dose_response.png
-│   ├── leakage_tests.csv
-│   ├── main_results.csv
-│   ├── results_df.csv
-│   ├── results_table.tex
-│   ├── shap_summary.png
-│   └── shap_waterfall.png
+│   ├── v1/                           # Main study results (see Expected Outputs)
+│   ├── v2/                           # Written by training_v2.ipynb
+│   └── v3/                           # Written by training_v3.ipynb
 ├── scripts/
 │   ├── full_model.py                 # Reproduces the main results
 │   ├── collect_news.py               # Tiingo news collector

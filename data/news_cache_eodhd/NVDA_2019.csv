@@ -1,0 +1,399 @@
+published,headline,summary,eod_polarity,n_symbols
+2019-12-18T04:02:00+00:00,"NVIDIA Introduces DRIVE AGX Orin — Advanced, Software-Defined Platform for Autonomous Machines","SUZHOU, China, Dec.  17, 2019  (GLOBE NEWSWIRE) -- GTC China -- NVIDIA today introduced NVIDIA DRIVE AGX Orin™, a highly advanced software-defined platform for autonomous vehicles and robots.
+
+The platform is powered by a new system-on-a-chip (SoC) called Orin, which consists of 17 billion transistors and is the result of four years of R&D investment. The Orin SoC integrates NVIDIA’s next-generation GPU architecture and Arm Hercules CPU cores, as well as new deep learning and computer vision acc",0.992,1
+2019-12-18T04:02:00+00:00,Didi Chuxing Teams with NVIDIA for Autonomous Driving and Cloud Computing,"SUZHOU, China, Dec.  17, 2019  (GLOBE NEWSWIRE) -- GTC China -- NVIDIA and Didi Chuxing (DiDi), the world’s leading mobile transportation platform, today announced that DiDi will leverage NVIDIA GPUs and AI technology to develop autonomous driving and cloud computing solutions.
+
+DiDi will use NVIDIA® GPUs in the data center for training machine learning algorithms and NVIDIA DRIVE™ for inference on its Level 4 autonomous driving vehicles. In August, DiDi upgraded its autonomous driving unit into",0.992,1
+2019-12-18T04:01:00+00:00,NVIDIA Provides Transportation Industry Access to Its Deep Neural Networks for Autonomous Vehicles,"Developers Also Gain Access to NVIDIA Advanced Learning Tools to Leverage DNNs Across Multiple Datasets While Preserving Data Privacy
+
+SUZHOU, China, Dec.  17, 2019  (GLOBE NEWSWIRE) -- GTC China -- NVIDIA today announced that it will provide the transportation industry with access to its NVIDIA DRIVE™ deep neural networks (DNNs) for autonomous vehicle development on the NVIDIA GPU Cloud (NGC) container registry.
+
+NVIDIA DRIVE has become a de facto standard for AV development, used broadly by au",0.993,1
+2019-12-18T04:01:00+00:00,NVIDIA Enables Era of Interactive Conversational AI with New Inference Software,"SUZHOU, China, Dec.  17, 2019  (GLOBE NEWSWIRE) -- GTC China -- NVIDIA today introduced groundbreaking inference software that developers everywhere can use to deliver conversational AI applications, slashing inference latency that until now has impeded true, interactive engagement.
+
+NVIDIA TensorRT™ 7 — the seventh generation of the company’s inference software development kit — opens the door to smarter human-to-AI interactions, enabling real-time engagement with applications such as voice age",0.994,1
+2019-12-18T04:00:00+00:00,Tencent Games Partners with NVIDIA to Launch START Cloud Gaming Service,"SUZHOU, China, Dec.  17, 2019  (GLOBE NEWSWIRE) --  GTC China -- Tencent Games and NVIDIA today announced a collaboration to bring PC gaming in the cloud to China.
+
+NVIDIA’s GPU technology will power Tencent Games’ START cloud gaming service, which began testing earlier this year. START gives gamers access to AAA games on underpowered devices anytime, anywhere. Tencent Games intends to scale the platform to millions of gamers, with an experience that is consistent with playing locally on a gamin",0.981,1
+2019-12-17T21:30:00+00:00,NVIDIA Announces Upcoming Event for Financial Community,"SANTA CLARA, Calif., Dec.  17, 2019  (GLOBE NEWSWIRE) -- NVIDIA will present at the following event for the financial community:
+
+J.P. Morgan Tech/Auto Forum 
+Tuesday, Jan. 7, at 7:50 a.m. Pacific time
+
+Interested parties can listen to the live audio webcast of NVIDIA’s presentation at this event, available on the NVIDIA website at investor.nvidia.com. Replay of the webcast will be available for 90 days afterward.
+
+About NVIDIANVIDIA’s (NASDAQ: NVDA) invention of the GPU in 1999 sparked the gro",0.869,1
+2019-11-19T22:00:00+00:00,NVIDIA Announces Upcoming Events for Financial Community,"SANTA CLARA, Calif., Nov.  19, 2019  (GLOBE NEWSWIRE) -- NVIDIA will present at the following events for the financial community:
+
+Credit Suisse Annual Technology Conference
+Tuesday, Dec. 3, at 9:55 a.m. Mountain time
+
+Deutsche Bank AutoTech Conference
+Tuesday, Dec. 10, at 11 a.m. Pacific time
+
+Barclays Global Technology, Media and Telecommunications Conference
+Wednesday, Dec. 11, at 9 a.m. Pacific time
+
+Interested parties can listen to the live audio webcasts of NVIDIA’s presentations at the",0.908,1
+2019-11-18T23:40:00+00:00,"NVIDIA Launches Magnum IO Software Suite to Help Eliminate Data Bottlenecks for Data Scientists and AI, HPC Researchers","DENVER, Nov.  18, 2019  (GLOBE NEWSWIRE) -- SC19 -- NVIDIA today introduced NVIDIA Magnum IO, a suite of software to help data scientists and AI and high performance computing researchers process massive amounts of data in minutes, rather than hours.
+
+Optimized to eliminate storage and input/output bottlenecks, Magnum IO delivers up to 20x faster data processing for multi-server, multi-GPU computing nodes when working with massive datasets to carry out complex financial analysis, climate modelin",0.992,1
+2019-11-18T23:26:00+00:00,NVIDIA and Tech Leaders Team to Build GPU-Accelerated Arm Servers  for New Era of Diverse HPC Architectures,"DENVER, Nov.  18, 2019  (GLOBE NEWSWIRE) -- SC19 -- NVIDIA today introduced a reference design platform that enables companies to quickly build GPU-accelerated Arm®-based servers, driving a new era of high performance computing for a growing range of applications in science and industry.
+
+Announced by NVIDIA founder and CEO Jensen Huang at the SC19 supercomputing conference, the reference design platform — consisting of hardware and software building blocks — responds to growing demand in the HP",0.998,1
+2019-11-18T23:20:00+00:00,NVIDIA Announces Scalable GPU-Accelerated Supercomputer in the Microsoft Azure Cloud,"DENVER, Nov.  18, 2019  (GLOBE NEWSWIRE) -- SC19 --NVIDIA today announced the availability of a new kind of GPU-accelerated supercomputer in the cloud on Microsoft Azure.
+
+Built to handle the most demanding AI and high performance computing applications, the largest deployments of Azure’s new NDv2 instance rank among the world’s fastest supercomputers, offering up to 800 NVIDIA V100 Tensor Core GPUs interconnected on a single Mellanox InfiniBand backend network. It enables customers for the firs",0.988,1
+2019-11-14T21:20:00+00:00,NVIDIA Announces Financial Results for Third Quarter Fiscal 2020,"SANTA CLARA, Calif., Nov.  14, 2019  (GLOBE NEWSWIRE) -- NVIDIA (NASDAQ: NVDA) today reported revenue for the third quarter ended Oct. 27, 2019, of $3.01 billion compared with $3.18 billion a year earlier and $2.58 billion in the previous quarter.
+
+GAAP earnings per diluted share for the quarter were $1.45, compared with $1.97 a year ago and $0.90 in the previous quarter. Non-GAAP earnings per diluted share were $1.78, compared with $1.84 a year earlier and $1.24 in the previous quarter.
+
+“Our g",0.998,1
+2019-11-06T18:00:00+00:00,NVIDIA Wins New AI Inference Benchmarks,"SANTA CLARA, Calif., Nov.  06, 2019  (GLOBE NEWSWIRE) -- NVIDIA today posted the fastest results on new benchmarks measuring the performance of AI inference workloads in data centers and at the edge — building on the company’s equally strong position in recent benchmarks measuring AI training.
+
+The results of the industry’s first independent suite of AI benchmarks for inference, called MLPerf Inference 0.5, demonstrate the performance of NVIDIA Turing™ GPUs for data centers and NVIDIA Xavier™ sy",0.987,1
+2019-11-06T18:00:00+00:00,"NVIDIA Announces Jetson Xavier NX, World’s Smallest Supercomputer for AI at the Edge","SANTA CLARA, Calif., Nov.  06, 2019  (GLOBE NEWSWIRE) -- NVIDIA today introduced Jetson Xavier™ NX, the world’s smallest, most powerful AI supercomputer for robotic and embedded computing devices at the edge.
+
+With a compact form factor smaller than the size of a credit card, the energy-efficient Jetson Xavier NX module delivers server-class performance up to 21 TOPS for running modern AI workloads, and consumes as little as 10 watts of power.
+
+Jetson Xavier NX opens the door for embedded edge c",0.998,1
+2019-11-05T16:00:00+00:00,NVIDIA Provides U.S. Postal Service AI Technology  to Improve Delivery Service,"WASHINGTON, Nov.  05, 2019  (GLOBE NEWSWIRE) --  GTC DC -- NVIDIA today announced that the United States Postal Service – the world’s largest postal service, with 485 million mail pieces processed and delivered daily – is adopting end-to-end AI technology from NVIDIA to improve its package data processing efficiency.
+
+The new system starts with high-performance servers powered by NVIDIA V100 Tensor Core GPUs and deep learning software to train multiple AI algorithms. The trained models are then ",0.985,1
+2019-10-31T21:00:00+00:00,NVIDIA Sets Conference Call for Third-Quarter Financial Results,"SANTA CLARA, Calif., Oct.  31, 2019  (GLOBE NEWSWIRE) -- NVIDIA will host a conference call on Thursday, November 14, at 2:30 p.m. PT (5:30 p.m. ET) to discuss its financial results for the third quarter of fiscal year 2020, which ended October 27, 2019.
+
+The call will be webcast live (in listen-only mode) on investor.nvidia.com. The company’s prepared remarks will be followed by a question and answer session, which will be limited to questions from financial analysts and institutional investors",0.382,1
+2019-10-29T13:00:00+00:00,A Hero for Every Gamer: NVIDIA Introduces New GeForce GTX SUPER Series,"SANTA CLARA, Calif., Oct.  29, 2019  (GLOBE NEWSWIRE) -- In the latest addition to its GeForce® GTX® family of gaming GPUs, NVIDIA today unveiled the GeForce GTX 1660 SUPER -- the successor to its most successful GPU ever -- as well as the GeForce 1650 SUPER.
+
+Designed to deliver even more horsepower for today’s most popular games, including Fortnite, PUBG and Apex Legends, the pair deliver up to 2X the performance of the prior generation GTX 10-series GPUs and up to 50 percent more performance ",0.999,1
+2019-10-28T12:00:00+00:00,"Future of Streaming Entertainment Starts Today with Launch of NVIDIA SHIELD TV, Starting at $149","SANTA CLARA, Calif., Oct.  28, 2019  (GLOBE NEWSWIRE) -- NVIDIA today raised the bar higher still for streaming media players — unveiling the next generation of SHIELD™ TV, which delivers unmatched levels of home entertainment, gaming and AI capabilities right into the living room, starting at $149.
+
+The two new SHIELD models — SHIELD TV and SHIELD TV Pro — provide exceptional visual and sound experiences. Their new Tegra® X1+ processor, delivering up to 25 percent more performance than its pred",0.995,1
+2019-10-21T23:19:00+00:00,Ericsson and NVIDIA Collaborate to Accelerate Virtualized 5G Radio Access Networks with GPUs,"LOS ANGELES, Oct.  21, 2019  (GLOBE NEWSWIRE) -- Mobile World Congress —NVIDIA and Ericsson today announced they are collaborating on technologies that can allow telco operators to build high-performing, efficient and completely virtualized 5G radio access networks (RAN). These virtualized networks can enable faster and more flexible introduction of new AI and IoT services.
+
+The collaboration, announced by NVIDIA founder and CEO Jensen Huang at a keynote ahead of the start of MWC Los Angeles, br",0.997,1
+2019-10-21T23:11:00+00:00,NVIDIA with Microsoft Announces Technology Collaboration for Era of Intelligent Edge,"LOS ANGELES, Oct.  21, 2019  (GLOBE NEWSWIRE) -- Mobile World Congress—NVIDIA with Microsoft Corp. today announced a technology collaboration focused on intelligent edge computing, designed to help industries better manage and gain insights from the growing flood of data created by retail stores, warehouses, manufacturing facilities, connected buildings, urban infrastructure and other environments.
+
+By enabling closer integration between Microsoft Azure and the NVIDIA EGX platform, the companies",0.996,1
+2019-10-21T23:09:00+00:00,"New NVIDIA EGX Edge Supercomputing Platform Accelerates AI, IoT, 5G at the Edge","LOS ANGELES, Oct.  21, 2019  (GLOBE NEWSWIRE) -- Mobile World Congress -- NVIDIA today announced the NVIDIA EGX Edge Supercomputing Platform – a high-performance, cloud-native platform that lets organizations harness rapidly streaming data from factory floors, manufacturing inspection lines and city streets to securely deliver next-generation AI, IoT and 5G-based services at scale, with low latency.
+
+Early adopters of the platform – which combines NVIDIA CUDA-X™ software with NVIDIA-certified GP",0.998,1
+2019-10-21T22:40:00+00:00,"Red Hat and NVIDIA Team to Bring High-Performance, Software-Defined 5G RAN to Telecom Industry","LOS ANGELES, Oct.  21, 2019  (GLOBE NEWSWIRE) -- Mobile World Congress — NVIDIA and Red Hat, the world’s leading provider of open source solutions, today announced they are expanding their alliance to deliver high-performance, software-defined 5G wireless infrastructure, running on Red Hat OpenShift, to the telecom industry.
+
+The collaboration, unveiled by NVIDIA founder and CEO Jensen Huang during his keynote at MWC Los Angeles, can help telcos transition to 5G networks capable of running a ran",0.996,1
+2019-09-04T12:00:00+00:00,NVIDIA Quadro RTX 6000 Powers World’s Fastest Laptop  — ASUS ProArt StudioBook One,"SANTA CLARA, Calif., Sept.  04, 2019  (GLOBE NEWSWIRE) -- NVIDIA and ASUS today announced that the Quadro RTX™ 6000 GPU will power the world’s most powerful laptop, the ASUS ProArt StudioBook One. It joins 11 other new RTX Studio systems, launched in time for IFA, the world’s largest electronics conference, and brings the total number of RTX Studio systems to 39.
+
+The Quadro RTX 6000 at the heart of the ProArt StudioBook One enables creatives and other innovators to tap into the power of a high-",0.997,1
+2019-08-26T12:00:00+00:00,"NVIDIA and VMware to Accelerate Machine Learning, Data Science and AI Workloads on VMware Cloud on AWS Accelerated by NVIDIA GPUs","SAN FRANCISCO, Aug.  26, 2019  (GLOBE NEWSWIRE) -- VMworld U.S. 2019 – NVIDIA and VMware today announced their intent to deliver accelerated GPU services for VMware Cloud on AWS to power modern enterprise applications, including AI, machine learning and data analytics workflows. These services will enable customers to seamlessly migrate VMware vSphere-based applications and containers to the cloud, unchanged, where they can be modernized to take advantage of high-performance computing, machine l",0.993,2
+2019-08-22T21:00:00+00:00,NVIDIA Announces Upcoming Event for Financial Community,"SANTA CLARA, Calif., Aug.  22, 2019  (GLOBE NEWSWIRE) -- NVIDIA will present at the following event for the financial community:
+
+Citi 2019 Global Technology Conference  Thursday, Sept. 5, at 8 a.m. Eastern time
+
+Interested parties can listen to the live audio webcast of NVIDIA’s presentation at this event, available on the NVIDIA website at investor.nvidia.com. A replay of the webcast will be available for 90 days afterward.
+
+Keep Current on NVIDIA
+Subscribe to the NVIDIA blog, follow us on Fa",0.869,1
+2019-08-19T07:01:00+00:00,‘Minecraft’ is RTX On! Real-Time Ray Tracing Comes to World’s Best-Selling Video Game,"COLOGNE, Germany, Aug.  19, 2019  (GLOBE NEWSWIRE) -- Gamescom—Minecraft, the world’s best-selling video game with over 176 million copies sold, will be dramatically more realistic through support for real-time ray tracing on PC, NVIDIA and Microsoft today announced.
+
+A free game update will provide Minecraft players with vivid visualizations of their self-created worlds, with more realistic shadows, lighting and vibrant colors.
+
+“Minecraft will expose ray tracing to millions of gamers of all ag",0.998,1
+2019-08-19T07:01:00+00:00,NVIDIA RTX On: New Wave of Blockbuster Games Showcase Ray Tracing  at Gamescom,"Ray-Traced Games Take Gamescom 2019 by Storm, Including Minecraft, Dying 
+Light 2, SYNCED: Off-Planet, Call of Duty: Modern Warfare, Cyberpunk 2077,
+Vampire: The Masquerade - Bloodlines 2 and Watch Dogs: Legion
+
+COLOGNE, Germany, Aug.  19, 2019  (GLOBE NEWSWIRE) --  Gamescom - Marking the ray-tracing revolution sweeping across the video game industry, NVIDIA and its partners kicked off Gamescom 2019 on Monday by premiering blockbuster games that support ray tracing and giving a first look at r",0.997,1
+2019-08-15T20:20:00+00:00,NVIDIA Announces Financial Results for Second Quarter Fiscal 2020,"SANTA CLARA, Calif., Aug.  15, 2019  (GLOBE NEWSWIRE) -- NVIDIA (NASDAQ: NVDA) today reported revenue for the second quarter ended July 28, 2019, of $2.58 billion compared with $3.12 billion a year earlier and $2.22 billion in the previous quarter.
+
+GAAP earnings per diluted share for the quarter were $0.90, compared with $1.76 a year ago and $0.64 in the previous quarter. Non-GAAP earnings per diluted share were $1.24 compared with $1.94 a year earlier and $0.88 in the previous quarter.
+
+“We ac",0.998,1
+2019-08-13T13:00:00+00:00,NVIDIA Achieves Breakthroughs in Language Understanding to Enable Real-Time Conversational AI,"SANTA CLARA, Calif., Aug.  13, 2019  (GLOBE NEWSWIRE) -- NVIDIA today announced breakthroughs in language understanding that allow businesses to engage more naturally with customers using real-time conversational AI.
+
+NVIDIA's AI platform is the first to train one of the most advanced AI language models -- BERT -- in less than an hour and complete AI inference in just over 2 milliseconds. This groundbreaking level of performance makes it possible for developers to use state-of-the-art language u",0.999,1
+2019-08-01T21:00:00+00:00,NVIDIA Sets Conference Call for Second-Quarter Financial Results,"SANTA CLARA, Calif., Aug.  01, 2019  (GLOBE NEWSWIRE) -- NVIDIA will host a conference call on Thursday, August 15, at 2:30 p.m. PT (5:30 p.m. ET) to discuss its financial results for the second quarter of fiscal year 2020, which ended July 28, 2019.
+
+The call will be webcast live (in listen-only mode) on investor.nvidia.com. The company’s prepared remarks will be followed by a question and answer session, which will be limited to questions from financial analysts and institutional investors.
+
+A",0.382,1
+2019-07-29T13:00:00+00:00,"NVIDIA RTX Extends Reach Across Top Applications, Bringing Ray Tracing, AI to Millions of Creatives","LOS ANGELES, July  29, 2019  (GLOBE NEWSWIRE) -- SIGGRAPH -- One year after NVIDIA RTX™ technology was unveiled at SIGGRAPH 2018, ray tracing has emerged as the new industry standard for product design, architecture, gaming, effects and scientific visualization.
+
+The world’s leading software makers have introduced over 40 applications with RTX technology, which will enable tens of millions of users to harness ray tracing and AI, which had previously been too computationally demanding for working",0.995,1
+2019-07-29T13:00:00+00:00,NVIDIA RTX Studio Laptops and Mobile Workstations — Purpose-Built for Creators — Coming from Every Major OEM,"LOS ANGELES, July  29, 2019  (GLOBE NEWSWIRE) -- SIGGRAPH—NVIDIA today announced that 10 new NVIDIA RTX™ Studio laptops and professional-grade mobile workstations are being released by major partners, delivering real-time ray tracing, advanced AI and ultra-high-resolution video editing to the world’s 40 million creatives.
+
+The latest designs from Dell, HP, Lenovo and BOXX bring the number of RTX Studio models to 27 — including 17 that are now available. These laptops power more than 40 creative ",0.996,1
+2019-07-02T13:00:00+00:00,With Great Power Comes Great Gaming: NVIDIA Launches GeForce RTX SUPER Series,"SANTA CLARA, Calif., July  02, 2019  (GLOBE NEWSWIRE) -- NVIDIA today supercharged its lineup of gaming GPUs by introducing GeForce® RTX 2060 SUPER™, GeForce RTX 2070 SUPER and GeForce RTX 2080 SUPER -- delivering best-in-class gaming performance and real time ray tracing for today’s and next-generation games.
+
+The result of nearly a year of architectural and process optimizations, the new GeForce RTX SUPER GPUs deliver the fastest gaming performance, and the best power efficiency of any gaming ",0.999,1
+2019-06-17T20:20:00+00:00,NVIDIA Names Donald Robertson as Chief Accounting Officer,"SANTA CLARA, Calif., June  17, 2019  (GLOBE NEWSWIRE) -- NVIDIA today announced that it has named Donald Robertson as vice president and chief accounting officer, reporting to Colette Kress, executive vice president and chief financial officer, effective June 17.
+
+Robertson, age 50, will be responsible for accounting and controllership, financial reporting, payroll and Sarbanes-Oxley controls. He succeeds Michael Byron, who will take on the new role of vice president of finance, operations and s",0.919,1
+2019-06-17T07:00:00+00:00,"NVIDIA Brings CUDA to Arm, Enabling New Path to Exascale Supercomputing","FRANKFURT, Germany, June  17, 2019  (GLOBE NEWSWIRE) -- International Supercomputing Conference --NVIDIA today announced its support for Arm CPUs, providing the high performance computing industry a new path to build extremely energy-efficient, AI-enabled exascale supercomputers.
+
+NVIDIA is making available to the Arm® ecosystem its full stack of AI and HPC software — which accelerates more than 600 HPC applications and all AI frameworks — by year’s end. The stack includes all NVIDIA CUDA-X AI™ ",0.999,1
+2019-06-11T19:00:00+00:00,CD PROJEKT RED and NVIDIA Partner to Bring Ray Tracing  to ‘Cyberpunk 2077’,"LOS ANGELES, June  11, 2019  (GLOBE NEWSWIRE) -- E3—NVIDIA and CD PROJEKT RED today announced that NVIDIA® GeForce RTX™ is an official technology partner for Cyberpunk 2077 and that the companies are working together to bring real-time ray tracing to the game.
+
+Cyberpunk 2077 won over 100 awards at E3 2018 and Gamespot calls it “one of the most anticipated games of the decade.” The game is the next project from CD PROJEKT RED, makers of the highly acclaimed The Witcher 3: Wild Hunt, which has wo",0.991,1
+2019-06-10T21:15:00+00:00,"‘Watch Dogs: Legion’ to Support DirectX Raytracing on PC, Powered by NVIDIA GeForce RTX","LOS ANGELES, June  10, 2019  (GLOBE NEWSWIRE) -- E3 -- NVIDIA and Ubisoft today announced that NVIDIA® GeForce RTX™ is the official graphics platform for Ubisoft’s upcoming 2020 release, Watch Dogs®: Legion.
+
+Watch Dogs: Legion will use real-time ray tracing and other advanced NVIDIA gaming technologies to create stunning visuals in the highly anticipated third installment of the AAA, open world, action-adventure Watch Dogs franchise.
+
+“Ubisoft goes to painstaking lengths to recreate the cities ",0.996,1
+2019-06-06T13:00:00+00:00,"‘Quake II RTX,’ NVIDIA’s Reimagining of PC Gaming Classic with Ray-Traced Graphics, Available Now","SANTA CLARA, Calif., June  06, 2019  (GLOBE NEWSWIRE) -- NVIDIA today announced that Quake II RTX, published by the company’s LightSpeed Studios, is now available on Steam and nvidia.com as a free download.
+
+Quake II RTX is the world’s first game that is fully path-traced, a ray-tracing technique that unifies all lighting effects such as shadows, reflections, refractions and more into a single ray-tracing algorithm. The result is a stunning new look for id Software’s Quake II, one of the world’s",0.989,1
+2019-06-05T17:00:00+00:00,"‘Call of Duty: Modern Warfare’ to Support DirectX Raytracing on PC, Powered by NVIDIA GeForce RTX","SANTA CLARA, Calif., June  05, 2019  (GLOBE NEWSWIRE) -- NVIDIA and Activision today announced that NVIDIA is the official PC partner for Call of Duty®: Modern Warfare®, the highly anticipated, all-new title scheduled for release on Oct. 25.
+
+NVIDIA is working side by side with developer Infinity Ward to bring real-time DirectX Raytracing (DXR), and NVIDIA® Adaptive Shading gaming technologies to the PC version of the new Modern Warfare.
+
+“Call of Duty: Modern Warfare is poised to reset the bar ",0.98,1
+2019-05-28T04:50:00+00:00,NVIDIA Earns Double Wins with Computex ‘Best Choice’ Awards,"TAIPEI, Taiwan, May  27, 2019  (GLOBE NEWSWIRE) -- Computex --NVIDIA today announced that it has won two Best Choice Awards at COMPUTEX 2019, extending its record-breaking win streak to 11 consecutive years at the world’s leading IT, communications and IoT trade show.
+
+The NVIDIA DGX-2™, the world’s most powerful AI system, won a Golden Award, while NVIDIA Jetson AGX Xavier™, an AI platform for autonomous machines, won a Category Award for IPC and Embedded Products.
+
+The NVIDIA DGX-2 is the firs",0.995,1
+2019-05-27T07:30:00+00:00,NVIDIA Launches Edge Computing Platform to Bring Real-Time AI to Global Industries,"TAIPEI, Taiwan, May  27, 2019  (GLOBE NEWSWIRE) -- Computex -- NVIDIA today announced NVIDIA EGX, an accelerated computing platform that enables companies to perform low-latency AI at the edge — to perceive, understand and act in real time on continuous streaming data between 5G base stations, warehouses, retail stores, factories and beyond.
+
+NVIDIA EGX was created to meet the growing demand to perform instantaneous, high-throughput AI at the edge — where data is created – with guaranteed respon",0.999,1
+2019-05-27T07:14:00+00:00,NVIDIA Laptop Momentum Accelerates as Partners Announce 25 New Models,"TAIPEI, May  27, 2019  (GLOBE NEWSWIRE) -- Computex -- NVIDIA today announced the launch by leading manufacturers of 25 laptops fueled by its power-efficient NVIDIA Turing™ GPUs, broadening the reach of their revolutionary ray-tracing capabilities beyond the nearly 100 Turing-generation laptops announced earlier this year.
+
+The latest systems include both powerful RTX Studio laptops — aimed at the new class of independent artists whose creativity is fueling fields like social media, digital adve",0.997,1
+2019-05-27T07:09:00+00:00,NVIDIA Boosts Capabilities of World’s 40 Million Creatives with Launch of NVIDIA Studio,"TAIPEI, Taiwan, May  27, 2019  (GLOBE NEWSWIRE) -- Computex --NVIDIA today unveiled NVIDIA Studio, a platform to dramatically improve performance and reliability for the world’s 40 million online and studio-based creatives who depend on high-performance PCs for their craft.
+
+NVIDIA Studio combines RTX GPUs, as well as the NVIDIA Studio Stack of specialized SDKs and dedicated Studio Drivers. It is supported with rigorous hardware and software testing for top creative applications and workflows.
+
+",0.998,1
+2019-05-27T07:02:00+00:00,NVIDIA and Bethesda Add ‘Wolfenstein: Youngblood’ to List of Ray-Traced Blockbuster Franchises,"TAIPEI, Taiwan, May  27, 2019  (GLOBE NEWSWIRE) -- Computex -- NVIDIA and Bethesda today announced that Wolfenstein®: Youngblood™, the next installment in the legendary Wolfenstein franchise, will include support for real-time ray-tracing effects, NVIDIA® Adaptive Shading and other advanced gaming technologies that will let gamers experience the rich realism and depth of the game’s visuals.
+
+To celebrate the return of the Wolfenstein franchise, NVIDIA kicked off a “Born to Hunt” bundle for GeFor",0.993,1
+2019-05-27T06:56:00+00:00,"Relive a Classic! NVIDIA Remakes ‘Quake II’ with Stunning Ray-Traced Graphics, Gifts to PC Gamers","TAIPEI, Taiwan, May  26, 2019  (GLOBE NEWSWIRE) --  Computex -- NVIDIA today announced that Quake II RTX will be available on GeForce.com as a free download on June 6.
+
+Quake II RTX is the world’s first game that is fully path-traced, a ray-tracing technique that unifies all lighting effects such as shadows, reflections, refractions and more into a single ray-tracing algorithm. The result is a stunning new look for id Software’s Quake II, one of the world’s most popular games, originally launche",0.999,1
+2019-05-22T21:00:00+00:00,NVIDIA Announces Upcoming Events for Financial Community,"SANTA CLARA, Calif., May  22, 2019  (GLOBE NEWSWIRE) -- NVIDIA will present at the following events for the financial community:
+
+Bank of America 2019 Global Technology Conference 
+Wednesday, June 5, at 9:30 a.m. Pacific time
+
+RBC Capital Markets Future of Mobility Conference
+Thursday, June 6, at 11:10 a.m. Pacific time
+
+Nasdaq’s 40th London Investor Conference
+Thursday, June 13, at 1 p.m. British Summer time
+
+Interested parties can listen to the live audio webcasts of NVIDIA’s presentations ",0.869,1
+2019-05-16T20:20:00+00:00,NVIDIA Announces Financial Results for First Quarter Fiscal 2020,"SANTA CLARA, Calif., May  16, 2019  (GLOBE NEWSWIRE) -- NVIDIA (NASDAQ: NVDA) today reported revenue for the first quarter ended April 28, 2019, of $2.22 billion compared with $3.21 billion a year earlier and $2.21 billion in the previous quarter.
+
+GAAP earnings per diluted share for the quarter were $0.64, compared with $1.98 a year ago and $0.92 in the previous quarter. Non-GAAP earnings per diluted share were $0.88 compared with $2.05 a year earlier and $0.80 in the previous quarter.
+
+“NVIDIA",0.999,1
+2019-05-09T09:00:00+00:00,King’s College London and NVIDIA Build UK’s First AI Platform for NHS Hospitals,"LONDON, May  09, 2019  (GLOBE NEWSWIRE) -- Aiming to simplify and speed up complicated radiology workflows, NVIDIA and King’s College London today announced they are partnering to build an AI platform that will in the near future allow specialists in the U.K.’s National Health Service (NHS) to train computers to automate the most time-consuming part of radiology interpretation.
+
+The collaboration is part of King’s London Medical Imaging & AI Centre for Value-Based Healthcare, an ongoing project ",0.998,1
+2019-05-08T21:00:00+00:00,NVIDIA Stockholder Meeting Set for May 22; Individuals Can Participate Online,"SANTA CLARA, Calif., May  08, 2019  (GLOBE NEWSWIRE) -- NVIDIA today announced it will hold its 2019 Annual Meeting of Stockholders online on Wednesday, May 22, at 10:30 am PT. The meeting will take place virtually at www.virtualshareholdermeeting.com/NVIDIA2019.
+
+Stockholders will need their control number included in their notice or proxy card to access the meeting, and may vote and submit questions while attending the meeting. Non-stockholders are welcome to attend by going to the above link ",0.802,1
+2019-05-02T21:00:00+00:00,NVIDIA Sets Conference Call for First-Quarter Financial Results,"SANTA CLARA, Calif., May  02, 2019  (GLOBE NEWSWIRE) -- NVIDIA will host a conference call on Thursday, May 16, at 2:30 p.m. PT (5:30 p.m. ET) to discuss its financial results for the first quarter of fiscal year 2020, which ended April 28, 2019.
+
+The call will be webcast live (in listen-only mode) on investor.nvidia.com. The company’s prepared remarks will be followed by a question and answer session, which will be limited to questions from financial analysts and institutional investors.
+
+Ahead",0.382,1
+2019-04-23T13:00:00+00:00,NVIDIA Supercharges Record 80+ Gaming Laptop Models with Turing-Powered GTX 16-Series GPUs,"SANTA CLARA, Calif., April  23, 2019  (GLOBE NEWSWIRE) -- NVIDIA today introduced the GeForce® GTX® 1660 Ti and 1650 Turing-based GPUs for gaming laptops, which deliver a major jump in overall performance and power efficiency for today’s most popular games.
+
+Beginning today, the world’s top gaming laptop manufacturers are rolling out more than 80 models powered by the latest GeForce GPUs, starting at $799.
+
+“Gamers have an impressive selection of fast, power-efficient and thin laptops to choose ",0.997,1
+2019-04-15T12:55:00+00:00,"Market Trends Toward New Normal in Raytheon, NiSource, NVIDIA, Sun Life Financial, American Software, and Care — Emerging Consolidated Expectations, Analyst Ratings","NEW YORK, April  15, 2019  (GLOBE NEWSWIRE) -- In new independent research reports released early this morning, Capital Review released its latest key findings for all current investors, traders, and shareholders of Raytheon Company (NYSE:RTN), NiSource, Inc (NYSE:NI), NVIDIA Corporation (NASDAQ:NVDA), Sun Life Financial Inc. (NYSE:SLF), American Software, Inc. (NASDAQ:AMSWA), and Care.com, Inc. (NYSE:CRCM), including updated fundamental summaries, consolidated fiscal reporting, and fully-qualif",0.996,6
+2019-04-08T10:00:00+00:00,NVIDIA and American College of Radiology AI-LAB Team to Accelerate Adoption of AI in Diagnostic Radiology Across Thousands of Hospitals,"BOSTON, April  08, 2019  (GLOBE NEWSWIRE) -- World Medical Innovation Forum — NVIDIA and the American College of Radiology today announced a collaboration to enable thousands of radiologists nationwide to create and use AI for diagnostic radiology in their own facilities, using their own data, to meet their own clinical needs.
+
+Following a successful three-month pilot program by both parties, ACR is integrating the NVIDIA Clara™ AI toolkit into the newly announced ACR Data Science Institute® ACR",1.0,1
+2019-04-01T13:00:00+00:00,NVIDIA Names Stephen Neal to Board of Directors,"SANTA CLARA, Calif., April  01, 2019  (GLOBE NEWSWIRE) -- NVIDIA today announced that it has named to its board of directors Stephen C. Neal, a veteran Silicon Valley attorney and corporate advisor.
+
+Neal, age 70, has served as chairman of the law firm Cooley LLP since 2001, as its chief executive from 2001 to 2008, and as a partner since 1995. Previously, he was a partner at Kirkland & Ellis LLP.
+
+In addition to his extensive experience handling a broad range of litigation matters, Neal has rep",0.947,1
+2019-03-19T00:02:00+00:00,NVIDIA Teams with Amazon Web Services to Bring AI  to Millions of Connected Devices,"SAN JOSE, Calif., March  18, 2019  (GLOBE NEWSWIRE) -- GPU Technology Conference—NVIDIA today announced a collaboration with Amazon Web Services (AWS) IoT on NVIDIA® Jetson™ to enable customers to deploy AI and deep learning to millions of connected devices.
+
+This joint solution enables models to be easily created, trained and optimized on AWS, then deployed to Jetson-powered edge devices using AWS IoT Greengrass.
+
+The NVIDIA Jetson platform offers AI at the edge with high-performance and power-",0.996,1
+2019-03-18T23:43:00+00:00,NVIDIA and Toyota Research Institute-Advanced Development Partner to Create Safer Autonomous Transportation,"SAN JOSE, Calif., March  18, 2019  (GLOBE NEWSWIRE) -- GPU Technology Conference -- Toyota Research Institute-Advanced Development (TRI-AD) and NVIDIA today announced a new collaboration to develop, train and validate self-driving vehicles.
+
+The partnership builds on an ongoing relationship with Toyota to utilize the NVIDIA DRIVE AGX Xavier™ AV computer and is based on close development between teams from NVIDIA, TRI-AD in Japan and Toyota Research Institute (TRI) in the United States. The broad",0.987,1
+2019-03-18T23:38:00+00:00,NVIDIA DRIVE Constellation Now Available — Virtual Proving Ground  for Validating Autonomous Vehicles,"SAN JOSE, Calif., March  18, 2019  (GLOBE NEWSWIRE) -- GPU Technology Conference -- NVIDIA today announced the NVIDIA DRIVE Constellation™ autonomous vehicle simulation platform is now available.
+
+The cloud-based platform enables millions of miles to be driven in virtual worlds across a broad range of scenarios — from routine driving to rare and dangerous situations — with greater efficiency, cost-effectiveness and safety than what is possible to achieve in the real world.
+
+First introduced at G",0.999,1
+2019-03-18T23:35:00+00:00,NVIDIA Introduces DRIVE AV Safety Force Field: Computational Defensive Driving Policy to Shield Autonomous Vehicles from Collisions,"SAN JOSE, Calif., March  18, 2019  (GLOBE NEWSWIRE) -- GPU Technology Conference—NVIDIA today bolstered its NVIDIA DRIVE™ AV autonomous vehicle software suite with a planning and control layer designed to enable a safe and comfortable driving experience. A primary component of this software is Safety Force Field™ (SFF™), a robust driving policy that protects the vehicle, its occupants and other road users.
+
+SFF analyzes and predicts the dynamics of the surrounding environment by taking in sensor",0.99,1
+2019-03-18T23:21:00+00:00,"NVIDIA Announces Jetson Nano: $99 Tiny, Yet Mighty NVIDIA CUDA-X AI Computer That Runs All AI Models","SAN JOSE, Calif., March  18, 2019  (GLOBE NEWSWIRE) -- GPU Technology Conference—NVIDIA today announced the Jetson Nano™, an AI computer that makes it possible to create millions of intelligent systems.
+
+The small but powerful CUDA-X™ AI computer delivers 472 GFLOPS of compute performance for running modern AI workloads and is highly power-efficient, consuming as little as 5 watts.
+
+Unveiled at the GPU Technology Conference by NVIDIA founder and CEO Jensen Huang, Jetson Nano comes in two version",1.0,1
+2019-03-18T23:09:00+00:00,Global Computer Companies Announce NVIDIA-Powered Enterprise Servers Optimized for Data Science,"SAN JOSE, Calif., March  18, 2019  (GLOBE NEWSWIRE) -- GPU Technology Conference —NVIDIA today announced that mainstream servers optimized to run NVIDIA’s data science acceleration software are now available from seven of the world’s largest systems manufacturers, including Cisco, Dell EMC, Fujitsu, Hewlett Packard Enterprise (HPE), Inspur, Lenovo and Sugon.
+
+Featuring NVIDIA® T4 GPUs and fine-tuned to run NVIDIA CUDA-X AI™ acceleration libraries, the servers provide businesses a standard, highl",1.0,1
+2019-03-18T22:50:00+00:00,NVIDIA Introduces New Breed of High-Performance Workstations for Millions of Data Scientists,"SAN JOSE, Calif., March  18, 2019  (GLOBE NEWSWIRE) -- GPU Technology Conference -- NVIDIA has teamed with the world’s leading OEMs and system builders to deliver powerful new workstations designed to help millions of data scientists, analysts and engineers make better business predictions faster and become more productive.
+
+Purpose-built for data analytics, machine learning and deep learning, the systems provide the extreme computational power and tools required to prepare, process and analyze ",0.997,1
+2019-03-18T21:50:00+00:00,"NVIDIA, Microsoft, Epic Games, Unity and Leading Developers Kick-Start Next-Gen Gaming at GDC 2019","SAN FRANCISCO, March  18, 2019  (GLOBE NEWSWIRE) -- Game Developers Conference—NVIDIA today announced several developments that reinforce NVIDIA® GeForce® GPUs as the core platform that allows game developers to add real-time ray tracing effects to games.
+
+The announcements, which build on the central role Microsoft DirectX™ Ray Tracing (DXR) plays in the PC gaming ecosystem, include:
+
+Integration of real-time ray tracing into Unreal Engine and Unity, the world’s most popular commercial game eng",0.998,1
+2019-03-18T21:41:00+00:00,NVIDIA RTX Ray Tracing-Accelerated Applications Available to Millions of 3D Artists and Designers This Year,"SAN JOSE, Calif., March  18, 2019  (GLOBE NEWSWIRE) -- GPU Technology Conference --NVIDIA today announced that the world’s top 3D application providers — makers of the most important tools for design and content creation — have adopted NVIDIA RTX™ ray-tracing technology in their upcoming product releases.
+
+NVIDIA RTX brings their customers — over 9 million active artists and designers — breakthroughs such as the ability to interact with complex models and scenes with ray-traced lighting, the ind",0.993,1
+2019-03-11T11:00:00+00:00,NVIDIA to Acquire Mellanox for $6.9 Billion,"Unites leaders in processing and interconnect for the high performance computing marketBuilds on the companies’ long history of collaboration and joint innovationExpected to be accretive to NVIDIA’s non-GAAP gross margin, non-GAAP EPS and free cash flow immediately after close
+
+SANTA CLARA, Calif., and YOKNEAM, Israel, March  11, 2019  (GLOBE NEWSWIRE) -- NVIDIA and Mellanox today announced that the companies have reached a definitive agreement under which NVIDIA will acquire Mellanox. Pursuant ",1.0,2
+2019-03-05T14:00:00+00:00,NVIDIA Announces Upcoming Event for Financial Community,"SANTA CLARA, Calif., March  05, 2019  (GLOBE NEWSWIRE) -- NVIDIA will present at the following event for the financial community:
+
+NVIDIA Annual Investor Day
+Tuesday, March 19, at 8:30 a.m. Pacific time
+San Jose, Calif.
+
+Interested parties can listen to a live audio webcast of NVIDIA’s presentation at this event, available on the NVIDIA website at investor.nvidia.com. A replay of the webcast will be available for 90 days afterward.
+
+Keep Current on NVIDIA
+Subscribe to the NVIDIA blog, follow ",0.869,1
+2019-02-22T14:00:00+00:00,"New GeForce GTX 1660 Ti Delivers Great Performance Leap for Every Gamer, Starting at $279","SANTA CLARA, Calif., Feb.  22, 2019  (GLOBE NEWSWIRE) -- NVIDIA today introduced the GeForce® GTX® 1660 Ti, a new gaming GPU that delivers a big step up in performance and power efficiency for today’s most popular games. It is available now worldwide starting at $279.
+
+Based on the 12th generation Turing™ GPU architecture, the GTX 1660 Ti takes advantage of all of Turing’s shader innovations to deliver 2x the TOPS of the previous-generation Pascal™ architecture. It supports concurrent floating p",0.995,1
+2019-02-20T12:30:00+00:00,"Recent Analysis Shows NVIDIA, Molson Coors Brewing, Invacare, The Blackstone Group, Inovio Pharmaceuticals, and Tech Data Market Influences — Renewed Outlook, Key Drivers of Growth","NEW YORK, Feb.  20, 2019  (GLOBE NEWSWIRE) -- In new independent research reports released early this morning, Fundamental Markets released its latest key findings for all current investors, traders, and shareholders of NVIDIA Corporation (NASDAQ:NVDA), Molson Coors Brewing Company (NYSE:TAP), Invacare Corporation (NYSE:IVC), The Blackstone Group L.P. (NYSE:BX), Inovio Pharmaceuticals, Inc. (NASDAQ:INO), and Tech Data Corporation (NASDAQ:TECD), including updated fundamental summaries, consolidat",0.995,6
+2019-02-17T19:00:00+00:00,"Bragar Eagel & Squire, P.C. Reminds Investors That Class Action Lawsuits Have Been Filed Against NVIDIA, DXC Technology, Immunomedics, and Natural Health and Encourages Investors to Contact the Firm","NEW YORK, Feb.  17, 2019  (GLOBE NEWSWIRE) -- Bragar Eagel & Squire, P.C. reminds investors that class action lawsuits have been commenced on behalf of stockholders of NVIDIA Corporation, DXC Technology Company, Immunomedics, Inc., and Natural Health Trends Corp.  Stockholders have until the deadlines listed below to petition the court to serve as lead plaintiff.  Additional information about each case can be found at the link provided.
+
+NVIDIA Corporation (NASDAQ: NVDA)
+
+Class Period: August 10",-0.601,4
+2019-02-15T17:46:00+00:00,"TUESDAY DEADLINE ALERT: The Schall Law Firm Announces the Filing of a Class Action Lawsuit Against NVIDIA Corporation and Encourages Investors with Losses in Excess of $2,000,000 to Contact the Firm","LOS ANGELES, Feb.  15, 2019  (GLOBE NEWSWIRE) -- The Schall Law Firm, a national shareholder rights litigation firm, announces the filing of a class action lawsuit against NVIDIA Corporation (“NVIDIA” or “the Company”) (NASDAQ: NVDA) for violations of §§10(b) and 20(a) of the Securities Exchange Act of 1934 and Rule 10b-5 promulgated thereunder by the U.S. Securities and Exchange Commission.
+
+Investors who purchased the Company's shares between August 10, 2017 and November 15, 2018, inclusive (t",-0.832,1
+2019-02-15T14:00:00+00:00,NVIDIA Announces Upcoming Event for Financial Community,"SANTA CLARA, Calif., Feb.  15, 2019  (GLOBE NEWSWIRE) -- NVIDIA will present at the following event for the financial community:
+
+Morgan Stanley Technology Conference
+ Tuesday, Feb. 26, at 8 a.m. Pacific time
+
+Interested parties can listen to the live audio webcast of NVIDIA’s presentation at this event, available on the NVIDIA website at investor.nvidia.com. A replay of the webcast will be available for 90 days afterward.
+
+Keep Current on NVIDIA
+Subscribe to the NVIDIA blog, follow us on Face",0.869,1
+2019-02-14T21:20:00+00:00,NVIDIA Announces Financial Results for Fourth Quarter and Fiscal 2019,"Quarterly revenue of $2.21 billion, down 24 percent from a year ago Record full-year revenue of $11.72 billion, up 21 percent from a year agoRecord full-year revenue from Gaming, Datacenter, Professional Visualization and Automotive
+
+SANTA CLARA, Calif., Feb.  14, 2019  (GLOBE NEWSWIRE) -- NVIDIA (NASDAQ: NVDA) today reported revenue for the fourth quarter ended Jan. 27, 2019, of $2.21 billion, down 24 percent from $2.91 billion a year earlier, and down 31 percent from $3.18 billion in the previ",0.997,1
+2019-02-14T20:24:00+00:00,SHAREHOLDER ALERT:  Pomerantz Law Firm Reminds Shareholders with Losses on their Investment in NVIDIA Corporation of Class Action Lawsuit and Upcoming Deadline – NVDA,"NEW YORK, Feb.  14, 2019  (GLOBE NEWSWIRE) -- Pomerantz LLP announces that a class action lawsuit has been filed against, NVIDIA Corporation (“NVIDIA” or the “Company”) (NASDAQ: NVDA) and certain of its officers.   The class action, filed in United States District Court, Northern District of California, and indexed under 18-cv-07783, is on behalf of a class consisting of all persons and entities, other than Defendants and their affiliates, who purchased or otherwise, acquired NVIDIA securities b",0.94,1
+2019-02-14T15:36:00+00:00,CLASS ACTION ALERT: Brower Piven Notifies Investors of Class Action Lawsuit And Encourages Those Who Have Significant Losses From Investment In NVIDIA Corporation (Nasdaq: NVDA) To Contact Brower Piven Before The Lead Plaintiff Deadline,"STEVENSON, Md., Feb.  14, 2019  (GLOBE NEWSWIRE) -- The securities litigation law firm of Brower Piven, A Professional Corporation, announces that a class action lawsuit has been commenced on behalf of purchasers of NVIDIA Corporation (Nasdaq: NVDA) (“NVIDIA” or the “Company”) securities during the period between August 10, 2017 through November 15, 2018, inclusive (the “Class Period”).  Investors who wish to become proactively involved in the litigation have until February 19, 2019 to seek appo",-0.052,1
+2019-02-14T15:26:00+00:00,Gainey McKenna & Egleston Announces a Class Action Lawsuit Has Been Filed Against NVIDIA Corporation (NVDA),"NEW YORK, Feb.  14, 2019  (GLOBE NEWSWIRE) -- Gainey McKenna & Egleston announces that a class action lawsuit has been filed against NVIDIA Corporation (“NVIDIA” or the “Company”) (NASDAQ: NVDA) in the United States District Court for the Northern District of California on behalf of those who purchased or acquired the securities of NVIDIA between August 10, 2017 and November 15, 2018, inclusive (the “Class Period”), seeking to recover damages caused by Defendants’ violations of the federal secur",0.974,1
+2019-02-14T14:30:00+00:00,"Hagens Berman Reminds NVIDIA Corporation (NASDAQ: NVDA) Investors of February 19, 2019 Lead Plaintiff Deadline and Encourages Investors Who Lost $1 Million or More to Contact the Firm","SAN FRANCISCO, Feb.  14, 2019  (GLOBE NEWSWIRE) -- Hagens Berman Sobol Shapiro LLP reminds investors in NVIDIA Corporation (NASDAQ: NVDA) of the February 19, 2019 Lead Plaintiff deadline in the pending securities class action.  If you purchased or otherwise acquired NVIDIA securities between August 10, 2017 and November 15, 2018 (the “class period”) and suffered $1 million or more in losses contact Hagens Berman Sobol Shapiro LLP.  For more information visit:
+
+https://www.hbsslaw.com/cases/NVDA
+",0.876,1
+2019-02-14T01:40:00+00:00,Deadline Alert: The Law Offices of Howard G. Smith Reminds Investors of Looming Deadline in the Class Action Lawsuit Against NVIDIA Corporation,"BENSALEM, Pa., Feb.  13, 2019  (GLOBE NEWSWIRE) -- Law Offices of Howard G. Smith reminds investors of the  February 19, 2019 deadline to file a lead plaintiff motion in the class action filed on behalf of investors that purchased NVIDIA Corporation (“NVIDIA” or the “Company”) (NASDAQ: NVDA) securities between August 10, 2017 and November 15, 2018, inclusive (the “Class Period”). NVIDIA investors have until  February 19, 2019 to file a lead plaintiff motion.
+
+Investors that suffered losses in ex",0.827,1
+2019-02-11T13:00:00+00:00,"Consolidated Research: 2019 Summary Expectations for NVIDIA, Monster Beverage, Universal Forest Products, TrueCar, Career Education, and Dynex Capital — Fundamental Analysis, Key Performance Indications","NEW YORK, Feb.  11, 2019  (GLOBE NEWSWIRE) -- In new independent research reports released early this morning, Market Source Research released its latest key findings for all current investors, traders, and shareholders of NVIDIA Corporation (NASDAQ:NVDA), Monster Beverage Corporation (NASDAQ:MNST), Universal Forest Products, Inc. (NASDAQ:UFPI), TrueCar, Inc. (NASDAQ:TRUE), Career Education Corporation (NASDAQ:CECO), and Dynex Capital, Inc. (NYSE:DX), including updated fundamental summaries, con",0.995,6
+2019-02-10T22:00:00+00:00,"Bragar Eagel & Squire, P.C. Reminds Investors That Class Action Lawsuits Have Been Filed Against NVIDIA, DXC Technology, Immunomedics, and Natural Health and Encourages Investors to Contact the Firm","NEW YORK, Feb.  10, 2019  (GLOBE NEWSWIRE) -- Bragar Eagel & Squire, P.C. reminds investors that class action lawsuits have been commenced on behalf of stockholders of NVIDIA Corporation, DXC Technology Company, Immunomedics, Inc., and Natural Health Trends Corp.  Stockholders have until the deadlines listed below to petition the court to serve as lead plaintiff.  Additional information about each case can be found at the link provided.
+
+NVIDIA Corporation (NASDAQ: NVDA)
+
+Class Period: August 10",-0.601,4
+2019-02-08T20:48:00+00:00,Glancy Prongay & Murray LLP Reminds Investors of the Deadline in the Class Action Lawsuit Against NVIDIA Corporation,"LOS ANGELES, Feb.  08, 2019  (GLOBE NEWSWIRE) -- Glancy Prongay & Murray LLP (“GPM”) reminds investors of the  February 19, 2019 deadline to file a lead plaintiff motion in the class action filed on behalf of investors that purchased NVIDIA Corporation (“NVIDIA” or the “Company”) (NASDAQ: NVDA) securities between August 10, 2017 and November 15, 2018, inclusive (the “Class Period”).
+
+If you are a shareholder who suffered a loss, click here to participate.
+
+On November 15, 2018, NVIDIA significan",0.823,1
+2019-02-07T21:45:00+00:00,SHAREHOLDER ALERT:  Pomerantz Law Firm Reminds Shareholders with Losses on their Investment in NVIDIA Corporation of Class Action Lawsuit and Upcoming Deadline – NVDA,"NEW YORK, Feb.  07, 2019  (GLOBE NEWSWIRE) -- Pomerantz LLP announces that a class action lawsuit has been filed against, NVIDIA Corporation (“NVIDIA” or the “Company”) (NASDAQ: NVDA) and certain of its officers.  The class action, filed in United States District Court, Northern District of California, and indexed under 18-cv-07783, is on behalf of a class consisting of all persons and entities, other than Defendants and their affiliates, who purchased or otherwise, acquired NVIDIA securities be",0.94,1
+2019-02-06T00:24:00+00:00,Deadline Alert: The Law Offices of Howard G. Smith Reminds Investors of Looming Deadline in the Class Action Lawsuit Against NVIDIA Corporation,"BENSALEM, Pa., Feb.  05, 2019  (GLOBE NEWSWIRE) -- Law Offices of Howard G. Smith reminds investors of the February 19, 2019 deadline to file a lead plaintiff motion in the class action filed on behalf of investors that purchased NVIDIA Corporation (“NVIDIA” or the “Company”) (NASDAQ: NVDA) securities between August 10, 2017 and November 15, 2018, inclusive (the “Class Period”). NVIDIA investors have until February 19, 2019 to file a lead plaintiff motion.
+
+Investors that suffered losses in exce",0.827,1
+2019-02-05T19:31:00+00:00,"INVESTOR ACTION NOTICE: The Schall Law Firm Announces the Filing of a Class Action Lawsuit Against NVIDIA Corporation and Encourages Investors with Losses in Excess of $2,000,000 to Contact the Firm","LOS ANGELES, Feb.  05, 2019  (GLOBE NEWSWIRE) -- The Schall Law Firm, a national shareholder rights litigation firm, announces the filing of a class action lawsuit against NVIDIA Corporation (“NVIDIA” or “the Company”) (NASDAQ: NVDA) for violations of §§10(b) and 20(a) of the Securities Exchange Act of 1934 and Rule 10b-5 promulgated thereunder by the U.S. Securities and Exchange Commission.
+
+Investors who purchased the Company's shares between August 10, 2017 and November 15, 2018, inclusive (t",-0.832,1
+2019-02-04T14:00:00+00:00,NVIDIA CEO Jensen Huang to Keynote World’s Premier AI Conference,"SANTA CLARA, Calif., Feb.  04, 2019  (GLOBE NEWSWIRE) -- NVIDIA founder and CEO Jensen Huang will deliver the opening keynote address at the 10th annual GPU Technology Conference, being held March 17-21, in San Jose, Calif.
+
+Huang will highlight the company’s latest innovations in AI, autonomous vehicles and robotics in his keynote on Monday, March 18, at 2 pm. As many as 10,000 developers, data scientists and industry executives are expected to register for this year’s conference, being held at",0.942,1
+2019-02-03T23:00:00+00:00,NVIDIA Responds to TRC Capital’s ‘Mini-Tender’ Offer,"SANTA CLARA, Calif., Feb.  03, 2019  (GLOBE NEWSWIRE) -- NVIDIA has received notice of an unsolicited “mini-tender” offer by TRC Capital Corporation (TRC) dated Jan. 21, 2019, to purchase up to 1,000,000 shares of NVIDIA’s common stock at a price of $149.88 per share in cash. The offer is for approximately 0.16 percent of NVIDIA’s outstanding common stock.
+
+TRC’s offer is subject to a financing condition, among others. By its terms, TRC’s mini-tender offer is set to expire at 12:01 a.m., New Yor",0.974,1
+2019-02-01T02:10:00+00:00,"Bragar Eagel & Squire, P.C. Reminds Investors That Class Action Lawsuits Have Been Filed Against NVIDIA, DXC Technology, Immunomedics, and Natural Health and Encourages Investors to Contact the Firm","NEW YORK, Jan.  31, 2019  (GLOBE NEWSWIRE) -- Bragar Eagel & Squire, P.C. reminds investors that class action lawsuits have been commenced on behalf of stockholders of NVIDIA Corporation, DXC Technology Company, Immunomedics, Inc., and Natural Health Trends Corp.  Stockholders have until the deadlines listed below to petition the court to serve as lead plaintiff. Additional information about each case can be found at the link provided.
+
+NVIDIA Corporation (NASDAQ: NVDA)
+
+Class Period: August 10,",-0.601,4
+2019-02-01T02:00:00+00:00,Deadline Alert: The Law Offices of Howard G. Smith Reminds Investors of Looming Deadline in the Class Action Lawsuit Against NVIDIA Corporation,"BENSALEM, Pa., Jan.  31, 2019  (GLOBE NEWSWIRE) -- Law Offices of Howard G. Smith reminds investors of the February 19, 2019 deadline to file a lead plaintiff motion in the class action filed on behalf of investors that purchased NVIDIA Corporation (“NVIDIA” or the “Company”) (NASDAQ: NVDA) securities between August 10, 2017 and November 15, 2018, inclusive (the “Class Period”). NVIDIA investors have until February 19, 2019 to file a lead plaintiff motion.
+
+Investors that suffered losses in exce",0.827,1
+2019-01-31T22:47:00+00:00,SHAREHOLDER ALERT:  Pomerantz Law Firm Reminds Shareholders with Losses on their Investment in NVIDIA Corporation of Class Action Lawsuit and Upcoming Deadline – NVDA,"NEW YORK, Jan.  31, 2019  (GLOBE NEWSWIRE) -- Pomerantz LLP announces that a class action lawsuit has been filed against, NVIDIA Corporation (“NVIDIA” or the “Company”) (NASDAQ: NVDA) and certain of its officers.  The class action, filed in United States District Court, Northern District of California, and indexed under 18-cv-07783, is on behalf of a class consisting of all persons and entities, other than Defendants and their affiliates, who purchased or otherwise, acquired NVIDIA securities be",0.94,1
+2019-01-31T21:31:00+00:00,CLASS ACTION ALERT: Brower Piven Notifies Investors of Class Action Lawsuit And Encourages Those Who Have Significant Losses From Investment In NVIDIA Corporation (Nasdaq: NVDA) To Contact Brower Piven Before The Lead Plaintiff Deadline,"STEVENSON, Md., Jan.  31, 2019  (GLOBE NEWSWIRE) -- The securities litigation law firm of Brower Piven, A Professional Corporation, announces that a class action lawsuit has been commenced on behalf of purchasers of NVIDIA Corporation (Nasdaq: NVDA) (“NVIDIA” or the “Company”) securities during the period between August 10, 2017 through November 15, 2018, inclusive (the “Class Period”).  Investors who wish to become proactively involved in the litigation have until February 19, 2019 to seek appo",-0.052,1
+2019-01-31T00:36:00+00:00,Glancy Prongay & Murray LLP Reminds Investors of the Deadline in the Class Action Lawsuit Against NVIDIA Corporation,"LOS ANGELES, Jan.  30, 2019  (GLOBE NEWSWIRE) -- Glancy Prongay & Murray LLP (“GPM”) reminds investors of the  February 19, 2019 deadline to file a lead plaintiff motion in the class action filed on behalf of investors that purchased NVIDIA Corporation (“NVIDIA” or the “Company”) (NASDAQ: NVDA) securities between August 10, 2017 and November 15, 2018, inclusive (the “Class Period”).
+
+If you are a shareholder who suffered a loss, click here to participate.
+
+On November 15, 2018, NVIDIA significan",0.823,1
+2019-01-28T18:11:00+00:00,"INVESTOR ACTION REMINDER: The Schall Law Firm Announces the Filing of a Class Action Lawsuit Against NVIDIA Corporation and Encourages Investors with Losses in Excess of $2,000,000 to Contact the Firm","LOS ANGELES, Jan.  28, 2019  (GLOBE NEWSWIRE) -- The Schall Law Firm, a national shareholder rights litigation firm, announces the filing of a class action lawsuit against NVIDIA Corporation (“NVIDIA” or “the Company”) (NASDAQ: NVDA) for violations of §§10(b) and 20(a) of the Securities Exchange Act of 1934 and Rule 10b-5 promulgated thereunder by the U.S. Securities and Exchange Commission.
+
+Investors who purchased the Company's shares between August 10, 2017 and November 15, 2018, inclusive (t",-0.832,1
+2019-01-28T14:00:00+00:00,NVIDIA Updates Financial Guidance for Fourth Quarter of Fiscal Year 2019,"Fourth quarter revenue expected to be $2.20 billion versus previous guidance of $2.70 billion Gaming and Datacenter revenue below company’s expectationsManagement to discuss reported financial results on Feb. 14 earnings call
+
+SANTA CLARA, Calif., Jan.  28, 2019  (GLOBE NEWSWIRE) -- NVIDIA (NASDAQ: NVDA) today updated its financial guidance for the fourth quarter of fiscal year 2019, reflecting weaker than forecasted sales of its Gaming and Datacenter platforms.
+
+In Gaming, NVIDIA’s previous fou",0.996,1
+2019-01-25T16:00:00+00:00,"SHAREHOLDER ALERT: Bronstein, Gewirtz & Grossman, LLC Reminds Investors With Losses Exceeding $500K of Class Action Against NVIDIA Corporation (NVDA) & Lead Plaintiff Deadline: February 19, 2019","NEW YORK, Jan.  25, 2019  (GLOBE NEWSWIRE) -- Attorney Advertising -- Bronstein, Gewirtz & Grossman, LLC reminds investors that a class action lawsuit has been filed against NVIDIA Corporation (""NVIDIA"" or the ""Company"") (NASDAQ: NVDA) and certain of its officers, on behalf of shareholders who purchased or otherwise acquired NVIDIA shares between August 10, 2017 and November 15, 2018, both dates inclusive (the “Class Period”). Such investors are encouraged to join this case by visiting the firm’",-0.75,1
+2019-01-25T01:19:00+00:00,"Bragar Eagel & Squire, P.C. Reminds Investors That Class Action Lawsuits Have Been Filed Against NVIDIA, DXC Technology, Immunomedics, and Natural Health and Encourages Investors to Contact the Firm","NEW YORK, Jan.  24, 2019  (GLOBE NEWSWIRE) -- Bragar Eagel & Squire, P.C. reminds investors that class action lawsuits have been commenced on behalf of stockholders of NVIDIA Corporation, DXC Technology Company, and Immunomedics, Inc., and Natural Health Trends Corp.  Stockholders have until the deadlines listed below to petition the court to serve as lead plaintiff.  Additional information about each case can be found at the link provided.
+
+NVIDIA Corporation (NASDAQ: NVDA)
+
+Class Period: Augus",-0.601,4
+2019-01-24T22:05:00+00:00,CLASS ACTION ALERT: Brower Piven Notifies Investors of Class Action Lawsuit And Encourages Those Who Have Significant Losses From Investment In NVIDIA Corporation (Nasdaq: NVDA) To Contact Brower Piven Before The Lead Plaintiff Deadline,"STEVENSON, Md., Jan.  24, 2019  (GLOBE NEWSWIRE) -- The securities litigation law firm of Brower Piven, A Professional Corporation, announces that a class action lawsuit has been commenced on behalf of purchasers of NVIDIA Corporation (Nasdaq: NVDA) (“NVIDIA” or the “Company”) securities during the period between August 10, 2017 through November 15, 2018, inclusive (the “Class Period”).  Investors who wish to become proactively involved in the litigation have until February 19, 2019 to seek appo",-0.052,1
+2019-01-24T18:10:00+00:00,SHAREHOLDER ALERT:  Pomerantz Law Firm Reminds Shareholders with Losses on their Investment in NVIDIA Corporation of Class Action Lawsuit and Upcoming Deadline – NVDA,"NEW YORK, Jan.  24, 2019  (GLOBE NEWSWIRE) -- Pomerantz LLP announces that a class action lawsuit has been filed against, NVIDIA Corporation (“NVIDIA” or the “Company”) (NASDAQ: NVDA) and certain of its officers.   The class action, filed in United States District Court, Northern District of California, and indexed under 18-cv-07783, is on behalf of a class consisting of all persons and entities, other than Defendants and their affiliates, who purchased or otherwise, acquired NVIDIA securities b",0.94,1
+2019-01-24T01:58:00+00:00,Deadline Alert: The Law Offices of Howard G. Smith Reminds Investors of Looming Deadline in the Class Action Lawsuit Against NVIDIA Corporation,"BENSALEM, Pa., Jan.  23, 2019  (GLOBE NEWSWIRE) -- Law Offices of Howard G. Smith reminds investors of the  February 19, 2019 deadline to file a lead plaintiff motion in the class action filed on behalf of investors that purchased NVIDIA Corporation (“NVIDIA” or the “Company”) (NASDAQ: NVDA) securities between August 10, 2017 and November 15, 2018, inclusive (the “Class Period”). NVIDIA investors have until  February 19, 2019 to file a lead plaintiff motion.
+
+Investors that suffered losses in ex",0.827,1
+2019-01-23T20:14:00+00:00,Capital Market Laboratories (CMLviz) Interviews Nvidia CEO – ‘China not an issue for us’,"LOS ANGELES, Jan.  23, 2019  (GLOBE NEWSWIRE) -- Shares of technology company Nvidia Corporation (NASDAQ:NVDA) have rightly seen a meteoric rise as the company’s after tax profit has risen more than 650%, from about $600 million in calendar 2015 to now nearly $4.7 billion in the trailing twelve-months.
+
+But in an interview with Capital Market Laboratories (CMLviz), chief executive officer of Nvidia Jensen Huang made several messages clear:  The company unveiled its newest consumer gaming video c",0.625,1
+2019-01-19T00:01:00+00:00,SHAREHOLDER ALERT:  Pomerantz Law Firm Reminds Shareholders with Losses on their Investment in NVIDIA Corporation of Class Action Lawsuit and Upcoming Deadline – NVDA,"NEW YORK, Jan.  18, 2019  (GLOBE NEWSWIRE) -- Pomerantz LLP announces that a class action lawsuit has been filed against, NVIDIA Corporation (“NVIDIA” or the “Company”) (NASDAQ: NVDA) and certain of its officers.   The class action, filed in United States District Court, Northern District of California, and indexed under 18-cv-07783, is on behalf of a class consisting of all persons and entities, other than Defendants and their affiliates, who purchased or otherwise, acquired NVIDIA securities b",0.94,1
+2019-01-18T18:00:00+00:00,"SHAREHOLDER ALERT : Bronstein, Gewirtz & Grossman, LLC Reminds Investors of Class Action Against NVIDIA Corporation (NVDA) and Lead Plaintiff Deadline: February 19, 2019","NEW YORK, Jan.  18, 2019  (GLOBE NEWSWIRE) -- Attorney Advertising -- Bronstein, Gewirtz & Grossman, LLC reminds investors that a class action lawsuit has been filed against NVIDIA Corporation (""NVIDIA"" or the ""Company"") (NASDAQ: NVDA) and certain of its officers, on behalf of shareholders who purchased or otherwise acquired NVIDIA shares between August 10, 2017 and November 15, 2018, both dates inclusive (the “Class Period”). Such investors are encouraged to join this case by visiting the firm’",-0.75,1
+2019-01-18T17:40:00+00:00,CLASS ACTION ALERT: Brower Piven Notifies Investors of Class Action Lawsuit And Encourages Those Who Have Significant Losses From Investment In NVIDIA Corporation (Nasdaq: NVDA) To Contact Brower Piven Before The Lead Plaintiff Deadline,"STEVENSON, Md., Jan.  18, 2019  (GLOBE NEWSWIRE) -- The securities litigation law firm of Brower Piven, A Professional Corporation, announces that a class action lawsuit has been commenced on behalf of purchasers of NVIDIA Corporation (Nasdaq: NVDA) (“NVIDIA” or the “Company”) securities during the period between August 10, 2017 through November 15, 2018, inclusive (the “Class Period”). Investors who wish to become proactively involved in the litigation have until February 19, 2019 to seek appoi",-0.052,1
+2019-01-18T01:36:00+00:00,"Bragar Eagel & Squire, P.C. Reminds Investors That Class Action Lawsuits Have Been Filed Against NVIDIA, DXC Technology, Immunomedics, and Natural Health and Encourages Investors to Contact the Firm","NEW YORK, Jan.  17, 2019  (GLOBE NEWSWIRE) -- Bragar Eagel & Squire, P.C. reminds investors that class action lawsuits have been commenced on behalf of stockholders of NVIDIA Corporation, DXC Technology Company, Immunomedics, Inc., and Natural Health Trends Corp.  Stockholders have until the deadlines listed below to petition the court to serve as lead plaintiff.  Additional information about each case can be found at the link provided.
+
+NVIDIA Corporation (NASDAQ: NVDA)
+
+Class Period: August 10",-0.601,4
+2019-01-16T14:30:00+00:00,"Hagens Berman Notifies NVIDIA Corporation (NASDAQ: NVDA) Investors of February 19, 2019 Securities Class Action Lead Plaintiff Deadline","SAN FRANCISCO, Jan.  16, 2019  (GLOBE NEWSWIRE) -- Hagens Berman Sobol Shapiro LLP notifies investors in NVIDIA Corporation (NASDAQ: NVDA) of the securities class action pending in the United States District Court for the Northern District of California and the February 19, 2019 Lead Plaintiff deadline. If you purchased or otherwise acquired NVIDIA securities between August 10, 2017 and November 15, 2018 (the “class period”) and suffered losses contact Hagens Berman Sobol Shapiro LLP.  For more ",0.963,1
+2019-01-12T00:09:00+00:00,SHAREHOLDER ALERT:  Pomerantz Law Firm Reminds Shareholders with Losses on their Investment in NVIDIA Corporation of Class Action Lawsuit and Upcoming Deadline – NVDA,"NEW YORK, Jan.  11, 2019  (GLOBE NEWSWIRE) -- Pomerantz LLP announces that a class action lawsuit has been filed against, NVIDIA Corporation (“NVIDIA” or the “Company”) (NASDAQ: NVDA) and certain of its officers.   The class action, filed in United States District Court, Northern District of California, and indexed under 18-cv-07783, is on behalf of a class consisting of all persons and entities, other than Defendants and their affiliates, who purchased or otherwise, acquired NVIDIA securities b",0.94,1
+2019-01-11T17:00:00+00:00,"SHAREHOLDER ALERT - Bronstein, Gewirtz & Grossman, LLC Reminds Investors of Class Action Against NVIDIA Corporation (NVDA) and Lead Plaintiff Deadline: February 19, 2019","NEW YORK, Jan.  11, 2019  (GLOBE NEWSWIRE) -- Attorney Advertising -- Bronstein, Gewirtz & Grossman, LLC reminds investors that a class action lawsuit has been filed against NVIDIA Corporation (""NVIDIA"" or the ""Company"") (NASDAQ: NVDA) and certain of its officers, on behalf of shareholders who purchased or otherwise acquired NVIDIA shares between August 10, 2017 and November 15, 2018, both dates inclusive (the “Class Period”). Such investors are encouraged to join this case by visiting the firm’",-0.75,1
+2019-01-11T00:17:00+00:00,"Bragar Eagel & Squire, P.C. Reminds Investors That Class Action Lawsuits Have Been Filed Against Aphria, NVIDIA, DXC Technology, and Immunomedics and Encourages Investors to Contact the Firm","NEW YORK, Jan.  10, 2019  (GLOBE NEWSWIRE) -- Bragar Eagel & Squire, P.C. reminds investors that class action lawsuits have been commenced on behalf of stockholders of Aphria Inc., NVIDIA Corporation, DXC Technology Company, and Immunomedics, Inc.  Stockholders have until the deadlines listed below to petition the court to serve as lead plaintiff.  Additional information about each case can be found at the link provided.
+
+Aphria Inc. (NYSE: APHA)
+
+Class Period: July 17, 2018 - December 4, 2018
+
+",-0.952,4
+2019-01-08T20:38:00+00:00,CLASS ACTION ALERT: Brower Piven Notifies Investors of Class Action Lawsuit And Encourages Those Who Have Significant Losses From Investment In NVIDIA Corporation (Nasdaq: NVDA) To Contact Brower Piven Before The Lead Plaintiff Deadline,"STEVENSON, Md., Jan.  08, 2019  (GLOBE NEWSWIRE) -- The securities litigation law firm of Brower Piven, A Professional Corporation, announces that a class action lawsuit has been commenced on behalf of purchasers of NVIDIA Corporation (Nasdaq: NVDA) (“NVIDIA” or the “Company”) securities during the period between August 10, 2017 through November 15, 2018, inclusive (the “Class Period”).  Investors who wish to become proactively involved in the litigation have until February 19, 2019 to seek appo",-0.052,1
+2019-01-07T22:00:00+00:00,"NVIDIA Introduces DRIVE AutoPilot, World’s First Commercially Available Level 2+ Automated Driving System","LAS VEGAS, Jan.  07, 2019  (GLOBE NEWSWIRE) -- CES -- NVIDIA today announced the world’s first commercially available Level 2+ automated driving system, NVIDIA DRIVE™ AutoPilot, which integrates multiple breakthrough AI technologies that will enable supervised self-driving vehicles to go into production by next year.
+
+At CES 2019, leading automotive suppliers Continental and ZF announced Level 2+ self-driving solutions based on NVIDIA DRIVE, with production starting in 2020.
+
+As a Level 2+ self-",0.999,1
+2019-01-07T05:30:00+00:00,NVIDIA GeForce RTX Powers Record Number of New Gaming Laptops,"LAS VEGAS, Jan.  06, 2019  (GLOBE NEWSWIRE) -- CES --NVIDIA today announced that the world’s top manufacturers are bringing to market a record number of laptops based on its revolutionary Turing GPU architecture — including the fastest, thinnest and lightest systems ever created.
+
+More than 40 new laptop models in 100-plus configurations will be available later this month. They will be powered by NVIDIA® GeForce® RTX GPUs, which fuse the performance of next-generation shaders with real-time ray ",0.997,1
+2019-01-07T05:03:00+00:00,NVIDIA GeForce RTX 2060 Is Here: Next-Gen Gaming Takes Off,"LAS VEGAS, Jan.  06, 2019  (GLOBE NEWSWIRE) -- CES --NVIDIA today announced the NVIDIA® GeForce® RTX 2060, putting revolutionary Turing architecture GPUs within the reach of tens of millions PC gamers worldwide.
+
+The RTX 2060 GPU delivers exceptional performance on modern games, with graphics enhanced by ray tracing and AI capabilities. Priced at $349, RTX 2060 delivers new levels of performance and features previously available only in high-end gaming GPUs.
+
+The RTX 2060 is 60 percent faster on",0.997,1
+2019-01-05T14:00:00+00:00,SHAREHOLDER ALERT:  Pomerantz Law Firm Reminds Shareholders with Losses on their Investment in NVIDIA Corporation of Class Action Lawsuit and Upcoming Deadline – NVDA,"NEW YORK, Jan.  05, 2019  (GLOBE NEWSWIRE) -- Pomerantz LLP announces that a class action lawsuit has been filed against, NVIDIA Corporation (“NVIDIA” or the “Company”) (NASDAQ: NVDA) and certain of its officers.   The class action, filed in United States District Court, Northern District of California, and indexed under 18-cv-07783, is on behalf of a class consisting of all persons and entities, other than Defendants and their affiliates, who purchased or otherwise, acquired NVIDIA securities b",0.94,1
+2019-01-04T02:30:00+00:00,"Bragar Eagel & Squire, P.C. Reminds Investors That Class Action Lawsuits Have Been Filed Against Aphria, NVIDIA, DXC Technology, and Immunomedics and Encourages Investors to Contact the Firm","NEW YORK, Jan.  03, 2019  (GLOBE NEWSWIRE) -- Bragar Eagel & Squire, P.C. reminds investors that class action lawsuits have been commenced on behalf of stockholders of Aphria Inc., NVIDIA Corporation, DXC Technology Company, and Immunomedics, Inc.  Stockholders have until the deadlines listed below to petition the court to serve as lead plaintiff.  Additional information about each case can be found at the link provided.
+
+Aphria Inc. (NYSE: APHA)
+
+Class Period: July 17, 2018 - December 4, 2018
+
+",-0.952,4
+2019-01-03T16:11:00+00:00,"UPDATE -- SHAREHOLDER ALERT: Bronstein, Gewirtz & Grossman, LLC Notifies Investors of Class Action Against NVIDIA Corporation (NVDA) and Lead Plaintiff Deadline: February 19, 2019","NEW YORK, Jan.  03, 2019  (GLOBE NEWSWIRE) -- Attorney Advertising -- Bronstein, Gewirtz & Grossman, LLC notifies investors that a class action lawsuit has been filed against NVIDIA Corporation (""NVIDIA"" or the ""Company"") (NASDAQ: NVDA) and certain of its officers, on behalf of shareholders who purchased or otherwise acquired NVIDIA shares between August 10, 2017 and November 15, 2018, both dates inclusive (the “Class Period”). Such investors are encouraged to join this case by visiting the firm",-0.75,1
+2019-01-03T15:00:00+00:00,"SHAREHOLDER ALERT - Bronstein, Gewirtz & Grossman, LLC Notifies Investors of Class Action Against NVIDIA Corporation (NVDA) and Lead Plaintiff Deadline: February 19, 2019","NEW YORK, Jan.  03, 2019  (GLOBE NEWSWIRE) -- Attorney Advertising -- Bronstein, Gewirtz & Grossman, LLC notifies investors that a class action lawsuit has been filed against NVIDIA Corporation (""NVIDIA"" or the ""Company"") (NASDAQ: NVDA) and certain of its officers, on behalf of shareholders who purchased or otherwise acquired NVIDIA shares between August 10, 2017 and November 15, 2018, both dates inclusive (the “Class Period”). Such investors are encouraged to join this case by visiting the firm",-0.75,1

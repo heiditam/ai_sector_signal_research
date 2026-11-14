@@ -1,0 +1,171 @@
+published,headline,summary,eod_polarity,n_symbols
+2019-12-20T14:00:00+00:00,Teradyne & Enflame Collaborate to Ensure Thorough Testing of AI Devices for Data Center Training,"NORTH READING, Mass. and SHANGHAI, China, Dec.  20, 2019  (GLOBE NEWSWIRE) -- Teradyne, Inc. (NASDAQ: TER), a leader in semiconductor automated test solutions, and Enflame Technology today announced that Enflame’s Deep Thinking Unit (DTU), designed to accelerate deep learning deployment for data center training, is supported by Teradyne’s UltraFLEX test system.
+
+Enflame’s DTU is based on a reconfigurable architecture that is optimized for the high performance computing and power efficiency requi",0.997,1
+2019-12-20T01:00:00+00:00,泰瑞达助力燧原科技云端数据中心产品，使其人工智能训练芯片邃思获全面测试,"中国上海, Dec.  20, 2019  (GLOBE NEWSWIRE) -- 全球领先的自动化测试解决方案供应商泰瑞达 (NASDAQ:TER)与燧原科技今日联合宣布，泰瑞达UltraFLEX测试系统助力燧原科技设计针对云端人工智能训练场景的高性能通用可编程芯片邃思（DTU）的问世。
+
+邃思支持CNN、RNN、LSTM、BERT等网络模型和丰富的数据类型，并提供高性能互联，针对数据中心的大规模集群训练进行优化，提供优异的能效比。为了测试这种新架构，燧原科技所采用的测试系统，须在保证电源高质量的同时，提供大电流(在低核心电压下大于300A)。泰瑞达UltraFLEX满足大电流下保持高精度和稳定性的要求，内置Current Profiling 也可实现在芯片测试过程中高分辨率动态观察电流变化的功能。
+
+邃思芯片集成了多个先进IP，因而要求测试设备的开发软件具备高度灵活性，易于设计工程师在bring-up阶段参与调试。UltraFLEX的Protocol Aware满足上述需求，可以极大地加快调试进度。泰瑞达屡获殊荣的IG-XL软件使燧原科技能够实现多人协作和模块化测试程序开发，减少测",0.0,1
+2019-12-06T01:00:00+00:00,泰瑞达完成第6000台J750半导体测试系统发货，并向Ardentec公司供货,"NORTH READING, Mass., Dec.  06, 2019  (GLOBE NEWSWIRE) -- 2019年12月6日，全球领先的自动化测试解决方案供应商泰瑞达 (NASDAQ:TER) 在美国马萨诸塞州北芮丁市宣布J750系列半导体测试机台实现第6000台的发货。 J750系列提供了涵盖微控制器（MCUs），无线设备和图像传感器的晶圆测试和最终测试解决方案。 Ardentec公司作为拥有最大的J750测试系统装机量的测试厂商之一，迎来了泰瑞达第6000台J750测试系统 。
+
+泰瑞达J750系列提供了世界领先的汽车和消费应用类MCU产品测试解决方案，也是图像传感器测试的全球领导者。低成本产品的集成度不断增长，并已延伸到指纹传感器，MEMS和带有MCU无线功能的物联网（IOT）产品，J750测试系统的可扩展性使其成为这类产品的理想选择。
+
+Ardentec公司副主席兼总裁Chang Chi-Ming Chang说到：“J750是MCU市场上公认的解决方案。” “J750的“零占用空间”使我们能够最大程度地利用测试场地来增加容量，而更高的多站点吞吐量可以降低测试成本。对",0.0,1
+2019-12-05T14:00:00+00:00,"Teradyne Marks the 6,000th J750 Semiconductor Test System Shipment with Ardentec","NORTH READING, Mass., Dec.  05, 2019  (GLOBE NEWSWIRE) -- Teradyne, Inc. (NASDAQ: TER), a leader in semiconductor automated test solutions, announced the 6,000th shipment of the J750 family of semiconductor testers. The J750 family includes wafer sort and final test solutions for Microcontroller Units (MCUs), wireless devices and image sensors. Ardentec, with one of the largest installed bases of J750 testers, received Teradyne’s 6,000th shipment.
+
+Teradyne’s J750 family is the world leading MCU",0.994,1
+2019-11-14T14:00:00+00:00,Teradyne Completes Acquisition of AutoGuide Mobile Robots,"NORTH READING, Mass., Nov.  14, 2019  (GLOBE NEWSWIRE) -- Teradyne, Inc. (NASDAQ:TER) announced today that it has completed the acquisition of AutoGuide Mobile Robots, a leading supplier of high payload autonomous mobile robots (AMRs). AutoGuide’s advanced products deliver easy deployment, improved safety, reduced costs and increased efficiency of industrial and warehouse material-handling operations.
+
+“AutoGuide’s safe, high-payload AMRs for the global forklift market provide a powerful, additi",0.992,1
+2019-11-12T13:45:00+00:00,Teradyne Declares Quarterly Cash Dividend,"NORTH READING, Mass. , Nov.  12, 2019  (GLOBE NEWSWIRE) -- Teradyne, Inc. (NASDAQ:TER) today announced a quarterly cash dividend of $0.09 per share, payable on December 20, 2019 to shareholders of record as of the close of business on November 27, 2019.
+
+About Teradyne
+Teradyne (NASDAQ:TER) brings high-quality innovations such as smart devices, life-saving medical equipment and data storage systems to market, faster. Its advanced test solutions for semiconductors, electronic systems, wireless d",0.967,1
+2019-10-22T21:02:00+00:00,Teradyne Reports Third Quarter 2019 Results,"Semiconductor Test demand for 5G infrastructure remained strong Memory test shipments grew 23% sequentially on Flash demand Industrial Automation revenue up 4% from Q3’18Q3’19 GAAP earnings per share grew 19% and Non-GAAP earnings per share grew 8% from Q3’18Full year GAAP earnings per share expected to grow 11% and Non-GAAP earnings per share to grow 16% from 2018 at mid-point of guidance
+
+Q3’19Q3’18Q2’19Revenue (mil)$582$567 $564 GAAP EPS$0.75$0.63 $0.55Non-GAAP EPS$0.77$0.71 $0.66
+
+==========",1.0,1
+2019-10-21T11:00:00+00:00,Teradyne to Acquire AutoGuide Mobile Robots,"AutoGuide offers uniquely modular autonomous mobile tuggers and forklifts for high-payload material transport of up to 10,000 pounds (4,500 kg).Autonomous industrial forklifts and tuggers are a high-growth, emerging segment of the global forklift market.Autoguide’s Surepath software enables easy deployment and operation of fleets of AMRs.AutoGuide complements Teradyne Mobile Industrial Robots’ (MiR) leading position in low- and mid-payload autonomous mobile robotsTeradyne provides financial stre",0.996,1
+2019-10-15T12:00:00+00:00,LitePoint to Showcase Test Solution for Next-Generation 6-GHz Wi-Fi at Broadband World Forum 2019,"SAN JOSE, Calif., Oct.  15, 2019  (GLOBE NEWSWIRE) -- LitePoint, a leading provider of wireless test solutions, today announced its IQxel-MW™ 7G test system will be showcased at the Broadband World Forum (BBWF) 2019. Designed to test up to 7 GHz, the IQxel-MW 7G has verified the full 6-GHz capability of Broadcom’s BCM6710 chip which supports 2.4-GHz, 5-GHz and 6-GHz bands. Broadcom will be demonstrating the BCM6710 using the IQxel-MW 7G in its booth K20 at the BBWF 2019 from October 15th to 17th",0.989,1
+2019-10-10T17:27:00+00:00,Teradyne to Announce Third Quarter 2019 Results,"NORTH READING, Mass., Oct.  10, 2019  (GLOBE NEWSWIRE) -- Teradyne, Inc. (NASDAQ:TER) will release financial results for the third quarter 2019 on Tuesday, October 22 at 5:00 p.m. Eastern Time (ET) or later.
+
+A conference call to discuss the third quarter 2019 results, along with management's business outlook, will follow at 10:00 a.m. ET, Wednesday, October 23.
+
+Interested investors should access the webcast at investors.teradyne.com/events-presentations at least five minutes before the call be",0.924,1
+2019-09-25T12:00:00+00:00,LitePoint Collaborates with NXP on Integrated Ultra-Wideband (UWB) Device Test Solution for Customers,"SAN JOSE, Calif., Sept.  25, 2019  (GLOBE NEWSWIRE) -- LitePoint, a leading provider of wireless test solutions, today announced a collaboration with NXP® Semiconductors to validate quality of devices that use NXP’s recently announced secure fine ranging chipset, SR100T. Customers will be able to use the integrated LitePoint IQgig-UWB™ solution to help test and calibrate devices enabled with NXP’s UWB technology.
+
+UWB is a technology addressing security applications in automotive and mobile prod",0.996,1
+2019-09-17T12:00:00+00:00,LitePoint Provides OFDMA Test Solution for Wi-Fi Alliance® Wi-Fi 6 Certification,"SAN JOSE, Calif., Sept.  17, 2019  (GLOBE NEWSWIRE) -- LitePoint’s IQxel-MW™ platform enables testing of key OFDMA functionality as part of the Wi-Fi Alliance® Wi-Fi CERTIFIED 6™ certification program.  This capability is available to all Wi-Fi Alliance members and Authorized Test Labs.
+
+“The Wi-Fi CERTIFIED 6 certification program ensures that devices will interoperate and deliver the latest generation of Wi-Fi technology and security,” said Kevin Robinson, Vice President of Marketing, Wi-Fi Al",0.994,1
+2019-09-11T12:00:00+00:00,LitePoint Debuts Industry’s First Test System for Wi-Fi 6 in the 6 GHz Frequency Band,"SAN JOSE, Calif., Sept.  11, 2019  (GLOBE NEWSWIRE) -- LitePoint, a leading provider of wireless test solutions, announced today the release of the LitePoint IQxel-MW™ 7G, the first fully integrated tester for Wi-Fi 6 in the 6 GHz frequency band meeting the needs of product development and high volume manufacturing.
+
+Today, Wi-Fi 6 operates in the 2.4 GHz or 5 GHz frequency bands.  The FCC and E.U. regulatory agencies have recently announced plans to extend Wi-Fi to the 6 GHz frequency band (5.9",0.978,1
+2019-09-04T12:48:00+00:00,Teradyne Introduces the UltraFLEXplus to Minimize Time to Market for Complex Digital Devices,"Innovative PACETM architecture enables higher engineering productivity, shorter development time, and lower manufacturing cost
+
+Operates compatibly with installed base of over 4,000 UltraFLEX testers, utilizing award-winning IG-XL software
+
+NORTH READING, Mass., Sept.  04, 2019  (GLOBE NEWSWIRE) -- Teradyne, Inc. (NASDAQ:TER), a leading supplier of automated test solutions, today introduced the UltraFLEXplus, the newest member of the UltraFLEX family of testers and the first to include the PACE ",0.992,1
+2019-09-04T01:00:00+00:00,泰瑞达推出UltraFLEXplus，高效缩短复杂数字芯片的上市时间,"富有创新性的PACETM架构可以实现更高的工程生产力，更短的开发时间以及更低的制造成本
+
+兼容现有超过4000台装机量的UltraFLEX测试机与屡获殊荣的IG-XL软件
+
+NORTH READING, Mass., Sept.  04, 2019  (GLOBE NEWSWIRE) -- 全球领先的自动化测试解决方案供应商泰瑞达(NASDAQ:TER)在美国马萨诸塞州北芮丁市推出了UltraFLEX测试机系列的最新成员UltraFLEXplus，这也是PACE架构的首次应用。 UltraFLEXplus解决了由于人工智能和5G通信基础设施变化所带来的新兴的数字测试需求。
+
+测试特性分析需求和量产数据量的增加，逐渐挑战到当前测试机架构的极限，导致了开发周期的延长以及量产测试时间的增加。为了应对这一新兴挑战，泰瑞达为UltraFLEXplus开发了PACE多控制器架构。这种革命性的技术，使测试工程师能够更高效地对复杂芯片进行调试和特性分析，实现更少的工作量和更高的测试机利用率，将新产品更快地推向市场。
+
+UltraFLEXplus将突破性的PACE架构与业界领先的IG-XL软件相结合，确",0.0,1
+2019-08-23T13:15:00+00:00,Teradyne Declares Quarterly Cash Dividend,"NORTH READING, Mass., Aug.  23, 2019  (GLOBE NEWSWIRE) -- Teradyne, Inc. (NASDAQ: TER) today announced a quarterly cash dividend of $0.09 per share, payable on September 27, 2019 to shareholders of record as of the close of business on September 4, 2019.
+
+About Teradyne
+Teradyne (NASDAQ:TER) brings high-quality innovations such as smart devices, life-saving medical equipment and data storage systems to market, faster. Its advanced test solutions for semiconductors, electronic systems, wireless ",0.967,1
+2019-08-09T17:00:00+00:00,UPDATE: LitePoint is First Test Equipment Vendor to Join FiRa Consortium,"SAN JOSE, Calif., Aug.  09, 2019  (GLOBE NEWSWIRE) -- LitePoint, a leading provider of wireless test solutions, today announced it is the first test equipment vendor to join the FiRa Consortium, a brand new organization launched by industry leaders to facilitate the creation of an Ultra-Wideband (UWB) ecosystem so that new use cases for Fine-Ranging (FiRa) capabilities can thrive.
+
+The FiRa Consortium’s mission is to create a broad ecosystem to develop specifications and a certification program ",0.995,1
+2019-08-08T14:00:00+00:00,LitePoint is First Test Vendor to Join FiRa Consortium,"SAN JOSE, Calif., Aug.  08, 2019  (GLOBE NEWSWIRE) -- LitePoint, a leading provider of wireless test solutions, today announced it is the first test vendor to join the FiRa Consortium, a brand new organization launched by industry leaders to facilitate the evolution of Ultra-Wideband (UWB) wireless technology to fine-ranging (FiRa) technology.
+
+The FiRa Consortium’s mission is to create a broad ecosystem to develop specifications and a certification program to ensure interoperability among new F",0.994,1
+2019-07-23T21:02:00+00:00,Teradyne Reports Second Quarter 2019 Results,"Q2’19 GAAP earnings per share grew 6% and Non-GAAP earnings per share grew 12% from Q2’18Semiconductor Test revenue up 4% from Q2’18 Industrial Automation revenue up 20% from Q2’18
+
+Q2’19Q2’18Q1’19  Revenue (mil)$564$527 $494  GAAP EPS$0.55$0.52 $0.62  Non-GAAP EPS$0.66$0.59 $0.54  ==========================================
+
+NORTH READING, Mass., July  23, 2019  (GLOBE NEWSWIRE) -- Teradyne, Inc. (NASDAQ: TER) reported revenue of $564 million for the second quarter of 2019 of which $375 million ",1.0,1
+2019-07-17T12:50:00+00:00,Teradyne Reduces Development Time and Production Costs for 5G Millimeter Wave Semiconductors with the UltraWaveMX44,"NORTH READING, Mass., July  17, 2019  (GLOBE NEWSWIRE) -- Teradyne, Inc. (NASDAQ:TER), a leading supplier of automated test solutions for semiconductor devices, announced today the introduction of the UltraWaveMX44, an UltraFLEX test solution for the new 5G-NR millimeter wave (mmWave) market. The new UltraWaveMX44 instrument enables faster time to market and higher product yields for semiconductor devices used in emerging 5G mmWave applications.
+
+The UltraWaveMX44 supports characterization and p",0.993,1
+2019-07-12T14:28:00+00:00,Teradyne to Announce Second Quarter 2019 Results,"NORTH READING, Mass., July  12, 2019  (GLOBE NEWSWIRE) -- Teradyne, Inc. (NASDAQ:TER) will release financial results for the second quarter 2019 on Tuesday, July 23 at 5:00 p.m. Eastern Time (ET) or later.
+
+A conference call to discuss the second quarter 2019 results, along with management's business outlook, will follow at 10:00 a.m. ET, Wednesday, July 24.
+
+Interested investors should access the webcast at investors.teradyne.com/events-presentations at least five minutes before the call begins",0.924,1
+2019-05-22T14:00:00+00:00,Teradyne Extends Memory Test Capabilities with New Magnum VU Test System,"NORTH READING, Mass., May  22, 2019  (GLOBE NEWSWIRE) -- Teradyne, Inc. (NASDAQ:TER), a leading supplier of automated test solutions, has announced the new Universal Protocol Board (UPBx), a module for its Magnum VU memory test system that enables testing of high-speed memory devices, popular in cutting edge mobile phones and tablets.
+
+As mobile devices offer higher resolution video, virtual reality (VR) and augmented reality (AR) applications, they are adopting higher speed NAND storage based o",0.991,1
+2019-05-16T14:30:00+00:00,Teradyne Tops VLSIresearch Customer Satisfaction Survey for Seventh Consecutive Year,"NORTH READING, Mass., May  16, 2019  (GLOBE NEWSWIRE) -- Teradyne, Inc. (NASDAQ:TER), a leading supplier of automated test solutions, was named ""THE BEST"" of all test equipment companies for the seventh year in a row by customers in the VLSIresearch annual survey. VLSI surveys the customers of companies that provide hardware, software and services to the semiconductor industry. Teradyne placed first in both “THE BEST Suppliers of Test Equipment” and “The 10 BEST Large Suppliers of Chip Making Eq",0.998,1
+2019-05-07T21:37:00+00:00,Teradyne Declares Quarterly Cash Dividend,"NORTH READING, Mass., May  07, 2019  (GLOBE NEWSWIRE) -- Teradyne, Inc. (NASDAQ: TER) today announced a quarterly cash dividend of $0.09 per share, payable on June 21, 2019 to shareholders of record as of the close of business on May 29, 2019.
+
+About Teradyne
+Teradyne (NASDAQ:TER) brings high-quality innovations such as smart devices, life-saving medical equipment and data storage systems to market, faster. Its advanced test solutions for semiconductors, electronic systems, wireless devices and",0.967,1
+2019-04-23T21:02:00+00:00,Teradyne Reports First Quarter 2019 Results,"Q1’19 GAAP earnings per share grew 44% and Non-GAAP earnings per share grew 20% from Q1’18 Industrial Automation revenue up 35% from Q1’18 on Universal Robots growth of 16% and the addition of Mobile Industrial Robots (MiR)Expect 8% sequential revenue growth in Q2’19 at mid-point of guidance
+
+Q1’19Q1’18Q4’18Revenue (mil)$494 $487 $520 GAAP EPS$0.62$0.43 $0.79 Non-GAAP EPS$0.54 $0.45 $0.63
+
+NORTH READING, Mass., April  23, 2019  (GLOBE NEWSWIRE) --  Teradyne, Inc. (NASDAQ: TER) reported revenue o",0.999,1
+2019-04-16T12:00:00+00:00,Decawave Chooses LitePoint to Ensure Quality of Ultra-Wideband Devices,"SUNNYVALE, Calif., April  16, 2019  (GLOBE NEWSWIRE) -- LitePoint®, a leading provider of wireless test solutions, announced today that Decawave, a global leader in ultra-wideband (UWB) semiconductors, has selected the LitePoint IQgig-UWB™ test solution for validation of its UWB devices.
+
+Decawave announced in February its roadmap for next-generation UWB chipsets, aimed at solving the global need for increased mobile transaction security. Key applications include highly secure mobile financial a",0.985,1
+2019-04-16T11:15:00+00:00,"New Research: Key Drivers of Growth for Teradyne, Lazard, Graphic Packaging Holding, Natus Medical, Flotek Industries, and BioDelivery Sciences International — Factors of Influence, Major Initiatives and Sustained Production","NEW YORK, April  16, 2019  (GLOBE NEWSWIRE) -- In new independent research reports released early this morning, Fundamental Markets released its latest key findings for all current investors, traders, and shareholders of Teradyne, Inc. (NASDAQ:TER), Lazard Ltd (NYSE:LAZ), Graphic Packaging Holding Company (NYSE:GPK), Natus Medical Incorporated (NASDAQ:BABY), Flotek Industries, Inc. (NYSE:FTK), and BioDelivery Sciences International, Inc. (NASDAQ:BDSI), including updated fundamental summaries, co",0.995,6
+2019-04-16T03:00:00+00:00,Decawave 选择 LitePoint 确保超宽带设备的质量,"加州森尼韦尔市, April  16, 2019  (GLOBE NEWSWIRE) -- 知名无线测试解决方案提供商 LitePoint® 今日宣布，超宽带 (UWB) 半导体行业全球领导者 Decawave 已选择 LitePoint IQgig-UWB™ 测试解决方案来验证其 UWB 设备。
+
+Decawave 于今年 2 月宣布下一代 UWB 芯片集的发展计划，旨在满足全球对提高移动交易安全性的需求。主要应用领域包括高度安全的移动金融和接入交易以及利用精确定位打击恶意攻击的能力，这些攻击能非法入侵无线支付系统和盗窃现代车辆。Decawave 选择全新 LitePoint IQgig-UWB 平台来验证其 UWB 芯片集。全新 Decawave 平台将继续为工业和消费者应用提供最先进的实时定位能力，同时借助更高的集成水平和比现今产品低 4 到 9 倍的功耗，提供成本更具经济效益的解决方案。
+
+LitePoint 产品营销总监 Adam Smith 说道: “作为 UWB 技术的首个全方位集成测试平台，IQgig-UWB 对协助全新 UWB 设备进入市场至关重要。 IQgig-UW",0.0,1
+2019-04-16T02:00:00+00:00,Decawave が超広帯域デバイスの品質保証にライトポイントを採用,"米カリフォルニア州サニーベール, April  16, 2019  (GLOBE NEWSWIRE) -- ワイヤレステストソリューションの大手プロバイダー、ライトポイント® は本日、超広帯域 (UWB) 半導体の世界的リーダーである Decawave が UWB デバイスの検証にライトポイント IQgig-UWB™ テスト ソリューションを採用したことを発表いたしました。
+
+Decawave は 2 月に、モバイル トランザクションのセキュリティを強化するという世界規模のニーズを解決することを目的とし、次世代の UWB チップセットのロードマップを発表しました。主なアプリケーションには、安全性の高いモバイル金融取引やアクセス取引、ワイヤレス決済のハッキングや自動車の盗難を可能にする悪意のある攻撃に対処するための正確な位置情報の使用が含まれます。 Decawave は、UWB チップセットの検証に、新しいライトポイント IQgig-UWB プラットフォームを採用しました。新しい Decawave プラットフォームは、工業用および消費者用アプリケーションに最先端のリアルタイム ロケーショ",0.0,1
+2019-04-12T15:00:00+00:00,Teradyne to Announce First Quarter 2019 Results,"NORTH READING, Mass., April  12, 2019  (GLOBE NEWSWIRE) -- Teradyne, Inc. (NASDAQ:TER) will release financial results for the first quarter 2019 on Tuesday, April 23 at 5:00 p.m. Eastern Time (ET) or later.
+
+A conference call to discuss the first quarter 2019 results, along with management's business outlook, will follow at 10:00 a.m. ET, Wednesday, April 24.
+
+Interested investors should access the webcast at investors.teradyne.com/events-presentations at least five minutes before the call begin",0.856,1
+2019-04-04T11:05:00+00:00,Teradyne Appoints Sanjay Mehta as New Chief Financial Officer,"NORTH READING, Mass., April  04, 2019  (GLOBE NEWSWIRE) -- Teradyne, Inc. (NASDAQ: TER) today announced that Sanjay Mehta will join the company on April 25, 2019 as Vice President and Chief Financial Officer, replacing Gregory Beecher who announced his planned retirement earlier this year. Reporting to CEO Mark Jagiela, Mr. Mehta will lead Teradyne’s global finance, operations and information technology organizations.
+
+Mr. Mehta joins Teradyne from Qualcomm where he served in senior financial an",0.988,1
+2019-03-21T02:06:00+00:00,泰瑞达和杭州士兰微电子合作量产测试汽车电子和大功率电子器件,"北雷丁, 马萨诸塞州，和中国杭州, March  21, 2019  (GLOBE NEWSWIRE) -- 业届领先的自动测试解决方案供应商泰瑞达公司（纳斯达克股票代码：TER）和士兰微电子有限公司宣布，士兰的新型智能功率模块（IPM）测试方案已经投入量产，该方案的测试品质和覆盖范围，在汽车功率电子器件测试业界处于领先地位。该智能功率模块（IPM）测试方案是在泰瑞达的ETS-88th测试平台上实现的。
+
+士兰微电子芯片测试部经理倪新伟指出，“我们非常高兴跟泰瑞达进行合作，这个测试方案保证了测试的质量，同时达到了业界领先的测试速度。ETS-88th的模块化设计，对于我们汽车电子和大功率器件测试的客户，可以进行标准化或者定制化设计他们的测试方案。”
+
+本次的合作使得客户可以在同一个测试平台上实现量产测试不断增长变化的要求。同时提供了业界领先的测试质量和测试速度。
+
+泰瑞达功率、分立产品测试部门经理Seth Prentice说，“在泰瑞达，我们一直致力于发掘各种方法，来提高测试平台的测试覆盖率和质量，同时提供业界最低的测试成本。我们会继续跟士兰合作，对于他们不断增长的大功率产品的新测试要求",0.0,1
+2019-03-20T01:00:00+00:00,Teradyne Achieves China Sales Milestone as it Ships 4000th Eagle Test System to MPS Inc.,"NORTH READING, Mass., March  19, 2019  (GLOBE NEWSWIRE) -- Teradyne, Inc. (NASDAQ:TER), a leading supplier of automated test solutions, announced it has shipped its 4000th Eagle Test System, hitting a new sales success milestone for its Eagle Test System (ETS) automatic test equipment in China.
+
+MPS Inc., a high-growth, linear, power and automotive semiconductor supplier with multiple locations in China, purchased the milestone system, an ETS-88™.
+
+The ETS-88 is an optimal platform for testing a",0.993,1
+2019-03-19T03:00:00+00:00,泰瑞达将第4000台Eagle测试系统向MPS公司发货，达到中国销售的里程碑,"北雷丁, 马萨诸塞州, March  19, 2019  (GLOBE NEWSWIRE) -- 业届领先的自动测试解决方案供应商泰瑞达公司（纳斯达克股票代码：TER）宣布其已经销售了4000台Eagle测试系统，达到了Eagle在中国新的销售里程碑.
+
+MPS Inc.是一家高增长的模拟线性，电力电子和汽车电子芯片供应商，在中国有多个分支机构，购买了这台具有里程碑意义的ETS-88™测试系统。
+
+ETS-88是测试各种模拟，高精度，高电压，高电流/功率，汽车电子，视频，音频，复杂混合信号芯片, 以及碳化硅, 氮化镓等新兴电源工艺芯片的最佳平台. 测试系统的硬件设计旨在为每个被测芯片提供独立的浮动资源，以避免芯片间的资源共享，来提高芯片和芯片之间的隔离度和测量准确性.
+
+ 可灵活配置的ETS-88使得MPS可将其测试系统配置成传统的多芯片并行测试模式或多芯片串行并行测试模式.
+
+ “MPS自2009年以来一直广泛使用Eagle测试系统，并建立了超过150台测试系统的产线，是所有无晶圆厂公司中最大的，”MPS亚洲运营总裁Deming Xiao指出,  “ETS-88显然是业界首选",0.0,1
+2019-03-18T13:00:00+00:00,Teradyne & Silan Microelectronics Collaborate to Ensure Thorough Testing of Automotive and High Power Electronics,"NORTH READING, Mass. and HANGZHOU, China, March  18, 2019  (GLOBE NEWSWIRE) -- Teradyne, Inc. (NASDAQ:TER), a leading supplier of automated test solutions, has announced, with Silan Microelectronics, the release of the new Silan Intelligent Power Module (IPM) test cell to provide customers with best-in-class test quality and coverage for their automotive and high power devices. The IPM test cell is supported by Teradyne’s ETS-88TH Power Discrete tester.
+
+“We’re excited to work with Teradyne to e",0.99,1
+2019-02-28T12:15:00+00:00,"Research Report Identifies Teradyne, Eastman Chemical, Monarch Casino & Resort, Pentair plc, Charter Communications, and National Health Investors with Renewed Outlook — Fundamental Analysis, Calculating Forward Movement","NEW YORK, Feb.  28, 2019  (GLOBE NEWSWIRE) -- In new independent research reports released early this morning, Fundamental Markets released its latest key findings for all current investors, traders, and shareholders of Teradyne, Inc. (NASDAQ:TER), Eastman Chemical Company (NYSE:EMN), Monarch Casino & Resort, Inc. (NASDAQ:MCRI), Pentair plc (NYSE:PNR), Charter Communications, Inc. (NASDAQ:CHTR), and National Health Investors, Inc. (NYSE:NHI), including updated fundamental summaries, consolidated",0.995,6
+2019-02-19T13:00:00+00:00,LitePoint and Movandi Collaborate to Increase Performance of 5G Millimeter Wave Solutions,"SUNNYVALE, Calif., Feb.  19, 2019  (GLOBE NEWSWIRE) -- LitePoint, a leading provider of wireless test solutions, announced today that Movandi has selected LitePoint’s IQgig-5G millimeter wave (mmWave) test system for design validation and production of Movandi’s new 5G BeamX system solutions. The powerful combination of a leading 5G technology solution developer and innovative wireless testing company will help to enable fast manufacturing product ramps of 5G solutions, while reducing lengthy te",0.995,1
+2019-01-31T01:00:00+00:00,泰瑞达与Lemsys联合声明泰瑞达收购了大功率半导体行业测试设备领先供应商Lemsys,"- 扩展泰瑞达在新兴和快速增长的功率分立领域测试市场中的作用
+
+- 为客户提供从研发到大批量生产的功率分立领域测试解决方案组合
+
+- 通过泰瑞达全球分销和财务实力增强Lemsys的增长。
+
+马萨诸塞州北芮丁市和瑞士日内瓦 - 2019年1月30日, Jan.  31, 2019  (GLOBE NEWSWIRE) -- 泰瑞达公司（NASDAQ：TER）和Lemsys 公司（“Lemsys”）的股东今天宣布收购瑞士日内瓦的私有公司Lemsys。这家拥有21名员工的公司将继续留在日内瓦，并保持现有的管理团队和人员。
+
+Lemsys是全球领先的大功率半导体测试设备供应商，为电动汽车、风能和太阳能发电以及大功率工业应用等新兴和不断增长的功率分立器件和模块市场提供服务。
+
+“Lemsys是新兴大功率分立领域半导体测试市场的领导者，我们很高兴Lemsys加入泰瑞达，”泰瑞达半导体测试部总裁格雷格.史密斯（Greg Smith）说道，“拥有其才华横溢团队和行业领先的产品线的Lemsys将会扩大我们为功率半导体客户提供的测试解决方案的范围。”
+
+“我们很兴奋和泰瑞达合力，并通过泰瑞达世界一流的工程和",0.0,1
+2019-01-30T13:35:00+00:00,"Teradyne and Lemsys Announce Teradyne’s Acquisition of Lemsys SA, Leading Provider of Test Equipment for High Power Semiconductor Industry","- Expands Teradyne’s role in the emerging and fast growing power discrete test market
+
+- Provides customers a portfolio of power discrete test solutions from R&D to high volume production
+
+- Enhances Lemsys’s growth through Teradyne’s global distribution and financial strength
+
+NORTH READING, Mass. and GENEVA, Jan.  30, 2019  (GLOBE NEWSWIRE) -- Teradyne, Inc. (NASDAQ:TER) and the shareholders of Lemsys SA (“Lemsys”) today announced the acquisition of privately held Lemsys of Geneva, Switzerland",0.992,1
+2019-01-23T22:06:00+00:00,Teradyne Reports Fourth Quarter and Fiscal Year 2018 Results,"Revenue of $520 million in Q4’18, organic growth of 5% from Q4’17 Record full year memory and analog test shipmentsRecord 60% quarterly and 58% full year gross marginExpect to repurchase $500 million in shares in 2019Quarterly dividend of $0.09 declared
+
+Q4'18Q4'17Q3'18FY 2018FY 2017 Revenue (mil)$520 $479$567 $2,101$2,137GAAP EPS$0.79($0.54)$0.63 $2.35$1.28Non-GAAP EPS$0.63$0.46$0.71 $2.37$2.34
+
+NORTH READING, Mass., Jan.  23, 2019  (GLOBE NEWSWIRE) -- Teradyne, Inc. (NASDAQ: TER) reported reve",1.0,1
+2019-01-11T15:31:00+00:00,Teradyne to Announce Fourth Quarter and Fiscal Year 2018 Results,"NORTH READING, Mass., Jan.  11, 2019  (GLOBE NEWSWIRE) -- Teradyne, Inc. (NYSE: TER) will release financial results for the fourth quarter and fiscal year 2018 on Wednesday, January 23 at 5:00 p.m. Eastern Time (ET) or later.
+
+A conference call to discuss the fourth quarter and fiscal year 2018 results, along with management's business outlook, will follow at 10:00 a.m. ET, Thursday, January 24.
+
+Interested investors should access the webcast at investors.teradyne.com/events-presentations at lea",0.856,1
