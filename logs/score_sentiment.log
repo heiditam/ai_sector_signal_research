@@ -235,3 +235,345 @@ Device set to use mps
   GEHC: 568 articles scored in 2s
 200/500 tickers done (18 min)
   GEN: 225 articles scored in 1s
+  GEV: 740 articles scored in 2s
+  GILD: 547 articles scored in 3s
+  GIS: 1053 articles scored in 4s
+  GL: 252 articles scored in 2s
+  GLW: 485 articles scored in 2s
+  GM: 1527 articles scored in 5s
+  GNRC: 1205 articles scored in 9s
+  GOOG: 4535 articles scored in 15s
+  GOOGL: 6618 articles scored in 21s
+  GPC: 360 articles scored in 2s
+  GPN: 708 articles scored in 2s
+  GRMN: 862 articles scored in 3s
+  GS: 1240 articles scored in 5s
+  GWW: 299 articles scored in 2s
+  HAL: 286 articles scored in 1s
+  HAS: 2393 articles scored in 6s
+  HBAN: 382 articles scored in 2s
+  HCA: 782 articles scored in 3s
+  HD: 1226 articles scored in 6s
+  HIG: 143 articles scored in 1s
+  HII: 1162 articles scored in 4s
+  HLT: 731 articles scored in 2s
+  HON: 1094 articles scored in 4s
+  HOOD: 2565 articles scored in 8s
+225/500 tickers done (20 min)
+  HPE: 1157 articles scored in 4s
+  HPQ: 735 articles scored in 3s
+  HRL: 732 articles scored in 3s
+  HSIC: 428 articles scored in 2s
+  HST: 444 articles scored in 2s
+  HSY: 663 articles scored in 3s
+  HUBB: 620 articles scored in 3s
+  HUM: 827 articles scored in 5s
+  HWM: 755 articles scored in 3s
+  IBKR: 1194 articles scored in 4s
+  IBM: 2705 articles scored in 13s
+  ICE: 1351 articles scored in 24s
+  IDXX: 570 articles scored in 4s
+  IEX: 419 articles scored in 2s
+  IFF: 423 articles scored in 2s
+  ILMN: 1168 articles scored in 6s
+  INCY: 464 articles scored in 2s
+  INTC: 5686 articles scored in 18s
+  INTU: 998 articles scored in 3s
+  INVH: 472 articles scored in 2s
+  IP: 565 articles scored in 2s
+  IQV: 558 articles scored in 2s
+  IR: 461 articles scored in 3s
+  IRM: 420 articles scored in 1s
+  ISRG: 1185 articles scored in 4s
+250/500 tickers done (22 min)
+  IT: 2123 articles scored in 6s
+  ITW: 403 articles scored in 4s
+  IVZ: 2078 articles scored in 10s
+/Users/heiditam/Documents/summer_2026/factor_model/scripts/score_sentiment.py:69: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([pd.read_csv(f, keep_default_na=False) for f in files], ignore_index=True)
+  J: 591 articles scored in 2s
+  JBHT: 605 articles scored in 3s
+  JBL: 841 articles scored in 4s
+  JCI: 754 articles scored in 3s
+  JKHY: 711 articles scored in 3s
+  JNJ: 1801 articles scored in 8s
+  JPM: 2221 articles scored in 15s
+  KDP: 442 articles scored in 3s
+  KEY: 1068 articles scored in 3s
+  KEYS: 1371 articles scored in 5s
+  KHC: 588 articles scored in 3s
+  KIM: 224 articles scored in 1s
+  KKR: 1913 articles scored in 7s
+  KLAC: 322 articles scored in 1s
+  KMB: 454 articles scored in 2s
+  KMI: 726 articles scored in 3s
+  KO: 1351 articles scored in 5s
+  KR: 1495 articles scored in 6s
+  L: 167 articles scored in 4s
+  LDOS: 1352 articles scored in 6s
+  LEN: 441 articles scored in 2s
+  LH: 825 articles scored in 5s
+275/500 tickers done (24 min)
+  LHX: 607 articles scored in 2s
+  LII: 554 articles scored in 2s
+/Users/heiditam/Documents/summer_2026/factor_model/scripts/score_sentiment.py:69: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([pd.read_csv(f, keep_default_na=False) for f in files], ignore_index=True)
+  LIN: 511 articles scored in 4s
+  LITE: 687 articles scored in 3s
+  LLY: 1832 articles scored in 9s
+  LMT: 1024 articles scored in 5s
+  LNT: 326 articles scored in 7s
+  LOW: 1780 articles scored in 6s
+  LRCX: 1554 articles scored in 12s
+  LULU: 1857 articles scored in 16s
+  LUV: 1580 articles scored in 9s
+  LVS: 337 articles scored in 5s
+  LYB: 542 articles scored in 7s
+  LYV: 730 articles scored in 4s
+  MA: 1415 articles scored in 9s
+  MAA: 297 articles scored in 3s
+  MAR: 1030 articles scored in 7s
+  MAS: 279 articles scored in 2s
+  MCD: 1070 articles scored in 14s
+  MCHP: 781 articles scored in 5s
+  MCK: 656 articles scored in 5s
+  MCO: 381 articles scored in 2s
+  MDLZ: 463 articles scored in 4s
+  MDT: 1756 articles scored in 13s
+  MET: 418 articles scored in 2s
+300/500 tickers done (26 min)
+  META: 6749 articles scored in 25s
+  MGM: 862 articles scored in 6s
+  MKC: 433 articles scored in 2s
+  MLM: 420 articles scored in 5s
+  MMM: 472 articles scored in 3s
+  MNST: 417 articles scored in 3s
+  MO: 628 articles scored in 6s
+  MOS: 225 articles scored in 3s
+  MPC: 601 articles scored in 4s
+  MPWR: 845 articles scored in 5s
+  MRK: 997 articles scored in 10s
+  MRNA: 3524 articles scored in 14s
+/Users/heiditam/Documents/summer_2026/factor_model/scripts/score_sentiment.py:69: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([pd.read_csv(f, keep_default_na=False) for f in files], ignore_index=True)
+  MRSH: 24 articles scored in 1s
+  MRVL: 2213 articles scored in 10s
+  MS: 1199 articles scored in 9s
+  MSCI: 903 articles scored in 6s
+  MSFT: 11472 articles scored in 47s
+  MSI: 436 articles scored in 3s
+  MTB: 476 articles scored in 2s
+  MTD: 344 articles scored in 2s
+  MU: 2699 articles scored in 10s
+  NCLH: 916 articles scored in 4s
+  NDAQ: 1314 articles scored in 9s
+  NDSN: 473 articles scored in 3s
+  NEE: 946 articles scored in 4s
+325/500 tickers done (30 min)
+  NEM: 452 articles scored in 4s
+  NFLX: 3065 articles scored in 10s
+  NI: 276 articles scored in 3s
+  NKE: 1423 articles scored in 5s
+  NOC: 820 articles scored in 3s
+  NOW: 5058 articles scored in 19s
+  NRG: 724 articles scored in 4s
+  NSC: 822 articles scored in 3s
+  NTAP: 428 articles scored in 4s
+  NTRS: 662 articles scored in 2s
+  NUE: 923 articles scored in 7s
+  NVDA: 33034 articles scored in 139s
+  NVR: 360 articles scored in 4s
+  NWS: 149 articles scored in 1s
+  NWSA: 205 articles scored in 1s
+  NXPI: 730 articles scored in 3s
+  O: 1457 articles scored in 6s
+  ODFL: 852 articles scored in 4s
+  OKE: 703 articles scored in 3s
+  OKTA: 1264 articles scored in 6s
+  OMC: 622 articles scored in 4s
+  ON: 2709 articles scored in 7s
+  ORCL: 2250 articles scored in 9s
+  ORLY: 481 articles scored in 2s
+  OTIS: 615 articles scored in 2s
+350/500 tickers done (34 min)
+  OXY: 1129 articles scored in 4s
+/Users/heiditam/Documents/summer_2026/factor_model/scripts/score_sentiment.py:69: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([pd.read_csv(f, keep_default_na=False) for f in files], ignore_index=True)
+  P: 104 articles scored in 0s
+  PANW: 2347 articles scored in 7s
+  PAYX: 540 articles scored in 2s
+  PCAR: 429 articles scored in 1s
+  PCG: 583 articles scored in 2s
+  PEG: 442 articles scored in 2s
+  PEP: 1350 articles scored in 5s
+  PFE: 3229 articles scored in 12s
+  PFG: 485 articles scored in 2s
+  PG: 759 articles scored in 3s
+  PGR: 559 articles scored in 2s
+  PH: 461 articles scored in 2s
+  PHM: 632 articles scored in 2s
+  PKG: 390 articles scored in 1s
+  PLD: 844 articles scored in 3s
+  PLTR: 6340 articles scored in 26s
+  PM: 1619 articles scored in 11s
+  PNC: 1047 articles scored in 5s
+  PNR: 455 articles scored in 2s
+  PNW: 264 articles scored in 2s
+  PODD: 493 articles scored in 2s
+  PPG: 664 articles scored in 2s
+  PPL: 335 articles scored in 1s
+  PRU: 609 articles scored in 4s
+375/500 tickers done (36 min)
+  PSA: 114 articles scored in 1s
+  PSX: 680 articles scored in 2s
+  PTC: 349 articles scored in 1s
+  PWR: 703 articles scored in 2s
+  PYPL: 2155 articles scored in 7s
+  Q: 4 articles scored in 0s
+  QCOM: 1030 articles scored in 4s
+  RCL: 1481 articles scored in 5s
+  RDDT: 1554 articles scored in 6s
+  REG: 345 articles scored in 1s
+  REGN: 2009 articles scored in 12s
+  RF: 141 articles scored in 1s
+/Users/heiditam/Documents/summer_2026/factor_model/scripts/score_sentiment.py:69: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([pd.read_csv(f, keep_default_na=False) for f in files], ignore_index=True)
+  RJF: 713 articles scored in 2s
+  RL: 484 articles scored in 1s
+  RMD: 201 articles scored in 1s
+  ROK: 641 articles scored in 2s
+  ROL: 686 articles scored in 2s
+  ROP: 664 articles scored in 2s
+  ROST: 452 articles scored in 1s
+  RSG: 416 articles scored in 1s
+  RTX: 2062 articles scored in 7s
+/Users/heiditam/Documents/summer_2026/factor_model/scripts/score_sentiment.py:69: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([pd.read_csv(f, keep_default_na=False) for f in files], ignore_index=True)
+  RVTY: 132 articles scored in 1s
+  SBAC: 403 articles scored in 2s
+  SBUX: 1312 articles scored in 4s
+  SCHW: 479 articles scored in 3s
+400/500 tickers done (37 min)
+  SHW: 623 articles scored in 5s
+  SJM: 559 articles scored in 2s
+/Users/heiditam/Documents/summer_2026/factor_model/scripts/score_sentiment.py:69: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([pd.read_csv(f, keep_default_na=False) for f in files], ignore_index=True)
+  SKYD: 13 articles scored in 0s
+  SLB: 266 articles scored in 1s
+  SMCI: 3395 articles scored in 20s
+  SNA: 424 articles scored in 9s
+  SNDK: 684 articles scored in 6s
+  SNPS: 1117 articles scored in 14s
+  SO: 2073 articles scored in 6s
+  SOLV: 184 articles scored in 1s
+  SPG: 487 articles scored in 3s
+  SPGI: 1482 articles scored in 7s
+  SRE: 477 articles scored in 3s
+  STE: 470 articles scored in 2s
+  STLD: 617 articles scored in 2s
+  STT: 285 articles scored in 1s
+  STX: 1289 articles scored in 5s
+  STZ: 774 articles scored in 6s
+/Users/heiditam/Documents/summer_2026/factor_model/scripts/score_sentiment.py:69: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([pd.read_csv(f, keep_default_na=False) for f in files], ignore_index=True)
+  SW: 167 articles scored in 2s
+  SWK: 787 articles scored in 4s
+  SWKS: 648 articles scored in 2s
+  SYF: 453 articles scored in 2s
+  SYK: 492 articles scored in 2s
+  SYY: 580 articles scored in 6s
+  T: 9484 articles scored in 52s
+425/500 tickers done (40 min)
+  TDG: 517 articles scored in 6s
+  TDY: 861 articles scored in 5s
+  TECH: 706 articles scored in 6s
+  TEL: 761 articles scored in 38s
+  TER: 470 articles scored in 11s
+  TFC: 542 articles scored in 7s
+  TGT: 1198 articles scored in 6s
+  TJX: 750 articles scored in 6s
+/Users/heiditam/Documents/summer_2026/factor_model/scripts/score_sentiment.py:69: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([pd.read_csv(f, keep_default_na=False) for f in files], ignore_index=True)
+  TKO: 396 articles scored in 2s
+  TMO: 300 articles scored in 4s
+  TMUS: 1729 articles scored in 7s
+  TPL: 401 articles scored in 2s
+  TPR: 576 articles scored in 4s
+  TRGP: 461 articles scored in 12s
+  TRMB: 675 articles scored in 3s
+  TROW: 825 articles scored in 4s
+  TRV: 403 articles scored in 2s
+  TSCO: 1187 articles scored in 7s
+  TSLA: 11875 articles scored in 54s
+  TSN: 1189 articles scored in 16s
+/Users/heiditam/Documents/summer_2026/factor_model/scripts/score_sentiment.py:69: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([pd.read_csv(f, keep_default_na=False) for f in files], ignore_index=True)
+  TT: 599 articles scored in 3s
+  TTWO: 746 articles scored in 4s
+  TWLO: 1085 articles scored in 4s
+  TXN: 565 articles scored in 3s
+  TXT: 533 articles scored in 4s
+450/500 tickers done (43 min)
+  TYL: 760 articles scored in 3s
+  UAL: 1580 articles scored in 5s
+  UBER: 1751 articles scored in 6s
+  UDR: 347 articles scored in 5s
+  UHS: 459 articles scored in 2s
+  ULTA: 909 articles scored in 5s
+  UNH: 1117 articles scored in 7s
+  UNP: 353 articles scored in 27s
+  UPS: 1153 articles scored in 9s
+  URI: 703 articles scored in 4s
+  USB: 197 articles scored in 1s
+  V: 3471 articles scored in 15s
+  VEEV: 1221 articles scored in 4s
+  VICI: 797 articles scored in 3s
+  VLO: 602 articles scored in 2s
+  VLTO: 190 articles scored in 1s
+  VMC: 306 articles scored in 2s
+/Users/heiditam/Documents/summer_2026/factor_model/scripts/score_sentiment.py:69: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([pd.read_csv(f, keep_default_na=False) for f in files], ignore_index=True)
+  VMRK: 10 articles scored in 0s
+  VRSK: 764 articles scored in 2s
+  VRSN: 240 articles scored in 1s
+/Users/heiditam/Documents/summer_2026/factor_model/scripts/score_sentiment.py:69: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([pd.read_csv(f, keep_default_na=False) for f in files], ignore_index=True)
+  VRT: 1506 articles scored in 6s
+  VRTX: 831 articles scored in 5s
+  VST: 1055 articles scored in 4s
+  VTR: 470 articles scored in 2s
+/Users/heiditam/Documents/summer_2026/factor_model/scripts/score_sentiment.py:69: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([pd.read_csv(f, keep_default_na=False) for f in files], ignore_index=True)
+  VTRS: 1041 articles scored in 5s
+475/500 tickers done (46 min)
+  VZ: 2464 articles scored in 11s
+  WAB: 548 articles scored in 4s
+  WAT: 402 articles scored in 3s
+  WDAY: 1386 articles scored in 7s
+  WDC: 609 articles scored in 3s
+  WEC: 396 articles scored in 2s
+  WELL: 1538 articles scored in 4s
+  WFC: 855 articles scored in 4s
+  WM: 548 articles scored in 2s
+  WMB: 430 articles scored in 2s
+  WMT: 2541 articles scored in 8s
+  WRB: 567 articles scored in 2s
+  WSM: 935 articles scored in 3s
+  WST: 670 articles scored in 3s
+/Users/heiditam/Documents/summer_2026/factor_model/scripts/score_sentiment.py:69: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([pd.read_csv(f, keep_default_na=False) for f in files], ignore_index=True)
+  WTW: 816 articles scored in 2s
+  WY: 414 articles scored in 1s
+  WYNN: 535 articles scored in 2s
+  XEL: 337 articles scored in 1s
+  XOM: 1476 articles scored in 5s
+  XYL: 519 articles scored in 2s
+/Users/heiditam/Documents/summer_2026/factor_model/scripts/score_sentiment.py:69: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df = pd.concat([pd.read_csv(f, keep_default_na=False) for f in files], ignore_index=True)
+  XYZ: 527 articles scored in 2s
+  YUM: 952 articles scored in 3s
+  ZBH: 433 articles scored in 2s
+  ZBRA: 853 articles scored in 3s
+  ZTS: 523 articles scored in 2s
+500/500 tickers done (47 min)
+Saved 231127 rows for 500 tickers to outputs/v3/data/sentiment_df.csv in 47 min. 0 failed: []

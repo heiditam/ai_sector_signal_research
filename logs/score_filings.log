@@ -1,60 +1,77 @@
-503 tickers, 2018-01-01 to 2026-11-14
+503 tickers, 2018-01-01 to 2026-11-17
 Model device: mps
 Device set to use mps
 Device set to use mps
-  A: 35 filings, 0 candidate sentences, text 9s, scoring 0s
-  AAPL: 37 filings, 5 candidate sentences, text 0s, scoring 2s
-  ABBV: 57 filings, 8 candidate sentences, text 13s, scoring 2s
-  ABNB: 24 filings, 78 candidate sentences, text 9s, scoring 9s
-  ABT: 36 filings, 1 candidate sentences, text 16s, scoring 1s
-  ACGL: 46 filings, 0 candidate sentences, text 11s, scoring 0s
-  ACN: 36 filings, 35 candidate sentences, text 12s, scoring 20s
-  ADBE: 35 filings, 44 candidate sentences, text 11s, scoring 9s
-  ADI: 35 filings, 46 candidate sentences, text 13s, scoring 7s
-  ADM: 38 filings, 4 candidate sentences, text 11s, scoring 2s
-  ADP: 36 filings, 12 candidate sentences, text 14s, scoring 2s
-  ADSK: 37 filings, 70 candidate sentences, text 11s, scoring 19s
-  AEE: 36 filings, 5 candidate sentences, text 12s, scoring 4s
-  AEP: 36 filings, 20 candidate sentences, text 10s, scoring 3s
-  AES: 30 filings, 55 candidate sentences, text 10s, scoring 11s
-  AFL: 37 filings, 0 candidate sentences, text 14s, scoring 0s
-  AIG: 38 filings, 0 candidate sentences, text 24s, scoring 0s
-  AIZ: 41 filings, 1 candidate sentences, text 11s, scoring 11s
-  AJG: 36 filings, 5 candidate sentences, text 31s, scoring 12s
-  AKAM: 36 filings, 140 candidate sentences, text 18s, scoring 22s
-  ALB: 39 filings, 125 candidate sentences, text 15s, scoring 26s
-  ALGN: 36 filings, 63 candidate sentences, text 15s, scoring 16s
-  ALL: 44 filings, 1 candidate sentences, text 38s, scoring 19s
-  ALLE: 37 filings, 49 candidate sentences, text 22s, scoring 6s
-SGML fetch failed for 0000006951-18-000011, falling back to homepage: SEC returned HTML or XML content instead of expected SGML filing data. This may indicate an invalid request or temporary SEC server issue.
-  AMAT: 35 filings, 78 candidate sentences, text 27s, scoring 18s
-25/503 tickers done (10 min)
-SGML fetch failed for 0001748790-24-000031, falling back to homepage: SEC returned HTML or XML content instead of expected SGML filing data. This may indicate an invalid request or temporary SEC server issue.
-SGML fetch failed for 0001748790-23-000005, falling back to homepage: SEC returned HTML or XML content instead of expected SGML filing data. This may indicate an invalid request or temporary SEC server issue.
-SGML fetch failed for 0001748790-20-000031, falling back to homepage: SEC returned HTML or XML content instead of expected SGML filing data. This may indicate an invalid request or temporary SEC server issue.
-SGML fetch failed for 0001748790-20-000017, falling back to homepage: SEC returned HTML or XML content instead of expected SGML filing data. This may indicate an invalid request or temporary SEC server issue.
-SGML fetch failed for 0001748790-20-000008, falling back to homepage: SEC returned HTML or XML content instead of expected SGML filing data. This may indicate an invalid request or temporary SEC server issue.
-SGML fetch failed for 0001104659-19-061135, falling back to homepage: SEC returned HTML or XML content instead of expected SGML filing data. This may indicate an invalid request or temporary SEC server issue.
-SGML fetch failed for 0001104659-19-046660, falling back to homepage: SEC returned HTML or XML content instead of expected SGML filing data. This may indicate an invalid request or temporary SEC server issue.
-  AMCR: 30 filings, 12 candidate sentences, text 64s, scoring 18s
-SGML fetch failed for 0000002488-18-000186, falling back to homepage: SEC returned HTML or XML content instead of expected SGML filing data. This may indicate an invalid request or temporary SEC server issue.
-  AMD: 38 filings, 572 candidate sentences, text 27s, scoring 230s
-  AME: 36 filings, 6 candidate sentences, text 14s, scoring 129s
-  AMGN: 36 filings, 210 candidate sentences, text 20s, scoring 200s
-  AMP: 36 filings, 5 candidate sentences, text 24s, scoring 9s
-  AMT: 36 filings, 484 candidate sentences, text 30s, scoring 372s
-  AMZN: 36 filings, 418 candidate sentences, text 27s, scoring 255s
-  ANET: 36 filings, 152 candidate sentences, text 22s, scoring 144s
-  AON: 36 filings, 199 candidate sentences, text 22s, scoring 67s
-  AOS: 39 filings, 51 candidate sentences, text 9s, scoring 37s
-  APA: 28 filings, 147 candidate sentences, text 19s, scoring 235s
-  APD: 37 filings, 259 candidate sentences, text 31s, scoring 135s
-  APH: 36 filings, 32 candidate sentences, text 16s, scoring 1180s
-  APO: 20 filings, 0 candidate sentences, text 7s, scoring 0s
-  APP: 24 filings, 15 candidate sentences, text 6s, scoring 16s
-  APTV: 37 filings, 48 candidate sentences, text 18s, scoring 60s
-  ARE: 37 filings, 163 candidate sentences, text 133s, scoring 553s
-SGML fetch failed for 0001628280-19-005614, falling back to homepage: SEC returned HTML or XML content instead of expected SGML filing data. This may indicate an invalid request or temporary SEC server issue.
-  ARES: 36 filings, 1 candidate sentences, text 15s, scoring 28s
-  ATO: 36 filings, 111 candidate sentences, text 17s, scoring 79s
-  AVGO: 34 filings, 156 candidate sentences, text 23s, scoring 215s
+25/503 tickers done (0 min)
+50/503 tickers done (0 min)
+75/503 tickers done (0 min)
+100/503 tickers done (0 min)
+125/503 tickers done (0 min)
+150/503 tickers done (0 min)
+175/503 tickers done (0 min)
+200/503 tickers done (0 min)
+225/503 tickers done (0 min)
+250/503 tickers done (0 min)
+275/503 tickers done (0 min)
+300/503 tickers done (0 min)
+325/503 tickers done (0 min)
+350/503 tickers done (0 min)
+375/503 tickers done (0 min)
+400/503 tickers done (0 min)
+425/503 tickers done (0 min)
+450/503 tickers done (0 min)
+  UAL: 41 filings, 112 candidate sentences, text 29s, scoring 44s
+  UBER: 34 filings, 65 candidate sentences, text 14s, scoring 9s
+  UDR: 37 filings, 7 candidate sentences, text 18s, scoring 8s
+  UHS: 38 filings, 34 candidate sentences, text 27s, scoring 32s
+  ULTA: 35 filings, 45 candidate sentences, text 13s, scoring 10s
+  UNH: 36 filings, 9 candidate sentences, text 12s, scoring 3s
+  UNP: 37 filings, 5 candidate sentences, text 15s, scoring 2s
+  UPS: 36 filings, 127 candidate sentences, text 26s, scoring 59s
+  URI: 36 filings, 115 candidate sentences, text 13s, scoring 30s
+  USB: 36 filings, 14 candidate sentences, text 41s, scoring 5s
+  V: 36 filings, 4 candidate sentences, text 12s, scoring 2s
+  VEEV: 39 filings, 35 candidate sentences, text 12s, scoring 10s
+  VICI: 37 filings, 63 candidate sentences, text 14s, scoring 14s
+  VLO: 37 filings, 75 candidate sentences, text 21s, scoring 32s
+  VLTO: 13 filings, 13 candidate sentences, text 6s, scoring 3s
+  VMC: 35 filings, 97 candidate sentences, text 16s, scoring 8s
+  VMRK: 35 filings, 296 candidate sentences, text 40s, scoring 50s
+  VRSK: 35 filings, 99 candidate sentences, text 17s, scoring 27s
+  VRSN: 36 filings, 0 candidate sentences, text 9s, scoring 0s
+  VRT: 29 filings, 136 candidate sentences, text 12s, scoring 21s
+  VRTX: 36 filings, 0 candidate sentences, text 18s, scoring 0s
+  VST: 36 filings, 11 candidate sentences, text 16s, scoring 4s
+475/503 tickers done (13 min)
+  VTR: 37 filings, 71 candidate sentences, text 23s, scoring 11s
+  VTRS: 24 filings, 102 candidate sentences, text 10s, scoring 24s
+  VYLR: 1 filings, 1 candidate sentences, text 1s, scoring 1s
+  VZ: 36 filings, 137 candidate sentences, text 21s, scoring 39s
+  WAB: 38 filings, 3 candidate sentences, text 22s, scoring 3s
+  WAT: 37 filings, 4 candidate sentences, text 14s, scoring 5s
+  WDAY: 36 filings, 180 candidate sentences, text 12s, scoring 27s
+  WDC: 35 filings, 59 candidate sentences, text 12s, scoring 11s
+  WEC: 37 filings, 10 candidate sentences, text 10s, scoring 4s
+  WELL: 49 filings, 9 candidate sentences, text 23s, scoring 4s
+  WFC: 38 filings, 3 candidate sentences, text 35s, scoring 5s
+  WM: 36 filings, 115 candidate sentences, text 17s, scoring 27s
+  WMB: 36 filings, 127 candidate sentences, text 26s, scoring 21s
+  WMT: 35 filings, 119 candidate sentences, text 21s, scoring 24s
+  WRB: 36 filings, 1 candidate sentences, text 16s, scoring 11s
+  WSM: 35 filings, 7 candidate sentences, text 17s, scoring 18s
+  WST: 36 filings, 147 candidate sentences, text 15s, scoring 33s
+  WTW: 37 filings, 32 candidate sentences, text 23s, scoring 7s
+  WY: 35 filings, 73 candidate sentences, text 10s, scoring 9s
+  WYNN: 36 filings, 120 candidate sentences, text 14s, scoring 9s
+  XEL: 35 filings, 218 candidate sentences, text 14s, scoring 31s
+  XOM: 36 filings, 91 candidate sentences, text 17s, scoring 23s
+  XYL: 38 filings, 77 candidate sentences, text 19s, scoring 18s
+  XYZ: 36 filings, 135 candidate sentences, text 30s, scoring 46s
+  YUM: 36 filings, 16 candidate sentences, text 21s, scoring 29s
+500/503 tickers done (28 min)
+  ZBH: 38 filings, 35 candidate sentences, text 33s, scoring 25s
+  ZBRA: 34 filings, 55 candidate sentences, text 13s, scoring 26s
+  ZTS: 36 filings, 9 candidate sentences, text 19s, scoring 8s
+/Users/heiditam/Documents/summer_2026/factor_model/scripts/score_filings.py:287: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  out = pd.concat(frames, ignore_index=True)
+Saved 18076 filings for 502 tickers to outputs/v3/data/filing_signals_df.csv in 30 min. 0 failed: []

@@ -118,6 +118,10 @@ CANDIDATE_RE = re.compile(
     r'|artificial intelligence|ai|generative|machine learning|gpus?|accelerators?|chips?'
     r'|data cent(?:er|re)s?|capex|capital expenditures?|capital spending)\b', re.I)
 AI_RE = re.compile(r'\b(?:artificial intelligence|ai|generative|gpus?|accelerators?)\b', re.I)
+# Periods in common abbreviations and middle initials are not sentence ends
+ABBREV_RE = re.compile(r'\b(?:U\.S|U\.K|Inc|Corp|Co|Ltd|No|Nos|vs|e\.g|i\.e|[ap]\.m|Mr|Ms|Mrs|Dr|Jr|Sr|St'
+                       r'|Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sept?|Oct|Nov|Dec)\.|(?<= )[A-Z]\.(?= [A-Z])')
+
 
 SIGNAL_COLS = ([f'{k}_share' for k in TOPICS]
                + ['ai_demand_net', 'capex_net', 'ai_tone', 'ai_sentence_ratio'])
@@ -127,19 +131,29 @@ SIGNAL_COLS = ([f'{k}_share' for k in TOPICS]
 def clean_filing_text(text):
     text = re.sub(r'<[^>]+>', ' ', text)          # remove HTML tags
     text = re.sub(r'&[a-z]+;', ' ', text)          # remove HTML entities
-    text = re.sub(r'\s+', ' ', text)               # normalize whitespace
+    text = re.sub(r'[•●▪◦]', '\n\n', text)         # each bullet starts a new paragraph
+    # SEC text is hard-wrapped at ~80 characters, so a single newline is not a break.
+    # Blank lines separate paragraphs: join the wrapped lines inside each one.
+    paragraphs = re.split(r'\n[ \t]*\n', text)
+    text = '\n'.join(re.sub(r'\s+', ' ', p) for p in paragraphs)
     text = re.sub(r'\d{1,2}/\d{1,2}/\d{2,4}', '', text)  # remove dates
     text = re.sub(r'\$[\d,\.]+', '', text)         # remove dollar amounts
     text = re.sub(r"['']", '', text)               # drop apostrophes
     text = re.sub(r'[^\w\s\.]', ' ', text)         # remove special characters
-    text = re.sub(r'\s{2,}', ' ', text)            # normalize whitespace again
-    return text.strip()
+    # one paragraph per line; drop empty lines
+    return '\n'.join(re.sub(r'[ \t]{2,}', ' ', line).strip() for line in text.split('\n') if line.strip())
+
 
 
 def split_sentences(text):
-    text = re.sub(r'\s+', ' ', text)
-    sents = re.split(r'(?<=[.!?])\s+(?=[A-Z"])', text)     # doesn't split "U.S." or "3.5"
-    return [s.strip() for s in sents if 30 <= len(s) <= 1000]
+    sents = []
+    # Split by paragraph before splitting by sentence
+    for para in text.split('\n'):                                                   # paragraphs and bullets
+        para = ABBREV_RE.sub(lambda m: m.group(0).replace('.', '<prd>'), para)      # protect abbreviations
+        sents += re.split(r'(?<=[.!?])\s+(?=[A-Z0-9"])', para)                      # doesn't split "3.5"
+    sents = [s.replace('<prd>', '.').strip() for s in sents]
+    return [s for s in sents if 30 <= len(s) <= 1000]
+
 
 
 def fetch_filings(ticker):
