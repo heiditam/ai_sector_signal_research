@@ -7,9 +7,10 @@ Download and score SEC 8-K earnings releases (Item 2.02, Exhibit 99) for every t
 - Run from the repository root, after data_cleaning_v3.ipynb has saved sp500_tickers.csv.
 - Requires EMAIL in .env (the SEC asks every client to identify itself).
 - Two caches, one file per ticker, so the script can be stopped and restarted:
-    outputs/v3/filing_text/    cleaned exhibit text. Downloaded once (~3 hours for ~500 tickers).
+    outputs/v3/filing_text/    raw text. Downloaded once (~3 hours for ~500 tickers).
     outputs/v3/filing_scores/  topic and tone scores. Delete this folder after changing TOPICS,
                                THRESHOLD, or the sentence filter; the saved text is reused.
+                               Delete filing_text/ as well after changing clean_filing_text.
 - Writes outputs/v3/data/filing_signals_df.csv: one row per filing, with the time the SEC
   accepted it. data_cleaning_v3.ipynb moves after-close filings to the next trading day.
 """
@@ -31,7 +32,7 @@ START, END = '2018-01-01', date.today().strftime('%Y-%m-%d')   # 2018 gives a pr
 
 NLI_MODEL = 'MoritzLaurer/deberta-v3-base-zeroshot-v2.0'
 THRESHOLD = 0.8          # NLI entailment probability needed to count a sentence toward a topic
-MAX_CANDIDATES = 25      # sentences per filing sent to the NLI model
+MAX_CANDIDATES = 60      # sentences per filing sent to the NLI model
 
 # Each topic is a plain-English hypothesis the model checks against a sentence
 TOPICS = {
@@ -139,10 +140,9 @@ def clean_filing_text(text):
     text = re.sub(r'\d{1,2}/\d{1,2}/\d{2,4}', '', text)  # remove dates
     text = re.sub(r'\$[\d,\.]+', '', text)         # remove dollar amounts
     text = re.sub(r"['']", '', text)               # drop apostrophes
-    text = re.sub(r'[^\w\s\.]', ' ', text)         # remove special characters
+    text = re.sub(r'[^\w\s\.%]', ' ', text)         # remove special characters
     # one paragraph per line; drop empty lines
     return '\n'.join(re.sub(r'[ \t]{2,}', ' ', line).strip() for line in text.split('\n') if line.strip())
-
 
 
 def split_sentences(text):
@@ -160,7 +160,7 @@ def fetch_filings(ticker):
     """Cleaned Exhibit 99 text of every Item 2.02 8-K. Failed filings are skipped."""
     from edgar import Company
     filings = Company(ticker).get_filings(form='8-K', filing_date=f'{START}:{END}')
-    rows = []
+    rows, n_failed = [], 0
     for filing in filings:
         try:
             if '2.02' not in str(filing.items):              # only earnings releases
@@ -174,10 +174,13 @@ def fetch_filings(ticker):
                 rows.append({'Ticker': ticker,
                              'Date': pd.to_datetime(filing.filing_date),
                              'Accepted': pd.Timestamp(filing.acceptance_datetime),   # UTC
-                             'Text': clean_filing_text(text)})
+                             'Text': text})
                 break                                        # one exhibit per filing
         except Exception as e:
+            n_failed += 1
             print(f'  skipped {ticker} {filing.filing_date}: {e}', flush=True)
+    if n_failed:
+        raise RuntimeError(f'{n_failed} filings failed; not caching so a rerun retries them')
     return pd.DataFrame(rows, columns=['Ticker', 'Date', 'Accepted', 'Text'])
 
 
@@ -207,7 +210,7 @@ def score_ticker(texts, nli, finbert):
     the models in one call each, because every model call has a fixed start-up cost."""
     filings, all_cands = [], []
     for text in texts['Text']:
-        sents = split_sentences(text)
+        sents = split_sentences(clean_filing_text(text))
         cands = [s for s in sents if CANDIDATE_RE.search(s)][:MAX_CANDIDATES]
         filings.append((max(len(sents), 1), sum(bool(AI_RE.search(s)) for s in sents), len(all_cands), cands))
         all_cands.extend(cands)
