@@ -28,7 +28,7 @@ UNIVERSE_PATH = 'outputs/v3/data/sp500_tickers.csv'
 TEXT_CACHE = 'outputs/v3/filing_text'
 SCORE_CACHE = 'outputs/v3/filing_scores'
 OUTPUT_PATH = 'outputs/v3/data/filing_signals_df.csv'
-START, END = '2018-01-01', date.today().strftime('%Y-%m-%d')   # 2018 gives a prior filing for early 2019
+START, END = '2014-01-01', date.today().strftime('%Y-%m-%d')   # 2014 gives a prior filing for early 2015
 
 NLI_MODEL = 'MoritzLaurer/deberta-v3-base-zeroshot-v2.0'
 THRESHOLD = 0.8          # NLI entailment probability needed to count a sentence toward a topic

@@ -85,3 +85,27 @@ def test_price_features_ignore_the_future():
                           bench.mask(future, bench * 3), bench.mask(future, bench * 3))
     assert len(base.loc[:t]) > 100          # make sure rows were actually compared
     pd.testing.assert_frame_equal(base.loc[:t], moved.loc[:t])
+
+
+# TEST 5: the development panels contain no 2026 rows, and no rows whose fwd_5d uses 2026 prices
+@pytest.mark.parametrize('name', ['features_df.csv', 'ai_sector_features_df.csv'])
+def test_development_panel_stops_before_2026(name):
+    dates = pd.read_csv(ROOT / 'outputs/v3/data' / name, usecols=['Date'], parse_dates=['Date'])['Date']
+    assert dates.max() <= pd.Timestamp('2025-12-31')      # no holdout rows
+    assert dates.max() <= pd.Timestamp('2025-12-23')      # no fwd_5d that reaches into 2026
+
+
+# TEST 6: the sealed files still match the hashes recorded when they were sealed
+SEALED = ROOT / 'outputs/v3/sealed'
+
+def test_sealed_files_unchanged():
+    import hashlib
+    sums = SEALED / 'SHA256SUMS.txt'
+    if not sums.exists():
+        pytest.skip('holdout not sealed yet')
+    latest = {}
+    for line in sums.read_text().splitlines():
+        digest, name = line.split()[:2]
+        latest[name] = digest                             # the last line for each file wins (reseals)
+    for name, digest in latest.items():
+        assert hashlib.sha256((SEALED / name).read_bytes()).hexdigest() == digest, f'{name} changed'
