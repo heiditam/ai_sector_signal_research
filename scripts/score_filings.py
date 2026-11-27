@@ -24,7 +24,7 @@ import numpy as np
 import pandas as pd
 
 # ---------------------------------------------------------------- settings
-UNIVERSE_PATH = 'outputs/v3/data/universe_2015.csv'
+UNIVERSE_PATH = 'data/universe_2015.csv'
 TEXT_CACHE = 'outputs/v3/filing_text'
 SCORE_CACHE = 'outputs/v3/filing_scores'
 OUTPUT_PATH = 'outputs/v3/data/filing_signals_df.csv'

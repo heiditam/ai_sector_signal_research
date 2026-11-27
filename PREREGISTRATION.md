@@ -56,8 +56,9 @@ Not seen: the 5- and 60-day event-study horizons, any 2015–2018 result, any re
 - The 2026 holdout is run once, with the frozen model and code, after all development analyses above are complete. Results are reported whatever they show.
 - The S&P 400 holdout is not opened until the agent paper's design is registered separately.
 
-## Deviation log
+## Deviation log 
 
 | Date | Change | Reason |
 |---|---|---|
-| | | |
+| 2026-11-27 | Universe: 600 tickers = 503 current members + 97 removed members whose yfinance prices cover ≥95% of their membership days (`scripts/build_universe.py`). 162 of 259 removed members are missing. Robustness check added: rerun the primary test on the 503 current members only. Sectors for the 97 entered by hand (current GICS structure). | yfinance has no usable prices for most delisted stocks. Measures how much survivorship bias affects results. |
+| 2026-11-27 | 2026 holdout first sealed before the rescore, with old-splitter scores. It will be resealed after the rescore and the 2015 rebuild. | The split cell was run early. The 2026 data was not viewed. |
