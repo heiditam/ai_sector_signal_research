@@ -24,7 +24,7 @@ import numpy as np
 import pandas as pd
 
 # ---------------------------------------------------------------- settings
-UNIVERSE_PATH = 'outputs/v3/data/sp500_tickers.csv'
+UNIVERSE_PATH = 'outputs/v3/data/universe_2015.csv'
 TEXT_CACHE = 'outputs/v3/filing_text'
 SCORE_CACHE = 'outputs/v3/filing_scores'
 OUTPUT_PATH = 'outputs/v3/data/filing_signals_df.csv'
@@ -292,7 +292,7 @@ def main():
     if time_only:
         if not n_filings:
             sys.exit('No filings found for those tickers.')
-        total = 18000                                          # ~16,100 filings 2018-2025, plus 2026
+        total = 26000                                          # ~16,100 filings 2018-2025, plus 2026
         print(f'\n{n_filings} filings, {n_cands / n_filings:.1f} candidate sentences per filing')
         print(f'Download: {t_fetch / n_filings:.2f}s per filing (0 if the text was already cached)')
         print(f'Scoring:  {t_score / n_filings:.2f}s per filing')
